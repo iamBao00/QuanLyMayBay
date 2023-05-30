@@ -94,7 +94,7 @@ namespace QuanLyMayBay
                 if (dangThemMoi)
                 {
                     dangThemMoi = false;
-                    string strLenh = "declare @result int exec @result = sp_KiemTraMaDonDatHang '" + txtSCMND.Text + "' select @result";
+                    string strLenh = "declare @result int exec @result = sp_CheckNguoiTonTai  '" + txtSCMND.Text + "' select @result";
 
                     Program.myReader = Program.ExecSqlDataReader(strLenh);
                     Program.myReader.Read();

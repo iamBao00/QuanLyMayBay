@@ -28,10 +28,10 @@ namespace QuanLyMayBay
 
         private void frmChu_Load(object sender, EventArgs e)
         {
-            QuanLyMayBay.DS.EnforceConstraints = false;
-            // TODO: This line of code loads data into the 'dS.NGUOI' table. You can move, or remove it, as needed.
+            DS.EnforceConstraints = false;
+            this.nGUOITableAdapter.Connection.ConnectionString = Program.connstr;
             this.nGUOITableAdapter.Fill(this.DS.NGUOI);
-            // TODO: This line of code loads data into the 'dS.CHUMAYBAY' table. You can move, or remove it, as needed.
+            this.cHUMAYBAYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.cHUMAYBAYTableAdapter.Fill(this.DS.CHUMAYBAY);
 
         }

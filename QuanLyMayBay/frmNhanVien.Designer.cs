@@ -488,6 +488,7 @@
             // txtMaNV
             // 
             this.txtMaNV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNV, "MANV", true));
+            this.txtMaNV.Enabled = false;
             this.txtMaNV.Location = new System.Drawing.Point(84, 131);
             this.txtMaNV.MenuManager = this.barManager1;
             this.txtMaNV.Name = "txtMaNV";

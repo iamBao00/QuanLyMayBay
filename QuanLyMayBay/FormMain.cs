@@ -36,10 +36,12 @@ namespace QuanLyMayBay
             if (Program.mGroup == "ADMIN") {
                 ribbonAdmin.Visible = true;
                 btnTaoTaiKhoan.Enabled = true;
+                ribbonThongKe.Visible = true;
             };
             if(Program.mGroup == "NHANVIEN") { 
                 ribbonNhanVien.Visible = true;
                 ribbonAdmin.Visible = false;
+                ribbonThongKe.Visible = false;
             }
 
         }
@@ -89,6 +91,94 @@ namespace QuanLyMayBay
             DangXuat();
             barButtonItemDangXuat.Enabled = btnTaoTaiKhoan.Enabled = false;
             btnDangNhap.Enabled = true;
+        }
+
+        private void btnLoaiMB_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form form = CheckExists(typeof(frmLoaiMB));
+            {
+                if (form != null) form.Activate();
+                else
+                {
+
+                    frmLoaiMB f = new frmLoaiMB();
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+        }
+
+        private void btnNCMB_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            Form form = CheckExists(typeof(frmNhaChuaMB));
+            {
+                if (form != null) form.Activate();
+                else
+                {
+
+                    frmNhaChuaMB f = new frmNhaChuaMB();
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+        }
+
+        private void btnMayBay_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form form = CheckExists(typeof(frmMayBay));
+            {
+                if (form != null) form.Activate();
+                else
+                {
+
+                    frmMayBay f = new frmMayBay();
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+        }
+
+        private void btnNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form form = CheckExists(typeof(frmNhanVien));
+            {
+                if (form != null) form.Activate();
+                else
+                {
+                    frmNhanVien f = new frmNhanVien();
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+        }
+
+        private void btnPhiCong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form form = CheckExists(typeof(frmPhiCong));
+            {
+                if (form != null) form.Activate();
+                else
+                {
+                    frmPhiCong f = new frmPhiCong();
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+        }
+
+        private void btnChuCN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form form = CheckExists(typeof(frmChuCN));
+            {
+                if (form != null) form.Activate();
+                else
+                {
+                    frmChuCN f = new frmChuCN();
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
         }
     }
 }

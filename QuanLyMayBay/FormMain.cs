@@ -244,5 +244,38 @@ namespace QuanLyMayBay
                 }
             }
         }
+
+        private void btnDSPC_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmReportPhiCong));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmReportPhiCong f = new frmReportPhiCong();
+                f.Show();
+            }
+        }
+
+        private void btnDSDoanhNghiep_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmReportDSDoanhNghiep));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmReportDSDoanhNghiep f = new frmReportDSDoanhNghiep();
+                f.Show();
+            }
+        }
+
+        private void btnDSDVBT_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmReportDSDVBaoTri));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmReportDSDVBaoTri f = new frmReportDSDVBaoTri();
+                f.Show();
+            }
+        }
     }
 }

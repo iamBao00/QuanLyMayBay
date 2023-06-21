@@ -129,3 +129,9 @@ C:\TTCS\QuanLyMayBay\QuanLyMayBay\bin\Debug\DevExpress.XtraDiagram.v22.2.xml
 C:\TTCS\QuanLyMayBay\QuanLyMayBay\bin\Debug\DevExpress.Diagram.v22.2.Core.xml
 C:\TTCS\QuanLyMayBay\QuanLyMayBay\obj\Debug\QuanLyMayBay.frmNVTaoTaiKhoan.resources
 C:\TTCS\QuanLyMayBay\QuanLyMayBay\obj\Debug\QuanLyMayBay.frmTaoTaiKhoan.resources
+C:\TTCS\QuanLyMayBay\QuanLyMayBay\obj\Debug\QuanLyMayBay.frmReportPhiCong.resources
+C:\TTCS\QuanLyMayBay\QuanLyMayBay\obj\Debug\QuanLyMayBay.ReportPhiCong.resources
+C:\TTCS\QuanLyMayBay\QuanLyMayBay\obj\Debug\QuanLyMayBay.frmReportDSDoanhNghiep.resources
+C:\TTCS\QuanLyMayBay\QuanLyMayBay\obj\Debug\QuanLyMayBay.frmReportDSDVBaoTri.resources
+C:\TTCS\QuanLyMayBay\QuanLyMayBay\obj\Debug\QuanLyMayBay.ReportDSDoanhNghiep.resources
+C:\TTCS\QuanLyMayBay\QuanLyMayBay\obj\Debug\QuanLyMayBay.ReportDSDVBaoTri.resources

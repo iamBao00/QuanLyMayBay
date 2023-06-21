@@ -141,11 +141,29 @@
     <Compile Include="frmPhiCong.Designer.cs">
       <DependentUpon>frmPhiCong.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportDSDoanhNghiep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportDSDoanhNghiep.Designer.cs">
+      <DependentUpon>frmReportDSDoanhNghiep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportDSDVBaoTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportDSDVBaoTri.Designer.cs">
+      <DependentUpon>frmReportDSDVBaoTri.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReportNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmReportNhanVien.Designer.cs">
       <DependentUpon>frmReportNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportPhiCong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportPhiCong.Designer.cs">
+      <DependentUpon>frmReportPhiCong.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTaoTaiKhoan.cs">
       <SubType>Form</SubType>
@@ -155,11 +173,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportDSDoanhNghiep.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportDSDoanhNghiep.Designer.cs">
+      <DependentUpon>ReportDSDoanhNghiep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportDSDVBaoTri.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportDSDVBaoTri.Designer.cs">
+      <DependentUpon>ReportDSDVBaoTri.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportNhanVien.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ReportNhanVien.Designer.cs">
       <DependentUpon>ReportNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportPhiCong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportPhiCong.Designer.cs">
+      <DependentUpon>ReportPhiCong.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
@@ -194,8 +230,17 @@
     <EmbeddedResource Include="frmPhiCong.resx">
       <DependentUpon>frmPhiCong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportDSDoanhNghiep.resx">
+      <DependentUpon>frmReportDSDoanhNghiep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportDSDVBaoTri.resx">
+      <DependentUpon>frmReportDSDVBaoTri.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReportNhanVien.resx">
       <DependentUpon>frmReportNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportPhiCong.resx">
+      <DependentUpon>frmReportPhiCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTaoTaiKhoan.resx">
       <DependentUpon>frmTaoTaiKhoan.cs</DependentUpon>
@@ -210,8 +255,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportDSDoanhNghiep.resx">
+      <DependentUpon>ReportDSDoanhNghiep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportDSDVBaoTri.resx">
+      <DependentUpon>ReportDSDVBaoTri.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportNhanVien.resx">
       <DependentUpon>ReportNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportPhiCong.resx">
+      <DependentUpon>ReportPhiCong.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="DS.xsc">

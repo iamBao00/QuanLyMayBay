@@ -27,6 +27,10 @@ namespace QuanLyMayBay
         public static String mGroup = "";
         public static String mlogin = "";
 
+        public static int mChinhanh = 0;
+        public static string maNhanVienDuocChon = "";
+
+
         public static FormMain formChinh;
 
         public static int KetNoi()

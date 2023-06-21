@@ -38,7 +38,6 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
-            this.btnHieuChinh = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
@@ -48,6 +47,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.btnHieuChinh = new DevExpress.XtraBars.BarButtonItem();
             this.DS = new QuanLyMayBay.DS();
             this.bdsCMB = new System.Windows.Forms.BindingSource(this.components);
             this.cHUMAYBAYTableAdapter = new QuanLyMayBay.DSTableAdapters.CHUMAYBAYTableAdapter();
@@ -57,18 +57,18 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMACHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.bdsNguoi = new System.Windows.Forms.BindingSource(this.components);
-            this.nGUOIDataGridView = new System.Windows.Forms.DataGridView();
+            this.gcNguoi = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.thêmNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hiệuChỉnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ghiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.phụcHồiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnThemN = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHieuChinhN = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnXoaN = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnGhiN = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnPhucHoiN = new System.Windows.Forms.ToolStripMenuItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtMaChu = new DevExpress.XtraEditors.TextEdit();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
@@ -89,7 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcChu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNguoi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGUOIDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNguoi)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -174,7 +174,7 @@
             this.btnPhucHoi,
             this.btnReload,
             this.btnThoat});
-            this.barManager1.MaxItemId = 7;
+            this.barManager1.MaxItemId = 8;
             // 
             // bar1
             // 
@@ -184,7 +184,6 @@
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnThem),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnHieuChinh),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnXoa),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnGhi),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnPhucHoi),
@@ -199,41 +198,40 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
-            // btnHieuChinh
-            // 
-            this.btnHieuChinh.Caption = "Hiệu chỉnh";
-            this.btnHieuChinh.Id = 1;
-            this.btnHieuChinh.Name = "btnHieuChinh";
-            // 
             // btnXoa
             // 
             this.btnXoa.Caption = "Xóa";
             this.btnXoa.Id = 2;
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnGhi
             // 
             this.btnGhi.Caption = "Ghi";
             this.btnGhi.Id = 3;
             this.btnGhi.Name = "btnGhi";
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
             // 
             // btnPhucHoi
             // 
             this.btnPhucHoi.Caption = "Phục hồi";
             this.btnPhucHoi.Id = 4;
             this.btnPhucHoi.Name = "btnPhucHoi";
+            this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick);
             // 
             // btnReload
             // 
             this.btnReload.Caption = "Reload";
             this.btnReload.Id = 5;
             this.btnReload.Name = "btnReload";
+            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
             // btnThoat
             // 
             this.btnThoat.Caption = "Thoát";
             this.btnThoat.Id = 6;
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -266,6 +264,11 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1001, 25);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 516);
+            // 
+            // btnHieuChinh
+            // 
+            this.btnHieuChinh.Id = 7;
+            this.btnHieuChinh.Name = "btnHieuChinh";
             // 
             // DS
             // 
@@ -309,7 +312,7 @@
             this.gcChu.MainView = this.gridView1;
             this.gcChu.MenuManager = this.barManager1;
             this.gcChu.Name = "gcChu";
-            this.gcChu.Size = new System.Drawing.Size(143, 246);
+            this.gcChu.Size = new System.Drawing.Size(143, 287);
             this.gcChu.TabIndex = 5;
             this.gcChu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -335,24 +338,24 @@
             this.bdsNguoi.DataMember = "NGUOI";
             this.bdsNguoi.DataSource = this.DS;
             // 
-            // nGUOIDataGridView
+            // gcNguoi
             // 
-            this.nGUOIDataGridView.AutoGenerateColumns = false;
-            this.nGUOIDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.nGUOIDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gcNguoi.AutoGenerateColumns = false;
+            this.gcNguoi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gcNguoi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
-            this.nGUOIDataGridView.ContextMenuStrip = this.contextMenuStrip1;
-            this.nGUOIDataGridView.DataSource = this.bdsNguoi;
-            this.nGUOIDataGridView.Location = new System.Drawing.Point(149, 31);
-            this.nGUOIDataGridView.Name = "nGUOIDataGridView";
-            this.nGUOIDataGridView.RowHeadersWidth = 51;
-            this.nGUOIDataGridView.RowTemplate.Height = 24;
-            this.nGUOIDataGridView.Size = new System.Drawing.Size(840, 246);
-            this.nGUOIDataGridView.TabIndex = 5;
+            this.gcNguoi.ContextMenuStrip = this.contextMenuStrip1;
+            this.gcNguoi.DataSource = this.bdsNguoi;
+            this.gcNguoi.Location = new System.Drawing.Point(149, 72);
+            this.gcNguoi.Name = "gcNguoi";
+            this.gcNguoi.RowHeadersWidth = 51;
+            this.gcNguoi.RowTemplate.Height = 24;
+            this.gcNguoi.Size = new System.Drawing.Size(840, 246);
+            this.gcNguoi.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -398,43 +401,48 @@
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thêmNToolStripMenuItem,
-            this.hiệuChỉnhToolStripMenuItem,
-            this.xóaToolStripMenuItem,
-            this.ghiToolStripMenuItem,
-            this.phụcHồiToolStripMenuItem});
+            this.btnThemN,
+            this.btnHieuChinhN,
+            this.btnXoaN,
+            this.btnGhiN,
+            this.btnPhucHoiN});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(151, 124);
             // 
-            // thêmNToolStripMenuItem
+            // btnThemN
             // 
-            this.thêmNToolStripMenuItem.Name = "thêmNToolStripMenuItem";
-            this.thêmNToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
-            this.thêmNToolStripMenuItem.Text = "Thêm";
+            this.btnThemN.Name = "btnThemN";
+            this.btnThemN.Size = new System.Drawing.Size(150, 24);
+            this.btnThemN.Text = "Thêm";
+            this.btnThemN.Click += new System.EventHandler(this.btnThemN_Click);
             // 
-            // hiệuChỉnhToolStripMenuItem
+            // btnHieuChinhN
             // 
-            this.hiệuChỉnhToolStripMenuItem.Name = "hiệuChỉnhToolStripMenuItem";
-            this.hiệuChỉnhToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
-            this.hiệuChỉnhToolStripMenuItem.Text = "Hiệu Chỉnh";
+            this.btnHieuChinhN.Name = "btnHieuChinhN";
+            this.btnHieuChinhN.Size = new System.Drawing.Size(150, 24);
+            this.btnHieuChinhN.Text = "Hiệu Chỉnh";
+            this.btnHieuChinhN.Click += new System.EventHandler(this.btnHieuChinhN_Click);
             // 
-            // xóaToolStripMenuItem
+            // btnXoaN
             // 
-            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
-            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
-            this.xóaToolStripMenuItem.Text = "Xóa";
+            this.btnXoaN.Name = "btnXoaN";
+            this.btnXoaN.Size = new System.Drawing.Size(150, 24);
+            this.btnXoaN.Text = "Xóa";
+            this.btnXoaN.Click += new System.EventHandler(this.btnXoaN_Click);
             // 
-            // ghiToolStripMenuItem
+            // btnGhiN
             // 
-            this.ghiToolStripMenuItem.Name = "ghiToolStripMenuItem";
-            this.ghiToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
-            this.ghiToolStripMenuItem.Text = "Ghi";
+            this.btnGhiN.Name = "btnGhiN";
+            this.btnGhiN.Size = new System.Drawing.Size(150, 24);
+            this.btnGhiN.Text = "Ghi";
+            this.btnGhiN.Click += new System.EventHandler(this.btnGhiN_Click);
             // 
-            // phụcHồiToolStripMenuItem
+            // btnPhucHoiN
             // 
-            this.phụcHồiToolStripMenuItem.Name = "phụcHồiToolStripMenuItem";
-            this.phụcHồiToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
-            this.phụcHồiToolStripMenuItem.Text = "Phục hồi";
+            this.btnPhucHoiN.Name = "btnPhucHoiN";
+            this.btnPhucHoiN.Size = new System.Drawing.Size(150, 24);
+            this.btnPhucHoiN.Text = "Phục hồi";
+            this.btnPhucHoiN.Click += new System.EventHandler(this.btnPhucHoiN_Click);
             // 
             // panelControl1
             // 
@@ -474,6 +482,7 @@
             // txtMaChuN
             // 
             this.txtMaChuN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNguoi, "MACHU", true));
+            this.txtMaChuN.Enabled = false;
             this.txtMaChuN.Location = new System.Drawing.Point(132, 150);
             this.txtMaChuN.MenuManager = this.barManager1;
             this.txtMaChuN.Name = "txtMaChuN";
@@ -523,7 +532,7 @@
             this.ClientSize = new System.Drawing.Size(1001, 541);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
-            this.Controls.Add(this.nGUOIDataGridView);
+            this.Controls.Add(this.gcNguoi);
             this.Controls.Add(this.gcChu);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -538,7 +547,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcChu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNguoi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nGUOIDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNguoi)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -589,17 +598,17 @@
         private DevExpress.XtraEditors.TextEdit txtSCMND;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.TextEdit txtMaChu;
-        private System.Windows.Forms.DataGridView nGUOIDataGridView;
+        private System.Windows.Forms.DataGridView gcNguoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem thêmNToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hiệuChỉnhToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ghiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem phụcHồiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem btnThemN;
+        private System.Windows.Forms.ToolStripMenuItem btnHieuChinhN;
+        private System.Windows.Forms.ToolStripMenuItem btnXoaN;
+        private System.Windows.Forms.ToolStripMenuItem btnGhiN;
+        private System.Windows.Forms.ToolStripMenuItem btnPhucHoiN;
     }
 }

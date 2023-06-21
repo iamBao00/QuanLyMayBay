@@ -57,11 +57,19 @@
             this.colMALOAI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMANHACHUA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbNhaChua = new System.Windows.Forms.ComboBox();
+            this.bdsMNC = new System.Windows.Forms.BindingSource(this.components);
+            this.cmbLoaiMB = new System.Windows.Forms.ComboBox();
+            this.bdsLMB = new System.Windows.Forms.BindingSource(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtMaNC = new DevExpress.XtraEditors.TextEdit();
             this.txtMaLoai = new DevExpress.XtraEditors.TextEdit();
             this.txtMaDK = new DevExpress.XtraEditors.TextEdit();
             this.bdsDVBT = new System.Windows.Forms.BindingSource(this.components);
             this.bdsSH = new System.Windows.Forms.BindingSource(this.components);
+            this.lOAIMAYBAYTableAdapter = new QuanLyMayBay.DSTableAdapters.LOAIMAYBAYTableAdapter();
+            this.nHACHUAMAYBAYTableAdapter = new QuanLyMayBay.DSTableAdapters.NHACHUAMAYBAYTableAdapter();
             mADANGKYLabel = new System.Windows.Forms.Label();
             mALOAILabel = new System.Windows.Forms.Label();
             mANHACHUALabel = new System.Windows.Forms.Label();
@@ -71,6 +79,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcMayBay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsMNC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLMB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaLoai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaDK.Properties)).BeginInit();
@@ -81,7 +91,7 @@
             // mADANGKYLabel
             // 
             mADANGKYLabel.AutoSize = true;
-            mADANGKYLabel.Location = new System.Drawing.Point(92, 37);
+            mADANGKYLabel.Location = new System.Drawing.Point(92, 40);
             mADANGKYLabel.Name = "mADANGKYLabel";
             mADANGKYLabel.Size = new System.Drawing.Size(80, 16);
             mADANGKYLabel.TabIndex = 0;
@@ -90,7 +100,7 @@
             // mALOAILabel
             // 
             mALOAILabel.AutoSize = true;
-            mALOAILabel.Location = new System.Drawing.Point(119, 75);
+            mALOAILabel.Location = new System.Drawing.Point(469, 74);
             mALOAILabel.Name = "mALOAILabel";
             mALOAILabel.Size = new System.Drawing.Size(54, 16);
             mALOAILabel.TabIndex = 2;
@@ -99,7 +109,7 @@
             // mANHACHUALabel
             // 
             mANHACHUALabel.AutoSize = true;
-            mANHACHUALabel.Location = new System.Drawing.Point(81, 111);
+            mANHACHUALabel.Location = new System.Drawing.Point(431, 110);
             mANHACHUALabel.Name = "mANHACHUALabel";
             mANHACHUALabel.Size = new System.Drawing.Size(86, 16);
             mANHACHUALabel.TabIndex = 4;
@@ -195,15 +205,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(803, 25);
+            this.barDockControlTop.Size = new System.Drawing.Size(784, 25);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 451);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 476);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(803, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(784, 0);
             // 
             // barDockControlLeft
             // 
@@ -211,15 +221,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 25);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 426);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 451);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(803, 25);
+            this.barDockControlRight.Location = new System.Drawing.Point(784, 25);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 426);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 451);
             // 
             // DS
             // 
@@ -268,7 +278,7 @@
             this.gcMayBay.MainView = this.gridView1;
             this.gcMayBay.MenuManager = this.barManager1;
             this.gcMayBay.Name = "gcMayBay";
-            this.gcMayBay.Size = new System.Drawing.Size(803, 220);
+            this.gcMayBay.Size = new System.Drawing.Size(784, 220);
             this.gcMayBay.TabIndex = 5;
             this.gcMayBay.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -311,6 +321,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbNhaChua);
+            this.groupBox1.Controls.Add(this.cmbLoaiMB);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(mANHACHUALabel);
             this.groupBox1.Controls.Add(this.txtMaNC);
             this.groupBox1.Controls.Add(mALOAILabel);
@@ -318,17 +332,69 @@
             this.groupBox1.Controls.Add(mADANGKYLabel);
             this.groupBox1.Controls.Add(this.txtMaDK);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 304);
+            this.groupBox1.Location = new System.Drawing.Point(0, 318);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(803, 147);
+            this.groupBox1.Size = new System.Drawing.Size(784, 158);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
+            // cmbNhaChua
+            // 
+            this.cmbNhaChua.DataSource = this.bdsMNC;
+            this.cmbNhaChua.DisplayMember = "MANHACHUA";
+            this.cmbNhaChua.FormattingEnabled = true;
+            this.cmbNhaChua.Location = new System.Drawing.Point(184, 114);
+            this.cmbNhaChua.Name = "cmbNhaChua";
+            this.cmbNhaChua.Size = new System.Drawing.Size(125, 24);
+            this.cmbNhaChua.TabIndex = 9;
+            this.cmbNhaChua.ValueMember = "MANHACHUA";
+            this.cmbNhaChua.SelectedIndexChanged += new System.EventHandler(this.cmbNhaChua_SelectedIndexChanged);
+            // 
+            // bdsMNC
+            // 
+            this.bdsMNC.DataMember = "NHACHUAMAYBAY";
+            this.bdsMNC.DataSource = this.DS;
+            // 
+            // cmbLoaiMB
+            // 
+            this.cmbLoaiMB.DataSource = this.bdsLMB;
+            this.cmbLoaiMB.FormattingEnabled = true;
+            this.cmbLoaiMB.Location = new System.Drawing.Point(184, 74);
+            this.cmbLoaiMB.Name = "cmbLoaiMB";
+            this.cmbLoaiMB.Size = new System.Drawing.Size(125, 24);
+            this.cmbLoaiMB.TabIndex = 8;
+            this.cmbLoaiMB.ValueMember = "MALOAI";
+            this.cmbLoaiMB.SelectedIndexChanged += new System.EventHandler(this.cmbLoaiMB_SelectedIndexChanged);
+            // 
+            // bdsLMB
+            // 
+            this.bdsLMB.DataMember = "LOAIMAYBAY";
+            this.bdsLMB.DataSource = this.DS;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(105, 117);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Nhà chứa:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(87, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Loại máy bay:";
+            // 
             // txtMaNC
             // 
             this.txtMaNC.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMB, "MANHACHUA", true));
-            this.txtMaNC.Location = new System.Drawing.Point(184, 108);
+            this.txtMaNC.Enabled = false;
+            this.txtMaNC.Location = new System.Drawing.Point(534, 107);
             this.txtMaNC.MenuManager = this.barManager1;
             this.txtMaNC.Name = "txtMaNC";
             this.txtMaNC.Size = new System.Drawing.Size(125, 22);
@@ -337,7 +403,8 @@
             // txtMaLoai
             // 
             this.txtMaLoai.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMB, "MALOAI", true));
-            this.txtMaLoai.Location = new System.Drawing.Point(184, 72);
+            this.txtMaLoai.Enabled = false;
+            this.txtMaLoai.Location = new System.Drawing.Point(534, 71);
             this.txtMaLoai.MenuManager = this.barManager1;
             this.txtMaLoai.Name = "txtMaLoai";
             this.txtMaLoai.Size = new System.Drawing.Size(125, 22);
@@ -362,12 +429,20 @@
             this.bdsSH.DataMember = "FK_SOHUU_MAYBAY";
             this.bdsSH.DataSource = this.bdsMB;
             // 
+            // lOAIMAYBAYTableAdapter
+            // 
+            this.lOAIMAYBAYTableAdapter.ClearBeforeFill = true;
+            // 
+            // nHACHUAMAYBAYTableAdapter
+            // 
+            this.nHACHUAMAYBAYTableAdapter.ClearBeforeFill = true;
+            // 
             // frmMayBay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(803, 451);
+            this.ClientSize = new System.Drawing.Size(784, 476);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gcMayBay);
             this.Controls.Add(this.barDockControlLeft);
@@ -384,6 +459,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsMNC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLMB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaLoai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaDK.Properties)).EndInit();
@@ -426,5 +503,13 @@
         private System.Windows.Forms.BindingSource bdsDVBT;
         private DSTableAdapters.SOHUUTableAdapter sOHUUTableAdapter;
         private System.Windows.Forms.BindingSource bdsSH;
+        private System.Windows.Forms.BindingSource bdsLMB;
+        private DSTableAdapters.LOAIMAYBAYTableAdapter lOAIMAYBAYTableAdapter;
+        private System.Windows.Forms.BindingSource bdsMNC;
+        private DSTableAdapters.NHACHUAMAYBAYTableAdapter nHACHUAMAYBAYTableAdapter;
+        private System.Windows.Forms.ComboBox cmbNhaChua;
+        private System.Windows.Forms.ComboBox cmbLoaiMB;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

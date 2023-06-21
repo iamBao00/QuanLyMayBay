@@ -54,7 +54,6 @@
             this.bdsNguoi = new System.Windows.Forms.BindingSource(this.components);
             this.nGUOITableAdapter = new QuanLyMayBay.DSTableAdapters.NGUOITableAdapter();
             this.tableAdapterManager = new QuanLyMayBay.DSTableAdapters.TableAdapterManager();
-            this.nHANVIENTableAdapter = new QuanLyMayBay.DSTableAdapters.NHANVIENTableAdapter();
             this.gcNguoi = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSOCMND = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -74,11 +73,6 @@
             this.txtLuong = new DevExpress.XtraEditors.TextEdit();
             this.txtSCMNDNV = new DevExpress.XtraEditors.TextEdit();
             this.bdsCV = new System.Windows.Forms.BindingSource(this.components);
-            this.gcNhanVien = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnThemNV = new System.Windows.Forms.ToolStripMenuItem();
             this.btnHieuChinhNV = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,6 +82,12 @@
             this.cHUYENVETableAdapter = new QuanLyMayBay.DSTableAdapters.CHUYENVETableAdapter();
             this.bdsDVBT = new System.Windows.Forms.BindingSource(this.components);
             this.dICHVUBAOTRITableAdapter = new QuanLyMayBay.DSTableAdapters.DICHVUBAOTRITableAdapter();
+            this.nHANVIENTableAdapter = new QuanLyMayBay.DSTableAdapters.NHANVIENTableAdapter();
+            this.gcNhanVien = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             sOCMNDLabel = new System.Windows.Forms.Label();
             hOTENLabel = new System.Windows.Forms.Label();
             dIACHILabel = new System.Windows.Forms.Label();
@@ -115,9 +115,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSCMNDNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcNhanVien)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bdsDVBT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNhanVien)).BeginInit();
             this.SuspendLayout();
             // 
             // sOCMNDLabel
@@ -159,7 +159,7 @@
             // sOCMNDLabel1
             // 
             sOCMNDLabel1.AutoSize = true;
-            sOCMNDLabel1.Location = new System.Drawing.Point(15, 19);
+            sOCMNDLabel1.Location = new System.Drawing.Point(7, 19);
             sOCMNDLabel1.Name = "sOCMNDLabel1";
             sOCMNDLabel1.Size = new System.Drawing.Size(65, 16);
             sOCMNDLabel1.TabIndex = 0;
@@ -168,7 +168,7 @@
             // lUONGLabel
             // 
             lUONGLabel.AutoSize = true;
-            lUONGLabel.Location = new System.Drawing.Point(27, 57);
+            lUONGLabel.Location = new System.Drawing.Point(19, 57);
             lUONGLabel.Name = "lUONGLabel";
             lUONGLabel.Size = new System.Drawing.Size(47, 16);
             lUONGLabel.TabIndex = 2;
@@ -177,7 +177,7 @@
             // cALabel
             // 
             cALabel.AutoSize = true;
-            cALabel.Location = new System.Drawing.Point(50, 95);
+            cALabel.Location = new System.Drawing.Point(40, 95);
             cALabel.Name = "cALabel";
             cALabel.Size = new System.Drawing.Size(27, 16);
             cALabel.TabIndex = 4;
@@ -186,7 +186,7 @@
             // mANVLabel
             // 
             mANVLabel.AutoSize = true;
-            mANVLabel.Location = new System.Drawing.Point(32, 134);
+            mANVLabel.Location = new System.Drawing.Point(22, 134);
             mANVLabel.Name = "mANVLabel";
             mANVLabel.Size = new System.Drawing.Size(49, 16);
             mANVLabel.TabIndex = 6;
@@ -282,15 +282,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(933, 25);
+            this.barDockControlTop.Size = new System.Drawing.Size(1092, 25);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 440);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 428);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(933, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1092, 0);
             // 
             // barDockControlLeft
             // 
@@ -298,15 +298,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 25);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 415);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 403);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(933, 25);
+            this.barDockControlRight.Location = new System.Drawing.Point(1092, 25);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 415);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 403);
             // 
             // DS
             // 
@@ -334,14 +334,10 @@
             this.tableAdapterManager.MAYBAYTableAdapter = null;
             this.tableAdapterManager.NGUOITableAdapter = this.nGUOITableAdapter;
             this.tableAdapterManager.NHACHUAMAYBAYTableAdapter = null;
-            this.tableAdapterManager.NHANVIENTableAdapter = this.nHANVIENTableAdapter;
+            this.tableAdapterManager.NHANVIENTableAdapter = null;
             this.tableAdapterManager.PHICONGTableAdapter = null;
             this.tableAdapterManager.SOHUUTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QuanLyMayBay.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // nHANVIENTableAdapter
-            // 
-            this.nHANVIENTableAdapter.ClearBeforeFill = true;
             // 
             // gcNguoi
             // 
@@ -353,7 +349,7 @@
             this.gcNguoi.Margin = new System.Windows.Forms.Padding(4);
             this.gcNguoi.MenuManager = this.barManager1;
             this.gcNguoi.Name = "gcNguoi";
-            this.gcNguoi.Size = new System.Drawing.Size(933, 175);
+            this.gcNguoi.Size = new System.Drawing.Size(1092, 175);
             this.gcNguoi.TabIndex = 5;
             this.gcNguoi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -428,13 +424,13 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 200);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(269, 240);
+            this.panelControl1.Size = new System.Drawing.Size(269, 228);
             this.panelControl1.TabIndex = 6;
             // 
             // txtSDT
             // 
             this.txtSDT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNguoi, "SODIENTHOAI", true));
-            this.txtSDT.Location = new System.Drawing.Point(101, 131);
+            this.txtSDT.Location = new System.Drawing.Point(123, 131);
             this.txtSDT.MenuManager = this.barManager1;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(125, 22);
@@ -443,7 +439,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNguoi, "DIACHI", true));
-            this.txtDiaChi.Location = new System.Drawing.Point(101, 92);
+            this.txtDiaChi.Location = new System.Drawing.Point(123, 92);
             this.txtDiaChi.MenuManager = this.barManager1;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(125, 22);
@@ -452,7 +448,7 @@
             // txtHoTen
             // 
             this.txtHoTen.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNguoi, "HOTEN", true));
-            this.txtHoTen.Location = new System.Drawing.Point(101, 54);
+            this.txtHoTen.Location = new System.Drawing.Point(123, 54);
             this.txtHoTen.MenuManager = this.barManager1;
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(125, 22);
@@ -461,7 +457,7 @@
             // txtSCMND
             // 
             this.txtSCMND.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNguoi, "SOCMND", true));
-            this.txtSCMND.Location = new System.Drawing.Point(101, 16);
+            this.txtSCMND.Location = new System.Drawing.Point(123, 16);
             this.txtSCMND.Margin = new System.Windows.Forms.Padding(4);
             this.txtSCMND.MenuManager = this.barManager1;
             this.txtSCMND.Name = "txtSCMND";
@@ -482,14 +478,13 @@
             this.panelControl2.Location = new System.Drawing.Point(269, 200);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(242, 240);
+            this.panelControl2.Size = new System.Drawing.Size(249, 228);
             this.panelControl2.TabIndex = 7;
             // 
             // txtMaNV
             // 
             this.txtMaNV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNV, "MANV", true));
-            this.txtMaNV.Enabled = false;
-            this.txtMaNV.Location = new System.Drawing.Point(84, 131);
+            this.txtMaNV.Location = new System.Drawing.Point(97, 131);
             this.txtMaNV.MenuManager = this.barManager1;
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(125, 22);
@@ -497,13 +492,13 @@
             // 
             // bdsNV
             // 
-            this.bdsNV.DataMember = "NHANVIEN";
-            this.bdsNV.DataSource = this.DS;
+            this.bdsNV.DataMember = "FK_NHANVIEN_NGUOI";
+            this.bdsNV.DataSource = this.bdsNguoi;
             // 
             // txtCa
             // 
             this.txtCa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNV, "CA", true));
-            this.txtCa.Location = new System.Drawing.Point(84, 92);
+            this.txtCa.Location = new System.Drawing.Point(97, 92);
             this.txtCa.MenuManager = this.barManager1;
             this.txtCa.Name = "txtCa";
             this.txtCa.Size = new System.Drawing.Size(125, 22);
@@ -512,7 +507,7 @@
             // txtLuong
             // 
             this.txtLuong.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNV, "LUONG", true));
-            this.txtLuong.Location = new System.Drawing.Point(84, 54);
+            this.txtLuong.Location = new System.Drawing.Point(99, 54);
             this.txtLuong.MenuManager = this.barManager1;
             this.txtLuong.Name = "txtLuong";
             this.txtLuong.Size = new System.Drawing.Size(125, 22);
@@ -521,67 +516,11 @@
             // txtSCMNDNV
             // 
             this.txtSCMNDNV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNV, "SOCMND", true));
-            this.txtSCMNDNV.Location = new System.Drawing.Point(84, 16);
+            this.txtSCMNDNV.Location = new System.Drawing.Point(99, 16);
             this.txtSCMNDNV.MenuManager = this.barManager1;
             this.txtSCMNDNV.Name = "txtSCMNDNV";
             this.txtSCMNDNV.Size = new System.Drawing.Size(125, 22);
             this.txtSCMNDNV.TabIndex = 1;
-            // 
-            // bdsCV
-            // 
-            this.bdsCV.DataMember = "FK_CHUYENVE_NHANVIEN";
-            this.bdsCV.DataSource = this.bdsNV;
-            // 
-            // gcNhanVien
-            // 
-            this.gcNhanVien.AutoGenerateColumns = false;
-            this.gcNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gcNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.gcNhanVien.ContextMenuStrip = this.contextMenuStrip1;
-            this.gcNhanVien.DataSource = this.bdsNV;
-            this.gcNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcNhanVien.Location = new System.Drawing.Point(511, 200);
-            this.gcNhanVien.Name = "gcNhanVien";
-            this.gcNhanVien.RowHeadersWidth = 51;
-            this.gcNhanVien.RowTemplate.Height = 24;
-            this.gcNhanVien.Size = new System.Drawing.Size(422, 240);
-            this.gcNhanVien.TabIndex = 7;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "SOCMND";
-            this.dataGridViewTextBoxColumn1.HeaderText = "SOCMND";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "LUONG";
-            this.dataGridViewTextBoxColumn2.HeaderText = "LUONG";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "CA";
-            this.dataGridViewTextBoxColumn3.HeaderText = "CA";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "MANV";
-            this.dataGridViewTextBoxColumn4.HeaderText = "MANV";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
             // 
             // contextMenuStrip1
             // 
@@ -634,20 +573,70 @@
             // 
             this.cHUYENVETableAdapter.ClearBeforeFill = true;
             // 
-            // bdsDVBT
-            // 
-            this.bdsDVBT.DataMember = "FK_DICHVUBAOTRI_NHANVIEN";
-            this.bdsDVBT.DataSource = this.bdsNV;
-            // 
             // dICHVUBAOTRITableAdapter
             // 
             this.dICHVUBAOTRITableAdapter.ClearBeforeFill = true;
+            // 
+            // nHANVIENTableAdapter
+            // 
+            this.nHANVIENTableAdapter.ClearBeforeFill = true;
+            // 
+            // gcNhanVien
+            // 
+            this.gcNhanVien.AutoGenerateColumns = false;
+            this.gcNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gcNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.gcNhanVien.ContextMenuStrip = this.contextMenuStrip1;
+            this.gcNhanVien.DataSource = this.bdsNV;
+            this.gcNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcNhanVien.Location = new System.Drawing.Point(518, 200);
+            this.gcNhanVien.Name = "gcNhanVien";
+            this.gcNhanVien.RowHeadersWidth = 51;
+            this.gcNhanVien.RowTemplate.Height = 24;
+            this.gcNhanVien.Size = new System.Drawing.Size(574, 228);
+            this.gcNhanVien.TabIndex = 19;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "SOCMND";
+            this.dataGridViewTextBoxColumn1.HeaderText = "SOCMND";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "LUONG";
+            this.dataGridViewTextBoxColumn2.HeaderText = "LUONG";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "CA";
+            this.dataGridViewTextBoxColumn3.HeaderText = "CA";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "MANV";
+            this.dataGridViewTextBoxColumn4.HeaderText = "MANV";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 125;
             // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 440);
+            this.ClientSize = new System.Drawing.Size(1092, 428);
             this.Controls.Add(this.gcNhanVien);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
@@ -680,9 +669,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSCMNDNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcNhanVien)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bdsDVBT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNhanVien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -716,21 +705,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colSODIENTHOAI;
         private DevExpress.XtraGrid.Columns.GridColumn colMACHU;
-        private DSTableAdapters.NHANVIENTableAdapter nHANVIENTableAdapter;
-        private System.Windows.Forms.BindingSource bdsNV;
-        private System.Windows.Forms.DataGridView gcNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DevExpress.XtraEditors.TextEdit txtSCMND;
         private DevExpress.XtraEditors.TextEdit txtSDT;
         private DevExpress.XtraEditors.TextEdit txtDiaChi;
         private DevExpress.XtraEditors.TextEdit txtHoTen;
-        private DevExpress.XtraEditors.TextEdit txtMaNV;
-        private DevExpress.XtraEditors.TextEdit txtCa;
-        private DevExpress.XtraEditors.TextEdit txtLuong;
-        private DevExpress.XtraEditors.TextEdit txtSCMNDNV;
         private System.Windows.Forms.BindingSource bdsCV;
         private DSTableAdapters.CHUYENVETableAdapter cHUYENVETableAdapter;
         private System.Windows.Forms.BindingSource bdsDVBT;
@@ -741,5 +719,16 @@
         private System.Windows.Forms.ToolStripMenuItem btnXoaNV;
         private System.Windows.Forms.ToolStripMenuItem btnGhiNV;
         private System.Windows.Forms.ToolStripMenuItem btnPhucHoiNV;
+        private System.Windows.Forms.BindingSource bdsNV;
+        private DSTableAdapters.NHANVIENTableAdapter nHANVIENTableAdapter;
+        private DevExpress.XtraEditors.TextEdit txtMaNV;
+        private DevExpress.XtraEditors.TextEdit txtCa;
+        private DevExpress.XtraEditors.TextEdit txtLuong;
+        private DevExpress.XtraEditors.TextEdit txtSCMNDNV;
+        private System.Windows.Forms.DataGridView gcNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

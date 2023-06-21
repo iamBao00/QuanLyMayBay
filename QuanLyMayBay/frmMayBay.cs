@@ -34,6 +34,10 @@ namespace QuanLyMayBay
             this.dICHVUBAOTRITableAdapter.Fill(this.DS.DICHVUBAOTRI);
             this.sOHUUTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sOHUUTableAdapter.Fill(this.DS.SOHUU);
+            this.lOAIMAYBAYTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.lOAIMAYBAYTableAdapter.Fill(this.DS.LOAIMAYBAY);
+            this.nHACHUAMAYBAYTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.nHACHUAMAYBAYTableAdapter.Fill(this.DS.NHACHUAMAYBAY);
 
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -83,7 +87,7 @@ namespace QuanLyMayBay
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi ghi nhân viên\n" + ex.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi ghi.\n" + ex.Message, "", MessageBoxButtons.OK);
                 return;
             }
             gcMayBay.Enabled = true;
@@ -104,7 +108,7 @@ namespace QuanLyMayBay
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi xóa nhân viên. Bạn hãy xóa lại\n" + ex.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi xóa. Bạn hãy xóa lại\n" + ex.Message, "", MessageBoxButtons.OK);
                 this.mAYBAYTableAdapter.Fill(this.DS.MAYBAY);
                 bdsMB.Position = bdsMB.Find("MADANGKY", madk);
                 return;
@@ -134,10 +138,34 @@ namespace QuanLyMayBay
 
             }
         }
+        private void cmbLoaiMB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtMaLoai.Text = cmbLoaiMB.SelectedValue.ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
 
+        private void cmbNhaChua_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txtMaNC.Text = cmbNhaChua.SelectedValue.ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Dispose();
         }
+
+        
     }
 }

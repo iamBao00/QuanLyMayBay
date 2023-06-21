@@ -6,6 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using QuanLyMayBay;
+using DevExpress.XtraBars;
+using DevExpress.XtraRichEdit.Model;
+using System.Threading.Tasks;
+
+
 
 namespace QuanLyMayBay
 {
@@ -37,11 +43,14 @@ namespace QuanLyMayBay
                 ribbonAdmin.Visible = true;
                 btnTaoTaiKhoan.Enabled = true;
                 ribbonThongKe.Visible = true;
+                ribbonNhanVien.Visible = false;
+                ribbonNhanVien.Visible = true;
             };
             if(Program.mGroup == "NHANVIEN") { 
                 ribbonNhanVien.Visible = true;
                 ribbonAdmin.Visible = false;
                 ribbonThongKe.Visible = false;
+                btnTaoTaiKhoan.Enabled = false;
             }
 
         }
@@ -84,6 +93,7 @@ namespace QuanLyMayBay
         {
             ribbonAdmin.Visible = false;
             ribbonNhanVien.Visible = false;
+            ribbonThongKe.Visible = false;
         }
 
         private void barButtonItemDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -175,6 +185,60 @@ namespace QuanLyMayBay
                 else
                 {
                     frmChuCN f = new frmChuCN();
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+        }
+
+        private void btnChuDN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form form = CheckExists(typeof(frmChuDN));
+            {
+                if (form != null) form.Activate();
+                else
+                {
+                    frmChuDN f = new frmChuDN();
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+        }
+
+        private void btnDVBT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form form = CheckExists(typeof(frmDVBaoTri));
+            {
+                if (form != null) form.Activate();
+                else
+                {
+                    frmDVBaoTri f = new frmDVBaoTri();
+                    f.MdiParent = this;
+                    f.Show();
+                }
+            }
+        }
+
+        private void btnDSNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmReportNhanVien));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmReportNhanVien f = new frmReportNhanVien();
+                f.Show();
+            }
+
+        }
+
+        private void btnTaoTaiKhoan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form form = CheckExists(typeof(frmTaoTaiKhoan));
+            {
+                if (form != null) form.Activate();
+                else
+                {
+                    frmTaoTaiKhoan f = new frmTaoTaiKhoan();
                     f.MdiParent = this;
                     f.Show();
                 }

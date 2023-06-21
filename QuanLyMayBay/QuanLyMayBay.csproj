@@ -33,17 +33,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v22.2" />
+    <Reference Include="DevExpress.Charts.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v22.2" />
     <Reference Include="DevExpress.Data.v22.2" />
+    <Reference Include="DevExpress.DataAccess.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v22.2.Core" />
+    <Reference Include="DevExpress.RichEdit.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v22.2.Export, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v22.2" />
+    <Reference Include="DevExpress.Utils.v22.2.UI, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v22.2" />
     <Reference Include="DevExpress.Sparkline.v22.2.Core" />
+    <Reference Include="DevExpress.XtraCharts.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v22.2" />
     <Reference Include="DevExpress.Drawing.v22.2" />
+    <Reference Include="DevExpress.XtraGauges.v22.2.Core, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v22.2, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v22.2.Extensions, Version=22.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -79,6 +93,18 @@
     <Compile Include="frmChuCN.Designer.cs">
       <DependentUpon>frmChuCN.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChuDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChuDN.Designer.cs">
+      <DependentUpon>frmChuDN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDVBaoTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDVBaoTri.Designer.cs">
+      <DependentUpon>frmDVBaoTri.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLoaiMB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,14 +129,38 @@
     <Compile Include="frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNVTaoTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNVTaoTaiKhoan.Designer.cs">
+      <DependentUpon>frmNVTaoTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPhiCong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPhiCong.Designer.cs">
       <DependentUpon>frmPhiCong.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportNhanVien.Designer.cs">
+      <DependentUpon>frmReportNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTaoTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaoTaiKhoan.Designer.cs">
+      <DependentUpon>frmTaoTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportNhanVien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportNhanVien.Designer.cs">
+      <DependentUpon>ReportNhanVien.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +169,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmChuCN.resx">
       <DependentUpon>frmChuCN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChuDN.resx">
+      <DependentUpon>frmChuDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDVBaoTri.resx">
+      <DependentUpon>frmDVBaoTri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoaiMB.resx">
       <DependentUpon>frmLoaiMB.cs</DependentUpon>
@@ -132,8 +188,17 @@
     <EmbeddedResource Include="frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmNVTaoTaiKhoan.resx">
+      <DependentUpon>frmNVTaoTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPhiCong.resx">
       <DependentUpon>frmPhiCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportNhanVien.resx">
+      <DependentUpon>frmReportNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaoTaiKhoan.resx">
+      <DependentUpon>frmTaoTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -145,6 +210,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportNhanVien.resx">
+      <DependentUpon>ReportNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="DS.xsc">
       <DependentUpon>DS.xsd</DependentUpon>

@@ -32,6 +32,7 @@ namespace QuanLyMayBay
 
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
+            
             DS.EnforceConstraints = false;
             this.nGUOITableAdapter.Connection.ConnectionString = Program.connstr;
             this.nGUOITableAdapter.Fill(this.DS.NGUOI);
@@ -47,7 +48,10 @@ namespace QuanLyMayBay
         {
             vitri = bdsNguoi.Position;
             dangThemMoi = true;
+            panelControl1.Enabled = true;
             panelControl2.Enabled = false;
+            gcNhanVien.Enabled = false;
+            gcNguoi.Enabled = false;
             bdsNguoi.AddNew();
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
@@ -57,10 +61,12 @@ namespace QuanLyMayBay
         private void btnHieuChinh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             vitri = bdsNguoi.Position;
+            panelControl1.Enabled = true;
             panelControl2.Enabled = false;
+            gcNhanVien.Enabled = false;
+            gcNguoi.Enabled = false;
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
-            gcNguoi.Enabled = false;
 
         }
 
@@ -83,12 +89,39 @@ namespace QuanLyMayBay
                     bdsNguoi.Position = bdsNguoi.Find("SOCMND", socmnd);
                     return;
                 }
-
+                panelControl1.Enabled = true;
+                panelControl2.Enabled = true;
+                gcNhanVien.Enabled = true;
+                gcNguoi.Enabled = true;
             }
         }
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (txtSCMND.Text.Trim() == "")
+            {
+                MessageBox.Show("Số CMND không được thiếu!", "", MessageBoxButtons.OK);
+                txtSCMND.Focus();
+                return;
+            }
+            if (txtHoTen.Text.Trim() == "")
+            {
+                MessageBox.Show("Họ tên không được thiếu!", "", MessageBoxButtons.OK);
+                txtHoTen.Focus();
+                return;
+            }
+            if (txtDiaChi.Text.Trim() == "")
+            {
+                MessageBox.Show("Địa chỉ không được thiếu!", "", MessageBoxButtons.OK);
+                txtDiaChi.Focus();
+                return;
+            }
+            if (txtSDT.Text.Trim() == "")
+            {
+                MessageBox.Show("Số điện thoại không được thiếu!", "", MessageBoxButtons.OK);
+                txtSDT.Focus();
+                return;
+            }
             try
             {
                 if (dangThemMoi)
@@ -120,6 +153,9 @@ namespace QuanLyMayBay
                 this.nGUOITableAdapter.Fill(this.DS.NGUOI);
                 bdsNguoi.Position = vitri;
             }
+            panelControl1.Enabled = true;
+            panelControl2.Enabled = true;
+            gcNhanVien.Enabled = true;
             gcNguoi.Enabled = true;
             btnThem.Enabled = btnXoa.Enabled = btnHieuChinh.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
             btnPhucHoi.Enabled = btnGhi.Enabled = false;
@@ -134,7 +170,10 @@ namespace QuanLyMayBay
                 this.nGUOITableAdapter.Fill(this.DS.NGUOI);
                 this.nHANVIENTableAdapter.Fill(this.DS.NHANVIEN);
                 bdsNguoi.Position = vitri;
-
+                panelControl1.Enabled = true;
+                panelControl2.Enabled = true;
+                gcNhanVien.Enabled = true;
+                gcNguoi.Enabled = true;
 
             }
             catch (Exception ex)
@@ -155,7 +194,6 @@ namespace QuanLyMayBay
             {
                 reload();
             }
-            gcNguoi.Enabled = true;
 
             btnThem.Enabled = btnXoa.Enabled = btnHieuChinh.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
             btnPhucHoi.Enabled = btnGhi.Enabled = false;
@@ -173,12 +211,15 @@ namespace QuanLyMayBay
 
         private void btnThemNV_Click(object sender, EventArgs e)
         {
-            btnThem.Enabled = btnXoa.Enabled = btnHieuChinh.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
-            btnPhucHoi.Enabled = btnGhi.Enabled = false;
-
+            btnThem.Enabled = btnXoa.Enabled = btnHieuChinh.Enabled = btnPhucHoi.Enabled = btnGhi.Enabled = btnReload.Enabled = false; 
+            btnThoat.Enabled = true;
+            
             bdsNV.AddNew();
             txtSCMNDNV.Text = txtSCMND.Text;
-
+            panelControl1.Enabled = false;
+            panelControl2.Enabled = true;
+            gcNguoi.Enabled = false;
+            gcNhanVien.Enabled = true;
             btnThemNV.Enabled = btnXoaNV.Enabled = btnHieuChinhNV.Enabled = false;
             btnGhiNV.Enabled = btnPhucHoiNV.Enabled = true;
 
@@ -186,7 +227,10 @@ namespace QuanLyMayBay
 
         private void btnHieuChinhNV_Click(object sender, EventArgs e)
         {
+            panelControl1.Enabled = false;
             panelControl2.Enabled = true;
+            gcNguoi.Enabled = false;
+            gcNhanVien.Enabled = true;
             btnReload.Enabled = btnThem.Enabled = btnXoa.Enabled = btnHieuChinh.Enabled = false;
 
             btnThemNV.Enabled = btnXoaNV.Enabled = btnHieuChinhNV.Enabled = false;
@@ -203,6 +247,10 @@ namespace QuanLyMayBay
                     bdsNV.RemoveCurrent();
                     this.nHANVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.nHANVIENTableAdapter.Update(this.DS.NHANVIEN);
+                    panelControl1.Enabled = true;
+                    panelControl2.Enabled = true;
+                    gcNguoi.Enabled = true;
+                    gcNhanVien.Enabled = true;
                 }
                 catch (Exception ex)
                 {
@@ -216,6 +264,24 @@ namespace QuanLyMayBay
 
         private void btnGhiNV_Click(object sender, EventArgs e)
         {
+            if (txtLuong.Text.Trim() == "")
+            {
+                MessageBox.Show("Lương không được thiếu!", "", MessageBoxButtons.OK);
+                txtLuong.Focus();
+                return;
+            }
+            if (txtCa.Text.Trim() == "")
+            {
+                MessageBox.Show("Ca không được thiếu!", "", MessageBoxButtons.OK);
+                txtCa.Focus();
+                return;
+            }
+            if (txtMaNV.Text.Trim() == "")
+            {
+                MessageBox.Show("Mã nhân viên không được thiếu!", "", MessageBoxButtons.OK);
+                txtMaNV.Focus();
+                return;
+            }
             try
             {
                 bdsNV.EndEdit();
@@ -228,7 +294,10 @@ namespace QuanLyMayBay
                 MessageBox.Show("Lỗi Ghi nhân viên\n" + ex.Message, "", MessageBoxButtons.OK);
                 this.nHANVIENTableAdapter.Fill(this.DS.NHANVIEN);
             }
-
+            panelControl1.Enabled = true;
+            panelControl2.Enabled = true;
+            gcNguoi.Enabled = true;
+            gcNhanVien.Enabled = true;
             btnThemNV.Enabled = btnXoaNV.Enabled = btnHieuChinhNV.Enabled = true;
             btnGhiNV.Enabled = btnPhucHoiNV.Enabled = false;
             btnReload.Enabled = btnThem.Enabled = btnXoa.Enabled = btnHieuChinh.Enabled = true;
@@ -239,7 +308,6 @@ namespace QuanLyMayBay
         {
             bdsNV.CancelEdit();
             reload();
-            gcNhanVien.Enabled = true;
             btnThemNV.Enabled = btnXoaNV.Enabled = btnHieuChinhNV.Enabled = true;
             btnGhiNV.Enabled = btnPhucHoiNV.Enabled = false;
             btnReload.Enabled = btnThem.Enabled = btnXoa.Enabled = btnHieuChinh.Enabled = true;

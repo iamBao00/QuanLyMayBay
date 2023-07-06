@@ -4,6 +4,11 @@
     <name>DevExpress.DataAccess.v22.2.UI</name>
   </assembly>
   <members>
+    <member name="N:DevExpress.DataAccess.UI">
+      <summary>
+        <para>Provides controls that allow you to work with data sets.</para>
+      </summary>
+    </member>
     <member name="N:DevExpress.DataAccess.UI.Design">
       <summary>
         <para>Contains classes that define the UI settings of applications providing Data Access functionality.</para>
@@ -32,7 +37,7 @@
     </member>
     <member name="N:DevExpress.DataAccess.UI.EntityFramework">
       <summary>
-        <para>This namespace is no longer used.</para>
+        <para>Provides an application programming interface (API) to access the graphical user interface (GUI) related to configuring an Entity Framework data source connection.</para>
       </summary>
     </member>
     <member name="T:DevExpress.DataAccess.UI.EntityFramework.EditFiltersContext">
@@ -213,6 +218,311 @@
         <para>Specifies a provider of an Excel data source schema.</para>
       </summary>
       <value>An object implementing the <see cref="T:DevExpress.DataAccess.Excel.IExcelSchemaProvider"/> interface.</value>
+    </member>
+    <member name="T:DevExpress.DataAccess.UI.FilterEditorControl">
+      <summary>
+        <para>Allows users to build filter criteria and apply them to controls and data sources. Supports visual and text criteria edit modes.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.DataAccess.UI.FilterEditorControl.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/> class with the default settings.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.DataAccess.UI.FilterEditorControl.#ctor(System.Func{DevExpress.XtraEditors.FilterControl})">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/> class.</para>
+      </summary>
+      <param name="getFilterControl">A method that returns the <see cref="T:DevExpress.XtraEditors.FilterControl"/> object that should be embedded in this <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/> object.</param>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ActiveEditor">
+      <summary>
+        <para>Returns the editor an end-user currently uses to edit operand value(s).</para>
+      </summary>
+      <value>A BaseEdit class descendant that is the currently used editor.</value>
+    </member>
+    <member name="E:DevExpress.DataAccess.UI.FilterEditorControl.ActiveEditorValidating">
+      <summary>
+        <para>Occurs when a currently active editor from the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>‘s “Visual” panel raises the Control.Validating event.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ActiveView">
+      <summary>
+        <para>Gets or sets the control’s active View.</para>
+      </summary>
+      <value>A DevExpress.XtraFilterEditor.FilterEditorActiveView enumeration value that specifies the control’s active View.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.AllowAggregateEditing">
+      <summary>
+        <para>Gets or sets whether filters can be created against properties that are List objects.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.XtraEditors.FilterControlAllowAggregateEditing"/> enumeration value that specifies whether or not filters can be created against properties that are List objects.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.AppearanceEmptyValueColor">
+      <summary>
+        <para>Gets or sets a color of a null prompt text that substitutes empty values in the control’s “Visual” panel.</para>
+      </summary>
+      <value>A Color applied to empty value text blocks.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.AppearanceFieldNameColor">
+      <summary>
+        <para>Gets or sets the color applied to field names in the control’s “Visual” panel.</para>
+      </summary>
+      <value>A Color applied to field names.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.AppearanceGroupOperatorColor">
+      <summary>
+        <para>Gets or sets the color applied to group operators in the control’s “Visual” panel.</para>
+      </summary>
+      <value>A Color applied to group operators.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.AppearanceOperatorColor">
+      <summary>
+        <para>Gets or sets the color applied to operators in the control’s “Visual” panel.</para>
+      </summary>
+      <value>A Color applied to operators.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.AppearanceTreeLine">
+      <summary>
+        <para>Returns appearance settings applied to tree lines in the control’s “Visual” panel.</para>
+      </summary>
+      <value>An AppearanceObject applied to tree lines.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.AppearanceValueColor">
+      <summary>
+        <para>Gets or sets the color applied to values in the control’s “Visual” panel.</para>
+      </summary>
+      <value>A Color applied to values.</value>
+    </member>
+    <member name="M:DevExpress.DataAccess.UI.FilterEditorControl.ApplyFilter">
+      <summary>
+        <para>Applies the filter criteria to the source control.</para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.DataAccess.UI.FilterEditorControl.BeforeShowValueEditor">
+      <summary>
+        <para>Fires before the editor used to edit operands is shown on screen. Allows you to customize this editor.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.BorderStyle">
+      <summary>
+        <para>Gets or sets the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/> border style.</para>
+      </summary>
+      <value>A BorderStyles enumeration value that specifies the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/> border style.</value>
+    </member>
+    <member name="M:DevExpress.DataAccess.UI.FilterEditorControl.ClearFilter">
+      <summary>
+        <para>Clears the filter criteria.</para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.DataAccess.UI.FilterEditorControl.FilterChanged">
+      <summary>
+        <para>Fires when the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>‘s criteria changes.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.FilterColumns">
+      <summary>
+        <para>Gets or sets a collection of columns retrieved from this <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>‘s source control.</para>
+      </summary>
+      <value>A FilterColumnCollection that stores columns retrieved from this <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>‘s source control.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.FilterControl">
+      <summary>
+        <para>Returns the <see cref="T:DevExpress.XtraEditors.FilterControl"/> embedded in the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>‘s “Visual” panel.</para>
+      </summary>
+      <value>A FilterControl embedded in this <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.FilterCriteria">
+      <summary>
+        <para>Gets or sets the filter criteria.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> object that represents the filter criteria.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.FilterString">
+      <summary>
+        <para>Gets or sets the final filter expression.</para>
+      </summary>
+      <value>A String value that is the final <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/> filter expression.</value>
+    </member>
+    <member name="E:DevExpress.DataAccess.UI.FilterEditorControl.FilterTextChanged">
+      <summary>
+        <para>Fires whenever the <see cref="P:DevExpress.DataAccess.UI.FilterEditorControl.FilterString"/> property value changes.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.FilterViewInfo">
+      <summary>
+        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.Font">
+      <summary>
+        <para>Gets or sets the control font.</para>
+      </summary>
+      <value>A Font for this <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.HasErrors">
+      <summary>
+        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+      <value>For internal use.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.HasWarnings">
+      <summary>
+        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+      <value>For internal use.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.IsFilterCriteriaValid">
+      <summary>
+        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.IsModified">
+      <summary>
+        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+      <value>For internal use.</value>
+    </member>
+    <member name="E:DevExpress.DataAccess.UI.FilterEditorControl.ItemDoubleClick">
+      <summary>
+        <para>Fires whenever a user clicks any <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/> element (logical operator, filtering value, field name, etc.).</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.DataAccess.UI.FilterEditorControl.LayoutChanged">
+      <summary>
+        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.LevelIndent">
+      <summary>
+        <para>Gets or sets the horizontal offset for individual logical expressions inside the “Visual” panel.</para>
+      </summary>
+      <value>An Int32 value that is the horizontal offset.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.MenuManager">
+      <summary>
+        <para>Gets or sets the menu manager that specifies the look and feel settings for this <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>‘s menus.</para>
+      </summary>
+      <value>An Object that implements the DevExpress.Utils.Menu.IDXMenuManager interface.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.NodeSeparatorHeight">
+      <summary>
+        <para>Gets or sets the distance between separate logical expressions in the “Visual” panel.</para>
+      </summary>
+      <value>An Int32 value that is the distance between logical expressions.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.PanelAlignment">
+      <summary>
+        <para>Specifies the relative alignment of the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>‘s “Visual” and “Text” panels.</para>
+      </summary>
+      <value>An <see cref="T:System.Windows.Forms.Orientation"/> enumeration value that specifies the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/> panels’ alignment.</value>
+    </member>
+    <member name="E:DevExpress.DataAccess.UI.FilterEditorControl.QueryCustomFunctions">
+      <summary>
+        <para>Allows you to add custom-function-based filters (for example, ‘discount is more than 15%’) to Excel-style pop-up filter menus and/or the filter editor.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ReadOnly">
+      <summary>
+        <para>Gets or sets whether users can edit filter criteria.</para>
+      </summary>
+      <value>true if users can edit filter criteria; otherwise, false.</value>
+    </member>
+    <member name="M:DevExpress.DataAccess.UI.FilterEditorControl.SetDefaultColumn(DevExpress.XtraEditors.Filtering.FilterColumn)">
+      <summary>
+        <para>Specifies a column the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/> uses by default when a user creates a new logical expression.</para>
+      </summary>
+      <param name="column">The FilterColumn this <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/> uses by default when a user creates a new logical expression.</param>
+    </member>
+    <member name="M:DevExpress.DataAccess.UI.FilterEditorControl.SetFilterColumnsCollection(DevExpress.XtraEditors.Filtering.FilterColumnCollection,DevExpress.Utils.Menu.IDXMenuManager)">
+      <summary>
+        <para>Clears the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>‘s column collection and re-populates it manually with specific columns. The menu manager passed as the second parameter specifies the context menus’ look and feel settings.</para>
+      </summary>
+      <param name="columns">A FilterColumnCollection object that stores a new column set for this <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>.</param>
+      <param name="manager">An object that implements the IDXMenuManager interface. This object specifies the look and feel settings of the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>‘s context menus.</param>
+    </member>
+    <member name="M:DevExpress.DataAccess.UI.FilterEditorControl.SetFilterColumnsCollection(DevExpress.XtraEditors.Filtering.FilterColumnCollection)">
+      <summary>
+        <para>Clears the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>‘s column collection and re-populates it manually with specific columns.</para>
+      </summary>
+      <param name="columns">A FilterColumnCollection object that stores a new column set for this <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>.</param>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ShowCustomFunctions">
+      <summary>
+        <para>Gets or sets whether to show custom function-based filters.</para>
+      </summary>
+      <value>True to show custom function-based filters; False to not show them; Default to enable/disable custom function-based filters depending on the global <see cref="F:DevExpress.XtraEditors.WindowsFormsSettings.DefaultSettingsCompatibilityMode"></see> setting.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ShowDateTimeFunctions">
+      <summary>
+        <para>Gets or sets whether to show the standard and advanced date-time functions (BeyondThisYear, LaterThisYear, Tomorrow, Today, Yesterday, LastWeek, etc.) for date-time fields.</para>
+      </summary>
+      <value>A DateTimeFunctionsShowMode enumaration value that specifies whether to show the standard and advanced date-time functions for date-time fields.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ShowDateTimeOperators">
+      <summary>
+        <para>Gets or sets whether date-time specific operators (BeyondThisYear, LaterThisYear, Tomorrow, Today, Yesterday, LastWeek, etc.) are available for date-time fields.</para>
+      </summary>
+      <value>true if date-time specific operators are available; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ShowFunctions">
+      <summary>
+        <para>Gets or sets whether or not the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/> allows end-users to use specific functions and constants when building filter criteria.</para>
+      </summary>
+      <value>true if functions and constants are available; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ShowGroupCommandsIcon">
+      <summary>
+        <para>Gets or sets whether or not group commands are available at runtime via a separate button inside the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/> “Visual” panel.</para>
+      </summary>
+      <value>true to move group commands to a separate button; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ShowIsNullOperatorsForStrings">
+      <summary>
+        <para>Gets or sets whether the “Visual” <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/> panel allows end-users to utilize the IsNull operator for string values.</para>
+      </summary>
+      <value>true if the IsNull operator is available for string values; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ShowOperandTypeIcon">
+      <summary>
+        <para>Gets or sets whether a user can swap the second operand’s type (between the Value box and Field list). The Field list allows users to compare the first operand (field) with another field.</para>
+      </summary>
+      <value>true, to allow end-users to swap the second operand’s type; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ShowToolTips">
+      <summary>
+        <para>Gets or sets whether the control shows tooltips.</para>
+      </summary>
+      <value>true if the control shows tooltips; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.SortFilterColumns">
+      <summary>
+        <para>Gets or sets whether or not the <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/> should sort its source control’s columns alphabetically in its menus.</para>
+      </summary>
+      <value>true if <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/> menus should display source control columns in an alphabetical order; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.SourceControl">
+      <summary>
+        <para>Gets or sets a source control associated with this <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>.</para>
+      </summary>
+      <value>An Object that is the source control for this <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.StyleController">
+      <summary>
+        <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.UseMenuForOperandsAndOperators">
+      <summary>
+        <para>Gets or sets whether a menu or combobox editor is used to select operands and operators in a <see cref="T:DevExpress.DataAccess.UI.FilterEditorControl"/>. This property is not supported when filters are edited in a text-based form (see <see cref="P:DevExpress.DataAccess.UI.FilterEditorControl.ViewMode"/>).</para>
+      </summary>
+      <value>true if a menu is used to select operands and operators; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.DataAccess.UI.FilterEditorControl.ViewMode">
+      <summary>
+        <para>Gets or sets how a Filter Editor’s criteria can be edited.</para>
+      </summary>
+      <value>A <see cref="T:DevExpress.XtraEditors.FilterEditorViewMode"/> enumeration value that specifies how a Filter Editor’s criteria can be edited.</value>
     </member>
     <member name="N:DevExpress.DataAccess.UI.MongoDB">
       <summary>

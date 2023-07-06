@@ -405,11 +405,12 @@
             this.panelControl1.Controls.Add(this.txtMaNV);
             this.panelControl1.Controls.Add(iDDVBTLabel);
             this.panelControl1.Controls.Add(this.txtIDDVBT);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl1.Location = new System.Drawing.Point(0, 285);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Location = new System.Drawing.Point(0, 248);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1064, 183);
+            this.panelControl1.Size = new System.Drawing.Size(1064, 220);
             this.panelControl1.TabIndex = 6;
+            this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
             // cmbMaDK
             // 

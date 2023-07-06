@@ -171,7 +171,7 @@
             this.btnDSPC,
             this.btnDSDoanhNghiep});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(12, 12, 12, 12);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(12);
             this.ribbonControl1.MaxItemId = 46;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 1174;
@@ -328,6 +328,8 @@
             // 
             this.btnNhanVien.Caption = "Nhân viên";
             this.btnNhanVien.Id = 36;
+            this.btnNhanVien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.ImageOptions.Image")));
+            this.btnNhanVien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.ImageOptions.LargeImage")));
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhanVien_ItemClick);
             // 
@@ -340,6 +342,8 @@
             // 
             this.btnPhiCong.Caption = "Phi công";
             this.btnPhiCong.Id = 38;
+            this.btnPhiCong.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhiCong.ImageOptions.Image")));
+            this.btnPhiCong.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPhiCong.ImageOptions.LargeImage")));
             this.btnPhiCong.Name = "btnPhiCong";
             this.btnPhiCong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhiCong_ItemClick);
             // 
@@ -361,6 +365,8 @@
             // 
             this.btnLoaiMB.Caption = "Loại máy bay";
             this.btnLoaiMB.Id = 41;
+            this.btnLoaiMB.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLoaiMB.ImageOptions.Image")));
+            this.btnLoaiMB.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLoaiMB.ImageOptions.LargeImage")));
             this.btnLoaiMB.Name = "btnLoaiMB";
             this.btnLoaiMB.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnLoaiMB_ItemClick);
             // 
@@ -453,6 +459,7 @@
             // 
             // ribbonPageGroup6
             // 
+            this.ribbonPageGroup6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup6.ImageOptions.Image")));
             this.ribbonPageGroup6.ItemLinks.Add(this.btnNhanVien);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 

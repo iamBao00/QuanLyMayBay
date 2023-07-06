@@ -33,25 +33,28 @@ namespace QuanLyMayBay
             this.nHACHUAMAYBAYTableAdapter.Fill(this.DS.NHACHUAMAYBAY);
             this.mAYBAYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mAYBAYTableAdapter.Fill(this.DS.MAYBAY);
+            controlPanel.Enabled = false;
+            btnGhi.Enabled = btnHuyThaoTac.Enabled = false;
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            controlPanel.Enabled = true;
             vitri = bdsNC.Position;
-            groupBox1.Enabled = true;
+            controlPanel.Enabled = true;
             bdsNC.AddNew();
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
-            btnGhi.Enabled = btnPhucHoi.Enabled = true;
+            btnGhi.Enabled = btnHuyThaoTac.Enabled = true;
 
         }
 
         private void btnHieuChinh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             vitri = bdsNC.Position;
-            groupBox1.Enabled = true;
+            controlPanel.Enabled = true;
             gcNhaChuaMB.Enabled = false;
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
-            btnGhi.Enabled = btnPhucHoi.Enabled = true;
+            btnGhi.Enabled = btnHuyThaoTac.Enabled = true;
 
         }
 
@@ -107,13 +110,13 @@ namespace QuanLyMayBay
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi ghi nhân viên\n" + ex.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi ghi nhà chứa\n" + ex.Message, "", MessageBoxButtons.OK);
                 return;
             }
             gcNhaChuaMB.Enabled = true;
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
-            btnGhi.Enabled = btnPhucHoi.Enabled = false;
-            groupBox1.Enabled = false;
+            btnGhi.Enabled = btnHuyThaoTac.Enabled = false;
+            controlPanel.Enabled = false;
 
         }
 
@@ -122,9 +125,9 @@ namespace QuanLyMayBay
             bdsNC.CancelEdit();
             if (btnThem.Enabled == false) bdsNC.Position = vitri;
             gcNhaChuaMB.Enabled = true;
-            groupBox1.Enabled = false;
+            controlPanel.Enabled = false;
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
-            btnGhi.Enabled = btnPhucHoi.Enabled = false;
+            btnGhi.Enabled = btnHuyThaoTac.Enabled = false;
 
         }
 

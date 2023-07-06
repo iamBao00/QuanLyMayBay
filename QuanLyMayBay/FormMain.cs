@@ -151,12 +151,12 @@ namespace QuanLyMayBay
 
         private void btnNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form form = CheckExists(typeof(frmNhanVien));
+            Form form = CheckExists(typeof(FormNhanVien));
             {
                 if (form != null) form.Activate();
                 else
                 {
-                    frmNhanVien f = new frmNhanVien();
+                    FormNhanVien f = new FormNhanVien();
                     f.MdiParent = this;
                     f.Show();
                 }
@@ -165,12 +165,12 @@ namespace QuanLyMayBay
 
         private void btnPhiCong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form form = CheckExists(typeof(frmPhiCong));
+            Form form = CheckExists(typeof(FormPhiCong));
             {
                 if (form != null) form.Activate();
                 else
                 {
-                    frmPhiCong f = new frmPhiCong();
+                    FormPhiCong f = new FormPhiCong();
                     f.MdiParent = this;
                     f.Show();
                 }

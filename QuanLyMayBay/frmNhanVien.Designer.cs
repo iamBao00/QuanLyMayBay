@@ -60,7 +60,6 @@
             this.colHOTEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSODIENTHOAI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMACHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.txtSDT = new DevExpress.XtraEditors.TextEdit();
             this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
@@ -360,8 +359,7 @@
             this.colSOCMND,
             this.colHOTEN,
             this.colDIACHI,
-            this.colSODIENTHOAI,
-            this.colMACHU});
+            this.colSODIENTHOAI});
             this.gridView1.GridControl = this.gcNguoi;
             this.gridView1.Name = "gridView1";
             // 
@@ -400,15 +398,6 @@
             this.colSODIENTHOAI.Visible = true;
             this.colSODIENTHOAI.VisibleIndex = 3;
             this.colSODIENTHOAI.Width = 94;
-            // 
-            // colMACHU
-            // 
-            this.colMACHU.FieldName = "MACHU";
-            this.colMACHU.MinWidth = 25;
-            this.colMACHU.Name = "colMACHU";
-            this.colMACHU.Visible = true;
-            this.colMACHU.VisibleIndex = 4;
-            this.colMACHU.Width = 94;
             // 
             // panelControl1
             // 
@@ -704,7 +693,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colHOTEN;
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colSODIENTHOAI;
-        private DevExpress.XtraGrid.Columns.GridColumn colMACHU;
         private DevExpress.XtraEditors.TextEdit txtSCMND;
         private DevExpress.XtraEditors.TextEdit txtSDT;
         private DevExpress.XtraEditors.TextEdit txtDiaChi;

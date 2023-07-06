@@ -116,7 +116,7 @@ namespace QuanLyMayBay
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi ghi nhân viên\n" + ex.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi ghi loại máy bay\n" + ex.Message, "", MessageBoxButtons.OK);
                 return;
             }
             gcLoaiMB.Enabled = true;

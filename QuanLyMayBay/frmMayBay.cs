@@ -18,35 +18,28 @@ namespace QuanLyMayBay
         {
             InitializeComponent();
         }
-        private void mAYBAYBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bdsMB.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.DS);
 
-        }
         private void frmMayBay_Load(object sender, EventArgs e)
         {
+            
             DS.EnforceConstraints = false;
             this.mAYBAYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mAYBAYTableAdapter.Fill(this.DS.MAYBAY);
-            this.dICHVUBAOTRITableAdapter.Connection.ConnectionString = Program.connstr;
-            this.dICHVUBAOTRITableAdapter.Fill(this.DS.DICHVUBAOTRI);
-            this.sOHUUTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.sOHUUTableAdapter.Fill(this.DS.SOHUU);
-            this.lOAIMAYBAYTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.lOAIMAYBAYTableAdapter.Fill(this.DS.LOAIMAYBAY);
-            this.nHACHUAMAYBAYTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.nHACHUAMAYBAYTableAdapter.Fill(this.DS.NHACHUAMAYBAY);
+            this.cB_NHACHUAMAYBAYTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.cB_NHACHUAMAYBAYTableAdapter.Fill(this.DS.CB_NHACHUAMAYBAY);
+            this.cB_LOAIMAYBAYTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.cB_LOAIMAYBAYTableAdapter.Fill(this.DS.CB_LOAIMAYBAY);
 
+            groupBox1.Enabled = false;
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            vitri = bdsMB.Position;
-            groupBox1.Enabled = true;
-            bdsMB.AddNew();
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
+            gcMayBay.Enabled = false;
+            groupBox1.Enabled = true;
+            bdsMB.AddNew();
+            
         }
 
         private void btnHieuChinh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -98,20 +91,29 @@ namespace QuanLyMayBay
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Int32 madk = 0;
-            try
+            if(bdsMB.Count == 0)
             {
-                madk = int.Parse(((DataRowView)bdsMB[bdsMB.Position])["MADANGKY"].ToString());
-                bdsMB.RemoveCurrent();
-                this.mAYBAYTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.mAYBAYTableAdapter.Update(this.DS.MAYBAY);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi xóa. Bạn hãy xóa lại\n" + ex.Message, "", MessageBoxButtons.OK);
-                this.mAYBAYTableAdapter.Fill(this.DS.MAYBAY);
-                bdsMB.Position = bdsMB.Find("MADANGKY", madk);
+                MessageBox.Show("Không còn máy bay để xóa!", "", MessageBoxButtons.OK);
                 return;
+            }
+            if (MessageBox.Show("Bạn có thực sự muốn xóa máy bay này!", "Xác nhận", MessageBoxButtons.OKCancel)
+                   == DialogResult.OK) 
+            {
+                Int32 madk = 0;
+                try
+                {
+                    madk = int.Parse(((DataRowView)bdsMB[bdsMB.Position])["MADANGKY"].ToString());
+                    bdsMB.RemoveCurrent();
+                    this.mAYBAYTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.mAYBAYTableAdapter.Update(this.DS.MAYBAY);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi xóa. Bạn hãy xóa lại\n" + ex.Message, "", MessageBoxButtons.OK);
+                    this.mAYBAYTableAdapter.Fill(this.DS.MAYBAY);
+                    bdsMB.Position = bdsMB.Find("MADANGKY", madk);
+                    return;
+                }
             }
             if (bdsMB.Count == 0) btnXoa.Enabled = false;
         }
@@ -138,34 +140,45 @@ namespace QuanLyMayBay
 
             }
         }
-        private void cmbLoaiMB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                txtMaLoai.Text = cmbLoaiMB.SelectedValue.ToString();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
 
-        private void cmbNhaChua_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                txtMaNC.Text = cmbNhaChua.SelectedValue.ToString();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
+
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Dispose();
         }
 
-        
+        private void cB_NHACHUAMAYBAYBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lOAIComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if(cmb_LoaiMB.SelectedValue != null) txtMaLoai.Text = cmb_LoaiMB.SelectedValue.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Combobox Loai MB :" + ex.Message, "", MessageBoxButtons.OK);
+            }
+        }
+
+        private void cmbNhaChuaMB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cmb_NhaChuaMB.SelectedValue != null) txtMaNC.Text = cmb_NhaChuaMB.SelectedValue.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Combobox Nha Chua MB :" + ex.Message, "", MessageBoxButtons.OK);
+            }
+        }
     }
 }

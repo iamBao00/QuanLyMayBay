@@ -198,5 +198,22 @@ namespace QuanLyMayBay
             panelControl1.Enabled = false;
             GC_TTPC.Enabled = true;
         }
+
+        private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có thực sự muốn xóa phi công này!", "Xác nhận", MessageBoxButtons.OKCancel)
+                == DialogResult.OK)
+            {
+                bds_ThongTinPhiCong.RemoveCurrent();
+                this.thongTinPhiCongTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.thongTinPhiCongTableAdapter.Update(this.dS.ThongTinPhiCong);
+
+                string xoaNV = "EXEC [dbo].[sp_XoaPhiCong] @MaPC =" + txtMaPC.Text;
+                Program.ExecSqlNonQuery(xoaNV);
+                string xoaNguoi = "EXEC [dbo].[sp_XoaNguoi] @CMND =" + txtCMND.Text;
+                Program.ExecSqlNonQuery(xoaNguoi);
+
+            }
+        }
     }
 }

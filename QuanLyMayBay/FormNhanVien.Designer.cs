@@ -99,7 +99,6 @@
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSODIENTHOAI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.txtSDT = new DevExpress.XtraEditors.TextEdit();
             this.txtHoTen = new DevExpress.XtraEditors.TextEdit();
             this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.txtCMND = new DevExpress.XtraEditors.TextEdit();
@@ -110,6 +109,7 @@
             this.nHANVIENTableAdapter = new QuanLyMayBay.DSTableAdapters.NHANVIENTableAdapter();
             this.nGUOIBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nGUOITableAdapter = new QuanLyMayBay.DSTableAdapters.NGUOITableAdapter();
+            this.txtSDT = new DevExpress.XtraEditors.TextEdit();
             mANVLabel = new System.Windows.Forms.Label();
             cALabel = new System.Windows.Forms.Label();
             lUONGLabel = new System.Windows.Forms.Label();
@@ -124,7 +124,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).BeginInit();
@@ -132,6 +131,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_NhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nGUOIBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // mANVLabel
@@ -733,9 +733,9 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.txtSDT);
             this.panelControl1.Controls.Add(label1);
             this.panelControl1.Controls.Add(sODIENTHOAILabel);
-            this.panelControl1.Controls.Add(this.txtSDT);
             this.panelControl1.Controls.Add(hOTENLabel);
             this.panelControl1.Controls.Add(this.txtHoTen);
             this.panelControl1.Controls.Add(this.txtDiaChi);
@@ -752,15 +752,6 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1128, 353);
             this.panelControl1.TabIndex = 13;
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_ThongTinNhanVien, "SODIENTHOAI", true));
-            this.txtSDT.Location = new System.Drawing.Point(90, 169);
-            this.txtSDT.MenuManager = this.barManager2;
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(156, 22);
-            this.txtSDT.TabIndex = 13;
             // 
             // txtHoTen
             // 
@@ -834,6 +825,15 @@
             // 
             this.nGUOITableAdapter.ClearBeforeFill = true;
             // 
+            // txtSDT
+            // 
+            this.txtSDT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_ThongTinNhanVien, "SODIENTHOAI", true));
+            this.txtSDT.Location = new System.Drawing.Point(90, 169);
+            this.txtSDT.MenuManager = this.barManager2;
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(156, 22);
+            this.txtSDT.TabIndex = 15;
+            // 
             // FormNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -860,7 +860,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).EndInit();
@@ -868,6 +867,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_NhanVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nGUOIBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -928,7 +928,6 @@
         private DSTableAdapters.ThongTinNhanVienTableAdapter thongTinNhanVienTableAdapter;
         private DSTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private DevExpress.XtraEditors.TextEdit txtSDT;
         private DevExpress.XtraEditors.TextEdit txtHoTen;
         private DevExpress.XtraEditors.TextEdit txtDiaChi;
         private DevExpress.XtraEditors.TextEdit txtCMND;
@@ -948,5 +947,6 @@
         private DSTableAdapters.NHANVIENTableAdapter nHANVIENTableAdapter;
         private System.Windows.Forms.BindingSource nGUOIBindingSource;
         private DSTableAdapters.NGUOITableAdapter nGUOITableAdapter;
+        private DevExpress.XtraEditors.TextEdit txtSDT;
     }
 }

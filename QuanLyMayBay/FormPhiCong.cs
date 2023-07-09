@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,11 +30,17 @@ namespace QuanLyMayBay
 
         private void FormPhiCong_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dS.LOAIMAYBAY' table. You can move, or remove it, as needed.
+            this.lOAIMAYBAYTableAdapter.Fill(this.dS.LOAIMAYBAY);
+            // TODO: This line of code loads data into the 'dS.LAI' table. You can move, or remove it, as needed.
+
             dS.EnforceConstraints = false;
+
 
             this.thongTinPhiCongTableAdapter.Connection.ConnectionString = Program.connstr;
             this.thongTinPhiCongTableAdapter.Fill(this.dS.ThongTinPhiCong);
-
+            this.lAITableAdapter.Connection.ConnectionString = Program.connstr;
+            this.lAITableAdapter.Fill(this.dS.LAI);
             GC_TTPC.Enabled = true;
             panelControl1.Enabled = false;
             btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
@@ -215,5 +222,16 @@ namespace QuanLyMayBay
 
             }
         }
+
+        private void mAPHICONGLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mAPHICONGTextEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

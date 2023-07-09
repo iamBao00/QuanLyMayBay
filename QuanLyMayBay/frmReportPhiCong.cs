@@ -21,7 +21,7 @@ namespace QuanLyMayBay
 
         private void btnXem_Click(object sender, EventArgs e)
         {
-            ReportPhiCong rpt = new ReportPhiCong();
+            Xrpt_reportPC rpt = new Xrpt_reportPC();
 
             ReportPrintTool preview = new ReportPrintTool(rpt);
             preview.ShowPreviewDialog();
@@ -31,7 +31,7 @@ namespace QuanLyMayBay
         {
             try
             {
-                ReportNhanVien rpt = new ReportNhanVien();
+                Xrpt_reportPC rpt = new Xrpt_reportPC();
 
                 if (File.Exists(@"C:\TTCS\Report\DanhSachPhiCong.pdf"))
                 {

@@ -198,14 +198,11 @@ namespace QuanLyMayBay
         {
             try
             {
-                if (cmbMaDK.SelectedValue != null)
-                {
-                    txtMaDK.Text = cmbMaDK.SelectedValue.ToString();
-                }
+                if (cmbMaDK.SelectedValue != null) txtMaDK.Text = cmbMaDK.SelectedValue.ToString();
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                MessageBox.Show("Lỗi Combobox Mã DK :" + ex.Message, "", MessageBoxButtons.OK);
             }
         }
 

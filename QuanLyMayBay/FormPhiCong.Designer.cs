@@ -106,6 +106,10 @@
             this.txtHoTen = new DevExpress.XtraEditors.TextEdit();
             this.txtCMND = new DevExpress.XtraEditors.TextEdit();
             this.txtMaPC = new DevExpress.XtraEditors.TextEdit();
+            this.bdsLAI = new System.Windows.Forms.BindingSource(this.components);
+            this.lAITableAdapter = new QuanLyMayBay.DSTableAdapters.LAITableAdapter();
+            this.bdsLMB = new System.Windows.Forms.BindingSource(this.components);
+            this.lOAIMAYBAYTableAdapter = new QuanLyMayBay.DSTableAdapters.LOAIMAYBAYTableAdapter();
             mAPHICONGLabel = new System.Windows.Forms.Label();
             sOCMNDLabel = new System.Windows.Forms.Label();
             hOTENLabel = new System.Windows.Forms.Label();
@@ -128,6 +132,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaPC.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLAI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLMB)).BeginInit();
             this.SuspendLayout();
             // 
             // mAPHICONGLabel
@@ -169,7 +175,7 @@
             // sODIENTHOAILabel
             // 
             sODIENTHOAILabel.AutoSize = true;
-            sODIENTHOAILabel.Location = new System.Drawing.Point(420, 28);
+            sODIENTHOAILabel.Location = new System.Drawing.Point(350, 25);
             sODIENTHOAILabel.Name = "sODIENTHOAILabel";
             sODIENTHOAILabel.Size = new System.Drawing.Size(93, 16);
             sODIENTHOAILabel.TabIndex = 8;
@@ -178,7 +184,7 @@
             // mASOBANGLabel
             // 
             mASOBANGLabel.AutoSize = true;
-            mASOBANGLabel.Location = new System.Drawing.Point(435, 70);
+            mASOBANGLabel.Location = new System.Drawing.Point(365, 67);
             mASOBANGLabel.Name = "mASOBANGLabel";
             mASOBANGLabel.Size = new System.Drawing.Size(78, 16);
             mASOBANGLabel.TabIndex = 10;
@@ -187,7 +193,7 @@
             // nGAYCAPLabel
             // 
             nGAYCAPLabel.AutoSize = true;
-            nGAYCAPLabel.Location = new System.Drawing.Point(447, 113);
+            nGAYCAPLabel.Location = new System.Drawing.Point(377, 110);
             nGAYCAPLabel.Name = "nGAYCAPLabel";
             nGAYCAPLabel.Size = new System.Drawing.Size(66, 16);
             nGAYCAPLabel.TabIndex = 12;
@@ -208,7 +214,7 @@
             this.barDockControl2.Location = new System.Drawing.Point(0, 30);
             this.barDockControl2.Manager = null;
             this.barDockControl2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControl2.Size = new System.Drawing.Size(840, 0);
+            this.barDockControl2.Size = new System.Drawing.Size(1200, 0);
             // 
             // barDockControl1
             // 
@@ -217,25 +223,25 @@
             this.barDockControl1.Location = new System.Drawing.Point(0, 30);
             this.barDockControl1.Manager = null;
             this.barDockControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControl1.Size = new System.Drawing.Size(840, 0);
+            this.barDockControl1.Size = new System.Drawing.Size(1200, 0);
             // 
             // barDockControl10
             // 
             this.barDockControl10.CausesValidation = false;
             this.barDockControl10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl10.Location = new System.Drawing.Point(840, 30);
+            this.barDockControl10.Location = new System.Drawing.Point(1200, 30);
             this.barDockControl10.Manager = null;
             this.barDockControl10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControl10.Size = new System.Drawing.Size(0, 420);
+            this.barDockControl10.Size = new System.Drawing.Size(0, 557);
             // 
             // barDockControl7
             // 
             this.barDockControl7.CausesValidation = false;
             this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl7.Location = new System.Drawing.Point(840, 30);
+            this.barDockControl7.Location = new System.Drawing.Point(1200, 30);
             this.barDockControl7.Manager = null;
             this.barDockControl7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControl7.Size = new System.Drawing.Size(0, 420);
+            this.barDockControl7.Size = new System.Drawing.Size(0, 557);
             // 
             // btnThoatPX
             // 
@@ -416,16 +422,16 @@
             this.barDockControl4.Location = new System.Drawing.Point(0, 0);
             this.barDockControl4.Manager = this.barManager2;
             this.barDockControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControl4.Size = new System.Drawing.Size(840, 30);
+            this.barDockControl4.Size = new System.Drawing.Size(1200, 30);
             // 
             // barDockControl5
             // 
             this.barDockControl5.CausesValidation = false;
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl5.Location = new System.Drawing.Point(0, 450);
+            this.barDockControl5.Location = new System.Drawing.Point(0, 587);
             this.barDockControl5.Manager = this.barManager2;
             this.barDockControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControl5.Size = new System.Drawing.Size(840, 0);
+            this.barDockControl5.Size = new System.Drawing.Size(1200, 0);
             // 
             // barDockControl6
             // 
@@ -434,16 +440,16 @@
             this.barDockControl6.Location = new System.Drawing.Point(0, 30);
             this.barDockControl6.Manager = this.barManager2;
             this.barDockControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControl6.Size = new System.Drawing.Size(0, 420);
+            this.barDockControl6.Size = new System.Drawing.Size(0, 557);
             // 
             // barDockControl8
             // 
             this.barDockControl8.CausesValidation = false;
             this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl8.Location = new System.Drawing.Point(840, 30);
+            this.barDockControl8.Location = new System.Drawing.Point(1200, 30);
             this.barDockControl8.Manager = this.barManager2;
             this.barDockControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControl8.Size = new System.Drawing.Size(0, 420);
+            this.barDockControl8.Size = new System.Drawing.Size(0, 557);
             // 
             // barButtonItem4
             // 
@@ -643,7 +649,7 @@
             this.GC_TTPC.MainView = this.gridView1;
             this.GC_TTPC.MenuManager = this.barManager2;
             this.GC_TTPC.Name = "GC_TTPC";
-            this.GC_TTPC.Size = new System.Drawing.Size(840, 220);
+            this.GC_TTPC.Size = new System.Drawing.Size(1200, 220);
             this.GC_TTPC.TabIndex = 9;
             this.GC_TTPC.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -740,10 +746,10 @@
             this.panelControl1.Controls.Add(this.txtCMND);
             this.panelControl1.Controls.Add(mAPHICONGLabel);
             this.panelControl1.Controls.Add(this.txtMaPC);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelControl1.Location = new System.Drawing.Point(0, 250);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(840, 200);
+            this.panelControl1.Size = new System.Drawing.Size(1146, 337);
             this.panelControl1.TabIndex = 10;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
@@ -751,32 +757,32 @@
             // 
             this.txtNgayCap.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_ThongTinPhiCong, "NGAYCAP", true));
             this.txtNgayCap.EditValue = null;
-            this.txtNgayCap.Location = new System.Drawing.Point(547, 110);
+            this.txtNgayCap.Location = new System.Drawing.Point(477, 107);
             this.txtNgayCap.MenuManager = this.barManager2;
             this.txtNgayCap.Name = "txtNgayCap";
             this.txtNgayCap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtNgayCap.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtNgayCap.Size = new System.Drawing.Size(176, 22);
+            this.txtNgayCap.Size = new System.Drawing.Size(138, 22);
             this.txtNgayCap.TabIndex = 13;
             // 
             // txtMaSoBang
             // 
             this.txtMaSoBang.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_ThongTinPhiCong, "MASOBANG", true));
-            this.txtMaSoBang.Location = new System.Drawing.Point(547, 67);
+            this.txtMaSoBang.Location = new System.Drawing.Point(477, 64);
             this.txtMaSoBang.MenuManager = this.barManager2;
             this.txtMaSoBang.Name = "txtMaSoBang";
-            this.txtMaSoBang.Size = new System.Drawing.Size(176, 22);
+            this.txtMaSoBang.Size = new System.Drawing.Size(138, 22);
             this.txtMaSoBang.TabIndex = 11;
             // 
             // txtSDT
             // 
             this.txtSDT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_ThongTinPhiCong, "SODIENTHOAI", true));
-            this.txtSDT.Location = new System.Drawing.Point(547, 25);
+            this.txtSDT.Location = new System.Drawing.Point(477, 22);
             this.txtSDT.MenuManager = this.barManager2;
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(176, 22);
+            this.txtSDT.Size = new System.Drawing.Size(138, 22);
             this.txtSDT.TabIndex = 9;
             // 
             // txtDiaChi
@@ -785,7 +791,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(144, 153);
             this.txtDiaChi.MenuManager = this.barManager2;
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(209, 22);
+            this.txtDiaChi.Size = new System.Drawing.Size(169, 22);
             this.txtDiaChi.TabIndex = 7;
             // 
             // txtHoTen
@@ -794,7 +800,7 @@
             this.txtHoTen.Location = new System.Drawing.Point(144, 107);
             this.txtHoTen.MenuManager = this.barManager2;
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(209, 22);
+            this.txtHoTen.Size = new System.Drawing.Size(169, 22);
             this.txtHoTen.TabIndex = 5;
             // 
             // txtCMND
@@ -803,7 +809,7 @@
             this.txtCMND.Location = new System.Drawing.Point(144, 64);
             this.txtCMND.MenuManager = this.barManager2;
             this.txtCMND.Name = "txtCMND";
-            this.txtCMND.Size = new System.Drawing.Size(209, 22);
+            this.txtCMND.Size = new System.Drawing.Size(169, 22);
             this.txtCMND.TabIndex = 3;
             // 
             // txtMaPC
@@ -812,14 +818,32 @@
             this.txtMaPC.Location = new System.Drawing.Point(144, 22);
             this.txtMaPC.MenuManager = this.barManager2;
             this.txtMaPC.Name = "txtMaPC";
-            this.txtMaPC.Size = new System.Drawing.Size(209, 22);
+            this.txtMaPC.Size = new System.Drawing.Size(169, 22);
             this.txtMaPC.TabIndex = 1;
+            // 
+            // bdsLAI
+            // 
+            this.bdsLAI.DataMember = "LAI";
+            this.bdsLAI.DataSource = this.dS;
+            // 
+            // lAITableAdapter
+            // 
+            this.lAITableAdapter.ClearBeforeFill = true;
+            // 
+            // bdsLMB
+            // 
+            this.bdsLMB.DataMember = "LOAIMAYBAY";
+            this.bdsLMB.DataSource = this.dS;
+            // 
+            // lOAIMAYBAYTableAdapter
+            // 
+            this.lOAIMAYBAYTableAdapter.ClearBeforeFill = true;
             // 
             // FormPhiCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 587);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.GC_TTPC);
             this.Controls.Add(this.barDockControl2);
@@ -849,6 +873,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaPC.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLAI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLMB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -925,5 +951,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSODIENTHOAI;
         private DevExpress.XtraGrid.Columns.GridColumn colMASOBANG;
         private DevExpress.XtraGrid.Columns.GridColumn colNGAYCAP;
+        private System.Windows.Forms.BindingSource bdsLAI;
+        private DSTableAdapters.LAITableAdapter lAITableAdapter;
+        private System.Windows.Forms.BindingSource bdsLMB;
+        private DSTableAdapters.LOAIMAYBAYTableAdapter lOAIMAYBAYTableAdapter;
     }
 }

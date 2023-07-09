@@ -33,23 +33,27 @@
             System.Windows.Forms.Label kIEUDANGLabel;
             System.Windows.Forms.Label tRONGLUONGLabel;
             System.Windows.Forms.Label sUCCHUALabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLoaiMB));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.btnHieuChinh = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnGhi = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhucHoi = new DevExpress.XtraBars.BarButtonItem();
             this.btnReload = new DevExpress.XtraBars.BarButtonItem();
             this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.DS = new QuanLyMayBay.DS();
             this.bdsLMB = new System.Windows.Forms.BindingSource(this.components);
             this.lOAIMAYBAYTableAdapter = new QuanLyMayBay.DSTableAdapters.LOAIMAYBAYTableAdapter();
             this.tableAdapterManager = new QuanLyMayBay.DSTableAdapters.TableAdapterManager();
+            this.cHUYENVETableAdapter = new QuanLyMayBay.DSTableAdapters.CHUYENVETableAdapter();
+            this.lAITableAdapter = new QuanLyMayBay.DSTableAdapters.LAITableAdapter();
+            this.mAYBAYTableAdapter = new QuanLyMayBay.DSTableAdapters.MAYBAYTableAdapter();
             this.gcLoaiMB = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMALOAI = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,16 +61,13 @@
             this.colTRONGLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSUCCHUA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtMaLoai = new DevExpress.XtraEditors.TextEdit();
-            this.txtKieuDang = new DevExpress.XtraEditors.TextEdit();
-            this.txtTrongLuong = new DevExpress.XtraEditors.TextEdit();
             this.txtSucChua = new DevExpress.XtraEditors.TextEdit();
+            this.txtTrongLuong = new DevExpress.XtraEditors.TextEdit();
+            this.txtKieuDang = new DevExpress.XtraEditors.TextEdit();
+            this.txtMaLoai = new DevExpress.XtraEditors.TextEdit();
             this.bdsCV = new System.Windows.Forms.BindingSource(this.components);
-            this.cHUYENVETableAdapter = new QuanLyMayBay.DSTableAdapters.CHUYENVETableAdapter();
             this.bdsL = new System.Windows.Forms.BindingSource(this.components);
-            this.lAITableAdapter = new QuanLyMayBay.DSTableAdapters.LAITableAdapter();
             this.bdsMB = new System.Windows.Forms.BindingSource(this.components);
-            this.mAYBAYTableAdapter = new QuanLyMayBay.DSTableAdapters.MAYBAYTableAdapter();
             mALOAILabel = new System.Windows.Forms.Label();
             kIEUDANGLabel = new System.Windows.Forms.Label();
             tRONGLUONGLabel = new System.Windows.Forms.Label();
@@ -77,14 +78,50 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcLoaiMB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaLoai.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKieuDang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTrongLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSucChua.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTrongLuong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKieuDang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaLoai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMB)).BeginInit();
             this.SuspendLayout();
+            // 
+            // mALOAILabel
+            // 
+            mALOAILabel.AutoSize = true;
+            mALOAILabel.Location = new System.Drawing.Point(148, 44);
+            mALOAILabel.Name = "mALOAILabel";
+            mALOAILabel.Size = new System.Drawing.Size(54, 16);
+            mALOAILabel.TabIndex = 0;
+            mALOAILabel.Text = "Mã loại:";
+            // 
+            // kIEUDANGLabel
+            // 
+            kIEUDANGLabel.AutoSize = true;
+            kIEUDANGLabel.Location = new System.Drawing.Point(128, 88);
+            kIEUDANGLabel.Name = "kIEUDANGLabel";
+            kIEUDANGLabel.Size = new System.Drawing.Size(70, 16);
+            kIEUDANGLabel.TabIndex = 2;
+            kIEUDANGLabel.Text = "Kiểu dáng:";
+            // 
+            // tRONGLUONGLabel
+            // 
+            tRONGLUONGLabel.AutoSize = true;
+            tRONGLUONGLabel.Location = new System.Drawing.Point(458, 41);
+            tRONGLUONGLabel.Name = "tRONGLUONGLabel";
+            tRONGLUONGLabel.Size = new System.Drawing.Size(82, 16);
+            tRONGLUONGLabel.TabIndex = 4;
+            tRONGLUONGLabel.Text = "Trọng lượng:";
+            // 
+            // sUCCHUALabel
+            // 
+            sUCCHUALabel.AutoSize = true;
+            sUCCHUALabel.Location = new System.Drawing.Point(488, 85);
+            sUCCHUALabel.Name = "sUCCHUALabel";
+            sUCCHUALabel.Size = new System.Drawing.Size(65, 16);
+            sUCCHUALabel.TabIndex = 6;
+            sUCCHUALabel.Text = "Sức chứa:";
             // 
             // barManager1
             // 
@@ -125,8 +162,71 @@
             // 
             this.btnThem.Caption = "Thêm";
             this.btnThem.Id = 0;
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
+            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
             this.btnThem.Name = "btnThem";
+            this.btnThem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick_1);
+            // 
+            // btnHieuChinh
+            // 
+            this.btnHieuChinh.Caption = "Hiệu chỉnh";
+            this.btnHieuChinh.Id = 1;
+            this.btnHieuChinh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.Image")));
+            this.btnHieuChinh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.LargeImage")));
+            this.btnHieuChinh.Name = "btnHieuChinh";
+            this.btnHieuChinh.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnHieuChinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHieuChinh_ItemClick_1);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Caption = "Xóa";
+            this.btnXoa.Id = 2;
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
+            this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick_1);
+            // 
+            // btnGhi
+            // 
+            this.btnGhi.Caption = "Ghi";
+            this.btnGhi.Id = 3;
+            this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
+            this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
+            this.btnGhi.Name = "btnGhi";
+            this.btnGhi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick_1);
+            // 
+            // btnPhucHoi
+            // 
+            this.btnPhucHoi.Caption = "Phục hồi";
+            this.btnPhucHoi.Id = 4;
+            this.btnPhucHoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.Image")));
+            this.btnPhucHoi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.LargeImage")));
+            this.btnPhucHoi.Name = "btnPhucHoi";
+            this.btnPhucHoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick_1);
+            // 
+            // btnReload
+            // 
+            this.btnReload.Caption = "Reload";
+            this.btnReload.Id = 5;
+            this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
+            this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
+            this.btnReload.Name = "btnReload";
+            this.btnReload.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick_1);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Caption = "Thoát";
+            this.btnThoat.Id = 6;
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
+            this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick_1);
             // 
             // barDockControlTop
             // 
@@ -134,7 +234,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(985, 25);
+            this.barDockControlTop.Size = new System.Drawing.Size(985, 30);
             // 
             // barDockControlBottom
             // 
@@ -148,59 +248,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 25);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 448);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 443);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(985, 25);
+            this.barDockControlRight.Location = new System.Drawing.Point(985, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 448);
-            // 
-            // btnHieuChinh
-            // 
-            this.btnHieuChinh.Caption = "Hiệu chỉnh";
-            this.btnHieuChinh.Id = 1;
-            this.btnHieuChinh.Name = "btnHieuChinh";
-            this.btnHieuChinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHieuChinh_ItemClick_1);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Caption = "Xóa";
-            this.btnXoa.Id = 2;
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick_1);
-            // 
-            // btnGhi
-            // 
-            this.btnGhi.Caption = "Ghi";
-            this.btnGhi.Id = 3;
-            this.btnGhi.Name = "btnGhi";
-            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick_1);
-            // 
-            // btnPhucHoi
-            // 
-            this.btnPhucHoi.Caption = "Phục hồi";
-            this.btnPhucHoi.Id = 4;
-            this.btnPhucHoi.Name = "btnPhucHoi";
-            this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick_1);
-            // 
-            // btnReload
-            // 
-            this.btnReload.Caption = "Reload";
-            this.btnReload.Id = 5;
-            this.btnReload.Name = "btnReload";
-            this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick_1);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Caption = "Thoát";
-            this.btnThoat.Id = 6;
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick_1);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 443);
             // 
             // DS
             // 
@@ -231,13 +289,27 @@
             this.tableAdapterManager.NHANVIENTableAdapter = null;
             this.tableAdapterManager.PHICONGTableAdapter = null;
             this.tableAdapterManager.SOHUUTableAdapter = null;
+            this.tableAdapterManager.ThongTinNhanVienTableAdapter = null;
+            this.tableAdapterManager.ThongTinPhiCongTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QuanLyMayBay.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // cHUYENVETableAdapter
+            // 
+            this.cHUYENVETableAdapter.ClearBeforeFill = true;
+            // 
+            // lAITableAdapter
+            // 
+            this.lAITableAdapter.ClearBeforeFill = true;
+            // 
+            // mAYBAYTableAdapter
+            // 
+            this.mAYBAYTableAdapter.ClearBeforeFill = true;
             // 
             // gcLoaiMB
             // 
             this.gcLoaiMB.DataSource = this.bdsLMB;
             this.gcLoaiMB.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcLoaiMB.Location = new System.Drawing.Point(0, 25);
+            this.gcLoaiMB.Location = new System.Drawing.Point(0, 30);
             this.gcLoaiMB.MainView = this.gridView1;
             this.gcLoaiMB.MenuManager = this.barManager1;
             this.gcLoaiMB.Name = "gcLoaiMB";
@@ -310,50 +382,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
-            // mALOAILabel
+            // txtSucChua
             // 
-            mALOAILabel.AutoSize = true;
-            mALOAILabel.Location = new System.Drawing.Point(148, 44);
-            mALOAILabel.Name = "mALOAILabel";
-            mALOAILabel.Size = new System.Drawing.Size(54, 16);
-            mALOAILabel.TabIndex = 0;
-            mALOAILabel.Text = "Mã loại:";
-            // 
-            // txtMaLoai
-            // 
-            this.txtMaLoai.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLMB, "MALOAI", true));
-            this.txtMaLoai.Location = new System.Drawing.Point(213, 41);
-            this.txtMaLoai.MenuManager = this.barManager1;
-            this.txtMaLoai.Name = "txtMaLoai";
-            this.txtMaLoai.Size = new System.Drawing.Size(125, 22);
-            this.txtMaLoai.TabIndex = 1;
-            // 
-            // kIEUDANGLabel
-            // 
-            kIEUDANGLabel.AutoSize = true;
-            kIEUDANGLabel.Location = new System.Drawing.Point(128, 88);
-            kIEUDANGLabel.Name = "kIEUDANGLabel";
-            kIEUDANGLabel.Size = new System.Drawing.Size(70, 16);
-            kIEUDANGLabel.TabIndex = 2;
-            kIEUDANGLabel.Text = "Kiểu dáng:";
-            // 
-            // txtKieuDang
-            // 
-            this.txtKieuDang.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLMB, "KIEUDANG", true));
-            this.txtKieuDang.Location = new System.Drawing.Point(213, 85);
-            this.txtKieuDang.MenuManager = this.barManager1;
-            this.txtKieuDang.Name = "txtKieuDang";
-            this.txtKieuDang.Size = new System.Drawing.Size(125, 22);
-            this.txtKieuDang.TabIndex = 3;
-            // 
-            // tRONGLUONGLabel
-            // 
-            tRONGLUONGLabel.AutoSize = true;
-            tRONGLUONGLabel.Location = new System.Drawing.Point(458, 41);
-            tRONGLUONGLabel.Name = "tRONGLUONGLabel";
-            tRONGLUONGLabel.Size = new System.Drawing.Size(82, 16);
-            tRONGLUONGLabel.TabIndex = 4;
-            tRONGLUONGLabel.Text = "Trọng lượng:";
+            this.txtSucChua.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLMB, "SUCCHUA", true));
+            this.txtSucChua.Location = new System.Drawing.Point(570, 82);
+            this.txtSucChua.MenuManager = this.barManager1;
+            this.txtSucChua.Name = "txtSucChua";
+            this.txtSucChua.Size = new System.Drawing.Size(125, 22);
+            this.txtSucChua.TabIndex = 7;
             // 
             // txtTrongLuong
             // 
@@ -364,51 +400,39 @@
             this.txtTrongLuong.Size = new System.Drawing.Size(125, 22);
             this.txtTrongLuong.TabIndex = 5;
             // 
-            // sUCCHUALabel
+            // txtKieuDang
             // 
-            sUCCHUALabel.AutoSize = true;
-            sUCCHUALabel.Location = new System.Drawing.Point(488, 85);
-            sUCCHUALabel.Name = "sUCCHUALabel";
-            sUCCHUALabel.Size = new System.Drawing.Size(65, 16);
-            sUCCHUALabel.TabIndex = 6;
-            sUCCHUALabel.Text = "Sức chứa:";
+            this.txtKieuDang.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLMB, "KIEUDANG", true));
+            this.txtKieuDang.Location = new System.Drawing.Point(213, 85);
+            this.txtKieuDang.MenuManager = this.barManager1;
+            this.txtKieuDang.Name = "txtKieuDang";
+            this.txtKieuDang.Size = new System.Drawing.Size(125, 22);
+            this.txtKieuDang.TabIndex = 3;
             // 
-            // txtSucChua
+            // txtMaLoai
             // 
-            this.txtSucChua.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLMB, "SUCCHUA", true));
-            this.txtSucChua.Location = new System.Drawing.Point(570, 82);
-            this.txtSucChua.MenuManager = this.barManager1;
-            this.txtSucChua.Name = "txtSucChua";
-            this.txtSucChua.Size = new System.Drawing.Size(125, 22);
-            this.txtSucChua.TabIndex = 7;
+            this.txtMaLoai.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLMB, "MALOAI", true));
+            this.txtMaLoai.Location = new System.Drawing.Point(213, 41);
+            this.txtMaLoai.MenuManager = this.barManager1;
+            this.txtMaLoai.Name = "txtMaLoai";
+            this.txtMaLoai.Size = new System.Drawing.Size(125, 22);
+            this.txtMaLoai.TabIndex = 1;
             // 
             // bdsCV
             // 
             this.bdsCV.DataMember = "FK_CHUYENVE_LOAIMAYBAY";
             this.bdsCV.DataSource = this.bdsLMB;
             // 
-            // cHUYENVETableAdapter
-            // 
-            this.cHUYENVETableAdapter.ClearBeforeFill = true;
-            // 
             // bdsL
             // 
             this.bdsL.DataMember = "FK_LAI_LOAIMAYBAY";
             this.bdsL.DataSource = this.bdsLMB;
-            // 
-            // lAITableAdapter
-            // 
-            this.lAITableAdapter.ClearBeforeFill = true;
             // 
             // bdsMB
             // 
             this.bdsMB.DataMember = "FK_MAYBAY_LOAIMAYBAY";
             this.bdsMB.DataSource = this.bdsLMB;
             this.bdsMB.CurrentChanged += new System.EventHandler(this.mAYBAYBindingSource_CurrentChanged);
-            // 
-            // mAYBAYTableAdapter
-            // 
-            this.mAYBAYTableAdapter.ClearBeforeFill = true;
             // 
             // frmLoaiMB
             // 
@@ -432,10 +456,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaLoai.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKieuDang.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTrongLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSucChua.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTrongLuong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKieuDang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaLoai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsCV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMB)).EndInit();

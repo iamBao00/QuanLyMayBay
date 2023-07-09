@@ -12,31 +12,31 @@ using System.Windows.Forms;
 
 namespace QuanLyMayBay
 {
-    public partial class frmReportNhanVien : Form
+    public partial class FormreportnhanVien : Form
     {
-        public frmReportNhanVien()
+        public FormreportnhanVien()
         {
             InitializeComponent();
         }
 
-        private void frmReportNhanVien_Load(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnXem_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            ReportNhanVien rpt = new ReportNhanVien();
+            Xrpt_reportnhanvien rpt = new Xrpt_reportnhanvien();
 
             ReportPrintTool preview = new ReportPrintTool(rpt);
             preview.ShowPreviewDialog();
         }
 
-        private void btnIn_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             try
             {
-                ReportNhanVien rpt = new ReportNhanVien();
+                Xrpt_reportnhanvien rpt = new Xrpt_reportnhanvien();
 
                 if (File.Exists(@"C:\TTCS\Report\DanhSachNhanVien.pdf"))
                 {
@@ -63,7 +63,6 @@ namespace QuanLyMayBay
                     "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return;
             }
-
         }
     }
 }

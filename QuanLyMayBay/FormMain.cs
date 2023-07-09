@@ -224,11 +224,11 @@ namespace QuanLyMayBay
 
         private void btnDSNV_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.CheckExists(typeof(frmReportNhanVien));
+            Form frm = this.CheckExists(typeof(FormreportnhanVien));
             if (frm != null) frm.Activate();
             else
             {
-                frmReportNhanVien f = new frmReportNhanVien();
+                FormreportnhanVien f = new FormreportnhanVien();
                 f.Show();
             }
 
@@ -288,6 +288,30 @@ namespace QuanLyMayBay
             else
             {
                 FormChuyenVe f = new FormChuyenVe();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void L_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormChuyenVe));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormChuyenVe f = new FormChuyenVe();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem15_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormLai));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormLai f = new FormLai();
                 f.MdiParent = this;
                 f.Show();
             }

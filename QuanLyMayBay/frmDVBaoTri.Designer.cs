@@ -33,6 +33,7 @@
             System.Windows.Forms.Label nGAYGIOLabel;
             System.Windows.Forms.Label sOGIOBAOTRILabel;
             System.Windows.Forms.Label cONGVIECLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDVBaoTri));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -66,6 +67,7 @@
             this.maNVCheckSua = new DevExpress.XtraEditors.TextEdit();
             this.cmbMaDK = new System.Windows.Forms.ComboBox();
             this.getCacMayBayMaNhanVienChuyenVeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsMB = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCongViec = new DevExpress.XtraEditors.TextEdit();
@@ -73,7 +75,6 @@
             this.dtpNgayGio = new DevExpress.XtraEditors.DateEdit();
             this.txtMaDK = new DevExpress.XtraEditors.TextEdit();
             this.txtIDDVBT = new DevExpress.XtraEditors.TextEdit();
-            this.bdsMB = new System.Windows.Forms.BindingSource(this.components);
             this.bdsNV = new System.Windows.Forms.BindingSource(this.components);
             this.getCacMayBayMaNhanVienChuyenVeTableAdapter = new QuanLyMayBay.DSTableAdapters.GetCacMayBayMaNhanVienChuyenVeTableAdapter();
             iDDVBTLabel = new System.Windows.Forms.Label();
@@ -90,13 +91,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maNVCheckSua.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getCacMayBayMaNhanVienChuyenVeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsMB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCongViec.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoGioBT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayGio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayGio.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaDK.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDDVBT.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsMB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -175,49 +176,70 @@
             // 
             this.btnThem.Caption = "Thêm";
             this.btnThem.Id = 0;
+            this.btnThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.Image")));
+            this.btnThem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThem.ImageOptions.LargeImage")));
             this.btnThem.Name = "btnThem";
+            this.btnThem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
             // btnHieuChinh
             // 
             this.btnHieuChinh.Caption = "Hiệu chỉnh";
             this.btnHieuChinh.Id = 1;
+            this.btnHieuChinh.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.Image")));
+            this.btnHieuChinh.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHieuChinh.ImageOptions.LargeImage")));
             this.btnHieuChinh.Name = "btnHieuChinh";
+            this.btnHieuChinh.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnHieuChinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHieuChinh_ItemClick);
             // 
             // btnXoa
             // 
             this.btnXoa.Caption = "Xóa";
             this.btnXoa.Id = 2;
+            this.btnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.Image")));
+            this.btnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXoa.ImageOptions.LargeImage")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnGhi
             // 
             this.btnGhi.Caption = "Ghi";
             this.btnGhi.Id = 3;
+            this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
+            this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
             this.btnGhi.Name = "btnGhi";
+            this.btnGhi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
             // 
             // btnPhucHoi
             // 
             this.btnPhucHoi.Caption = "Hủy Thao Tác";
             this.btnPhucHoi.Id = 4;
+            this.btnPhucHoi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.Image")));
+            this.btnPhucHoi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPhucHoi.ImageOptions.LargeImage")));
             this.btnPhucHoi.Name = "btnPhucHoi";
+            this.btnPhucHoi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnPhucHoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhucHoi_ItemClick);
             // 
             // btnReload
             // 
             this.btnReload.Caption = "Reload";
             this.btnReload.Id = 5;
+            this.btnReload.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.Image")));
+            this.btnReload.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnReload.ImageOptions.LargeImage")));
             this.btnReload.Name = "btnReload";
+            this.btnReload.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
             // btnThoat
             // 
             this.btnThoat.Caption = "Thoát";
             this.btnThoat.Id = 6;
+            this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
+            this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // barDockControlTop
@@ -226,7 +248,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1064, 25);
+            this.barDockControlTop.Size = new System.Drawing.Size(1064, 30);
             // 
             // barDockControlBottom
             // 
@@ -240,17 +262,17 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 25);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 443);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 438);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1064, 25);
+            this.barDockControlRight.Location = new System.Drawing.Point(1064, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 443);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 438);
             // 
             // DS
             // 
@@ -297,7 +319,7 @@
             // 
             this.gcDVBT.DataSource = this.bdsDVBT;
             this.gcDVBT.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcDVBT.Location = new System.Drawing.Point(0, 25);
+            this.gcDVBT.Location = new System.Drawing.Point(0, 30);
             this.gcDVBT.MainView = this.gridView1;
             this.gcDVBT.MenuManager = this.barManager1;
             this.gcDVBT.Name = "gcDVBT";
@@ -390,9 +412,9 @@
             this.panelControl1.Controls.Add(iDDVBTLabel);
             this.panelControl1.Controls.Add(this.txtIDDVBT);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(0, 248);
+            this.panelControl1.Location = new System.Drawing.Point(0, 253);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1064, 220);
+            this.panelControl1.Size = new System.Drawing.Size(1064, 215);
             this.panelControl1.TabIndex = 6;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
@@ -446,6 +468,11 @@
             this.getCacMayBayMaNhanVienChuyenVeBindingSource.DataMember = "GetCacMayBayMaNhanVienChuyenVe";
             this.getCacMayBayMaNhanVienChuyenVeBindingSource.DataSource = this.DS;
             // 
+            // bdsMB
+            // 
+            this.bdsMB.DataMember = "MAYBAY";
+            this.bdsMB.DataSource = this.DS;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -467,7 +494,7 @@
             // txtCongViec
             // 
             this.txtCongViec.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsDVBT, "CONGVIEC", true));
-            this.txtCongViec.Location = new System.Drawing.Point(482, 100);
+            this.txtCongViec.Location = new System.Drawing.Point(496, 100);
             this.txtCongViec.MenuManager = this.barManager1;
             this.txtCongViec.Name = "txtCongViec";
             this.txtCongViec.Size = new System.Drawing.Size(255, 22);
@@ -481,7 +508,7 @@
             0,
             0,
             0});
-            this.txtSoGioBT.Location = new System.Drawing.Point(482, 62);
+            this.txtSoGioBT.Location = new System.Drawing.Point(496, 62);
             this.txtSoGioBT.MenuManager = this.barManager1;
             this.txtSoGioBT.Name = "txtSoGioBT";
             this.txtSoGioBT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -503,7 +530,7 @@
             // 
             this.dtpNgayGio.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsDVBT, "NGAYGIO", true));
             this.dtpNgayGio.EditValue = null;
-            this.dtpNgayGio.Location = new System.Drawing.Point(482, 27);
+            this.dtpNgayGio.Location = new System.Drawing.Point(496, 27);
             this.dtpNgayGio.MenuManager = this.barManager1;
             this.dtpNgayGio.Name = "dtpNgayGio";
             this.dtpNgayGio.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -532,11 +559,6 @@
             this.txtIDDVBT.Name = "txtIDDVBT";
             this.txtIDDVBT.Size = new System.Drawing.Size(128, 22);
             this.txtIDDVBT.TabIndex = 1;
-            // 
-            // bdsMB
-            // 
-            this.bdsMB.DataMember = "MAYBAY";
-            this.bdsMB.DataSource = this.DS;
             // 
             // bdsNV
             // 
@@ -573,13 +595,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maNVCheckSua.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getCacMayBayMaNhanVienChuyenVeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsMB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCongViec.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoGioBT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayGio.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayGio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaDK.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDDVBT.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsMB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

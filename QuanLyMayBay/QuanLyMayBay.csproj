@@ -95,6 +95,12 @@
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLai.Designer.cs">
+      <DependentUpon>FormLai.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,12 @@
     </Compile>
     <Compile Include="FormPhiCong.Designer.cs">
       <DependentUpon>FormPhiCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormreportnhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormreportnhanVien.Designer.cs">
+      <DependentUpon>FormreportnhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="frmChuCN.cs">
       <SubType>Form</SubType>
@@ -179,12 +191,6 @@
     <Compile Include="frmReportDSDVBaoTri.Designer.cs">
       <DependentUpon>frmReportDSDVBaoTri.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReportNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmReportNhanVien.Designer.cs">
-      <DependentUpon>frmReportNhanVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmReportPhiCong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,23 +217,26 @@
     <Compile Include="ReportDSDVBaoTri.Designer.cs">
       <DependentUpon>ReportDSDVBaoTri.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportNhanVien.cs">
+    <Compile Include="Xrpt_reportnhanvien.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ReportNhanVien.Designer.cs">
-      <DependentUpon>ReportNhanVien.cs</DependentUpon>
+    <Compile Include="Xrpt_reportnhanvien.Designer.cs">
+      <DependentUpon>Xrpt_reportnhanvien.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportPhiCong.cs">
+    <Compile Include="Xrpt_reportPC.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ReportPhiCong.Designer.cs">
-      <DependentUpon>ReportPhiCong.cs</DependentUpon>
+    <Compile Include="Xrpt_reportPC.Designer.cs">
+      <DependentUpon>Xrpt_reportPC.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormChuyenVe.resx">
       <DependentUpon>FormChuyenVe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLai.resx">
+      <DependentUpon>FormLai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -237,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormPhiCong.resx">
       <DependentUpon>FormPhiCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormreportnhanVien.resx">
+      <DependentUpon>FormreportnhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmChuCN.resx">
       <DependentUpon>frmChuCN.cs</DependentUpon>
@@ -271,9 +283,6 @@
     <EmbeddedResource Include="frmReportDSDVBaoTri.resx">
       <DependentUpon>frmReportDSDVBaoTri.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportNhanVien.resx">
-      <DependentUpon>frmReportNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmReportPhiCong.resx">
       <DependentUpon>frmReportPhiCong.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,11 +305,11 @@
     <EmbeddedResource Include="ReportDSDVBaoTri.resx">
       <DependentUpon>ReportDSDVBaoTri.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportNhanVien.resx">
-      <DependentUpon>ReportNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="Xrpt_reportnhanvien.resx">
+      <DependentUpon>Xrpt_reportnhanvien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportPhiCong.resx">
-      <DependentUpon>ReportPhiCong.cs</DependentUpon>
+    <EmbeddedResource Include="Xrpt_reportPC.resx">
+      <DependentUpon>Xrpt_reportPC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="DS.xsc">

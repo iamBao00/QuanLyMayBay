@@ -101,6 +101,9 @@ namespace QuanLyMayBay
             DangXuat();
             barButtonItemDangXuat.Enabled = btnTaoTaiKhoan.Enabled = false;
             btnDangNhap.Enabled = true;
+            ribbonAdmin.Visible=false;
+            ribbonNhanVien.Visible = false;
+            ribbonThongKe.Visible =false;
         }
 
         private void btnLoaiMB_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

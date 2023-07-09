@@ -25,6 +25,7 @@ namespace QuanLyMayBay
 
         private void FormNhanVien_Load(object sender, EventArgs e)
         {
+            
             dS.EnforceConstraints = false;
             this.thongTinNhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
             this.thongTinNhanVienTableAdapter.Fill(this.dS.ThongTinNhanVien);
@@ -159,6 +160,8 @@ namespace QuanLyMayBay
                         throw new Exception("Số CMND đã tồn tại!");
                     }
                     // KIEM TRA MA NV TON TAI (CHUA LAM)
+
+                    
 
                     // THEM VAO TABLE NHANVIEN va TABLE NGUOI
                     string themNguoi = "EXEC [dbo].[sp_ThemNguoi] @CMND =" + txtCMND.Text + ", @HoTen = N'" + txtHoTen.Text + "', @DiaChi = N'" + txtDiaChi.Text + "', @SoDienThoai = " + txtSDT.Text + ", @MaChu = null";

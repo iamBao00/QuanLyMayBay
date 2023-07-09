@@ -99,6 +99,7 @@
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSODIENTHOAI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.txtSDT = new DevExpress.XtraEditors.TextEdit();
             this.txtHoTen = new DevExpress.XtraEditors.TextEdit();
             this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.txtCMND = new DevExpress.XtraEditors.TextEdit();
@@ -109,7 +110,12 @@
             this.nHANVIENTableAdapter = new QuanLyMayBay.DSTableAdapters.NHANVIENTableAdapter();
             this.nGUOIBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nGUOITableAdapter = new QuanLyMayBay.DSTableAdapters.NGUOITableAdapter();
-            this.txtSDT = new DevExpress.XtraEditors.TextEdit();
+            this.cHUYENVEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cHUYENVETableAdapter = new QuanLyMayBay.DSTableAdapters.CHUYENVETableAdapter();
+            this.cHUYENVEBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.thêmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xóaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             mANVLabel = new System.Windows.Forms.Label();
             cALabel = new System.Windows.Forms.Label();
             lUONGLabel = new System.Windows.Forms.Label();
@@ -124,6 +130,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).BeginInit();
@@ -131,7 +138,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_NhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nGUOIBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHUYENVEBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHUYENVEBindingSource1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mANVLabel
@@ -753,6 +762,15 @@
             this.panelControl1.Size = new System.Drawing.Size(1128, 353);
             this.panelControl1.TabIndex = 13;
             // 
+            // txtSDT
+            // 
+            this.txtSDT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_ThongTinNhanVien, "SODIENTHOAI", true));
+            this.txtSDT.Location = new System.Drawing.Point(90, 169);
+            this.txtSDT.MenuManager = this.barManager2;
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(156, 22);
+            this.txtSDT.TabIndex = 15;
+            // 
             // txtHoTen
             // 
             this.txtHoTen.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_ThongTinNhanVien, "HOTEN", true));
@@ -825,14 +843,40 @@
             // 
             this.nGUOITableAdapter.ClearBeforeFill = true;
             // 
-            // txtSDT
+            // cHUYENVEBindingSource
             // 
-            this.txtSDT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_ThongTinNhanVien, "SODIENTHOAI", true));
-            this.txtSDT.Location = new System.Drawing.Point(90, 169);
-            this.txtSDT.MenuManager = this.barManager2;
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(156, 22);
-            this.txtSDT.TabIndex = 15;
+            this.cHUYENVEBindingSource.DataMember = "CHUYENVE";
+            this.cHUYENVEBindingSource.DataSource = this.dS;
+            // 
+            // cHUYENVETableAdapter
+            // 
+            this.cHUYENVETableAdapter.ClearBeforeFill = true;
+            // 
+            // cHUYENVEBindingSource1
+            // 
+            this.cHUYENVEBindingSource1.DataMember = "FK_CHUYENVE_NHANVIEN";
+            this.cHUYENVEBindingSource1.DataSource = this.bds_NhanVien;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thêmToolStripMenuItem,
+            this.xóaToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(116, 52);
+            // 
+            // thêmToolStripMenuItem
+            // 
+            this.thêmToolStripMenuItem.Name = "thêmToolStripMenuItem";
+            this.thêmToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
+            this.thêmToolStripMenuItem.Text = "Thêm";
+            // 
+            // xóaToolStripMenuItem
+            // 
+            this.xóaToolStripMenuItem.Name = "xóaToolStripMenuItem";
+            this.xóaToolStripMenuItem.Size = new System.Drawing.Size(115, 24);
+            this.xóaToolStripMenuItem.Text = "Xóa";
             // 
             // FormNhanVien
             // 
@@ -860,6 +904,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).EndInit();
@@ -867,7 +912,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_NhanVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nGUOIBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHUYENVEBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHUYENVEBindingSource1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -948,5 +995,11 @@
         private System.Windows.Forms.BindingSource nGUOIBindingSource;
         private DSTableAdapters.NGUOITableAdapter nGUOITableAdapter;
         private DevExpress.XtraEditors.TextEdit txtSDT;
+        private System.Windows.Forms.BindingSource cHUYENVEBindingSource;
+        private DSTableAdapters.CHUYENVETableAdapter cHUYENVETableAdapter;
+        private System.Windows.Forms.BindingSource cHUYENVEBindingSource1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem thêmToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem xóaToolStripMenuItem;
     }
 }

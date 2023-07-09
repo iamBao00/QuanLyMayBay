@@ -206,3 +206,4 @@ D:\QuanLyMayBay\QuanLyMayBay\bin\Debug\DevExpress.XtraReports.v22.2.dll
 D:\QuanLyMayBay\QuanLyMayBay\bin\Debug\DevExpress.XtraReports.v22.2.Extensions.dll
 D:\QuanLyMayBay\QuanLyMayBay\obj\Debug\QuanLyMayBay.FormNhanVien.resources
 D:\QuanLyMayBay\QuanLyMayBay\obj\Debug\QuanLyMayBay.FormPhiCong.resources
+D:\QuanLyMayBay\QuanLyMayBay\obj\Debug\QuanLyMayBay.FormChuyenVe.resources

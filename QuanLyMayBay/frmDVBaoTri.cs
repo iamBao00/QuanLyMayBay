@@ -38,11 +38,14 @@ namespace QuanLyMayBay
             this.nHANVIENTableAdapter.Fill(this.DS.NHANVIEN);
             this.mAYBAYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mAYBAYTableAdapter.Fill(this.DS.MAYBAY);
-            if (Program.mGroup == "NHANVIEN")
-            {
-                btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled =  btnGhi.Enabled = btnPhucHoi.Enabled = false;
-                btnReload.Enabled = btnThoat.Enabled = true;
-            }
+
+            this.getCacMayBayMaNhanVienChuyenVeTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.getCacMayBayMaNhanVienChuyenVeTableAdapter.Fill(this.DS.GetCacMayBayMaNhanVienChuyenVe, new System.Nullable<int>(((int)(System.Convert.ChangeType(Program.username, typeof(int))))));
+
+            btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
+            btnGhi.Enabled = btnPhucHoi.Enabled = false;
+            panelControl1.Enabled = false;
+            gcDVBT.Enabled = true;
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -58,6 +61,11 @@ namespace QuanLyMayBay
 
         private void btnHieuChinh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if(Program.username != maNVCheckSua.Text && Program.mGroup == "NHANVIEN")
+            {
+                MessageBox.Show("Bạn không có quyền sửa thông tin DVBT của nhân viên này", "Xác nhận", MessageBoxButtons.OKCancel);
+                return;
+            }
             vitri = bdsDVBT.Position;
             panelControl1.Enabled = true;
             gcDVBT.Enabled = false;
@@ -67,6 +75,11 @@ namespace QuanLyMayBay
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (Program.username != maNVCheckSua.Text && Program.mGroup == "NHANVIEN")
+            {
+                MessageBox.Show("Bạn không có quyền xóa thông tin DVBT của nhân viên này", "Xác nhận", MessageBoxButtons.OKCancel);
+                return;
+            }
             if (MessageBox.Show("Bạn có muốn xóa dịch vụ này?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 String iddvbt = ((DataRowView)bdsDVBT[bdsDVBT.Position])["IDDVBT"].ToString();
@@ -84,7 +97,7 @@ namespace QuanLyMayBay
                     bdsDVBT.Position = bdsDVBT.Find("IDDVBT", iddvbt);
                     return;
                 }
-                panelControl1.Enabled = true;
+                panelControl1.Enabled = false;
                 gcDVBT.Enabled = true;
             }
         }
@@ -95,12 +108,6 @@ namespace QuanLyMayBay
             {
                 MessageBox.Show("Mã đăng ký không được thiếu!", "", MessageBoxButtons.OK);
                 cmbMaDK.Focus();
-                return;
-            }
-            if (cmbNV.Text.Trim() == "")
-            {
-                MessageBox.Show("Mã nhân viên không được thiếu!", "", MessageBoxButtons.OK);
-                cmbNV.Focus();
                 return;
             }
             if (txtIDDVBT.Text.Trim() == "")
@@ -115,12 +122,12 @@ namespace QuanLyMayBay
                 dtpNgayGio.Focus();
                 return;
             }
-            if (dtpNgayGio.DateTime < DateTime.Now)
+            /*if (dtpNgayGio.DateTime < DateTime.Now)
             {
                 MessageBox.Show("Ngày giờ không hợp lý!", "", MessageBoxButtons.OK);
                 dtpNgayGio.Focus();
                 return;
-            }
+            }*/
             if (txtSoGioBT.Text.Trim() == "")
             {
                 MessageBox.Show("Số giờ bảo trì không được thiếu!", "", MessageBoxButtons.OK);
@@ -145,7 +152,7 @@ namespace QuanLyMayBay
                 MessageBox.Show("Lỗi ghi.\n" + ex.Message, "", MessageBoxButtons.OK);
                 return;
             }
-            panelControl1.Enabled = true;
+            panelControl1.Enabled = false;
             gcDVBT.Enabled = true;
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
             btnGhi.Enabled = btnPhucHoi.Enabled = false;
@@ -179,23 +186,15 @@ namespace QuanLyMayBay
             }
         }
 
-        private void cmbNV_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                txtMaNV.Text = cmbNV.SelectedValue.ToString();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
 
         private void cmbMaDK_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                txtMaDK.Text = cmbMaDK.SelectedValue.ToString();
+                if (cmbMaDK.SelectedValue != null)
+                {
+                    txtMaDK.Text = cmbMaDK.SelectedValue.ToString();
+                }
             }
             catch (Exception ex)
             {
@@ -207,5 +206,12 @@ namespace QuanLyMayBay
         {
 
         }
+
+        private void txtMaNV_EditValueChanged(object sender, EventArgs e)
+        {
+            txtMaNV.Text = Program.username.ToString();
+        }
+
+
     }
 }

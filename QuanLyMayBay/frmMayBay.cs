@@ -31,6 +31,7 @@ namespace QuanLyMayBay
             this.cB_LOAIMAYBAYTableAdapter.Fill(this.DS.CB_LOAIMAYBAY);
 
             groupBox1.Enabled = false;
+
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

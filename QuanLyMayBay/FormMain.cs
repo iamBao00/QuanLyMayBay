@@ -277,5 +277,17 @@ namespace QuanLyMayBay
                 f.Show();
             }
         }
+
+        private void barButtonItem14_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormChuyenVe));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormChuyenVe f = new FormChuyenVe();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
     }
 }

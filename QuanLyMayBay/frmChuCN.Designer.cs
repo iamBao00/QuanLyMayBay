@@ -299,6 +299,8 @@
             this.tableAdapterManager.NHANVIENTableAdapter = null;
             this.tableAdapterManager.PHICONGTableAdapter = null;
             this.tableAdapterManager.SOHUUTableAdapter = null;
+            this.tableAdapterManager.ThongTinNhanVienTableAdapter = null;
+            this.tableAdapterManager.ThongTinPhiCongTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QuanLyMayBay.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // nGUOITableAdapter
@@ -482,7 +484,6 @@
             // txtMaChuN
             // 
             this.txtMaChuN.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNguoi, "MACHU", true));
-            this.txtMaChuN.Enabled = false;
             this.txtMaChuN.Location = new System.Drawing.Point(132, 150);
             this.txtMaChuN.MenuManager = this.barManager1;
             this.txtMaChuN.Name = "txtMaChuN";

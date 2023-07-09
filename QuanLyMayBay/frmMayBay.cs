@@ -36,7 +36,7 @@ namespace QuanLyMayBay
             this.sOHUUTableAdapter.Fill(this.DS.SOHUU);
             groupBox2.Enabled = groupBox1.Enabled = false;
             gcSOHUU.Enabled = true;
-            btnGHISH.Enabled = btnHUYSH.Enabled = false;
+            btnGHISH.Enabled = btnHUYSH.Enabled = btnGhi.Enabled = btnPhucHoi.Enabled=false;
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

@@ -824,6 +824,7 @@
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(156, 22);
             this.txtMaNV.TabIndex = 1;
+            this.txtMaNV.EditValueChanged += new System.EventHandler(this.txtMaNV_EditValueChanged);
             // 
             // bds_NhanVien
             // 

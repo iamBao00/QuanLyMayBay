@@ -211,14 +211,14 @@ namespace QuanLyMayBay
             if (MessageBox.Show("Bạn có thực sự muốn xóa phi công này!", "Xác nhận", MessageBoxButtons.OKCancel)
                 == DialogResult.OK)
             {
-                bds_ThongTinPhiCong.RemoveCurrent();
-                this.thongTinPhiCongTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.thongTinPhiCongTableAdapter.Update(this.dS.ThongTinPhiCong);
-
                 string xoaNV = "EXEC [dbo].[sp_XoaPhiCong] @MaPC =" + txtMaPC.Text;
                 Program.ExecSqlNonQuery(xoaNV);
                 string xoaNguoi = "EXEC [dbo].[sp_XoaNguoi] @CMND =" + txtCMND.Text;
                 Program.ExecSqlNonQuery(xoaNguoi);
+
+                bds_ThongTinPhiCong.RemoveCurrent();
+                this.thongTinPhiCongTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.thongTinPhiCongTableAdapter.Update(this.dS.ThongTinPhiCong);
 
             }
         }

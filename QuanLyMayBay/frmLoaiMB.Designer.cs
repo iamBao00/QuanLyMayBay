@@ -374,10 +374,10 @@
             this.groupBox1.Controls.Add(this.txtKieuDang);
             this.groupBox1.Controls.Add(mALOAILabel);
             this.groupBox1.Controls.Add(this.txtMaLoai);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 303);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 250);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(985, 170);
+            this.groupBox1.Size = new System.Drawing.Size(985, 223);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";

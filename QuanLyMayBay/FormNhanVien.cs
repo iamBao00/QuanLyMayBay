@@ -200,6 +200,7 @@ namespace QuanLyMayBay
             GC_TTNV.Enabled = true;
         }
 
+        
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             vitri = bds_ThongTinNhanVien.Position;
@@ -217,16 +218,23 @@ namespace QuanLyMayBay
             if (MessageBox.Show("Bạn có thực sự muốn xóa nhân viên này!", "Xác nhận", MessageBoxButtons.OKCancel)
                 == DialogResult.OK)
             {
+                string xoaNV = "EXEC [dbo].[sp_XoaNhanVien] @MaNV = " + txtMaNV.Text;
+                Program.ExecSqlNonQuery(xoaNV);
+                string xoaNguoi = "EXEC [dbo].[sp_XoaNguoi] @CMND = " + txtCMND.Text;
+                Program.ExecSqlNonQuery(xoaNguoi);
+
                 bds_ThongTinNhanVien.RemoveCurrent();
                 this.thongTinNhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.thongTinNhanVienTableAdapter.Update(this.dS.ThongTinNhanVien);
 
-                string xoaNV = "EXEC [dbo].[sp_XoaNhanVien] @MaNV =" + txtMaNV.Text;
-                Program.ExecSqlNonQuery(xoaNV);
-                string xoaNguoi = "EXEC [dbo].[sp_XoaNguoi] @CMND =" + txtCMND.Text ;
-                Program.ExecSqlNonQuery(xoaNguoi);
+                
                 
             }
+        }
+
+        private void txtMaNV_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

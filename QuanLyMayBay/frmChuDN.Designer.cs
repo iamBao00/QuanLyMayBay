@@ -260,6 +260,7 @@
             this.btnThoat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.Image")));
             this.btnThoat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnThoat.ImageOptions.LargeImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // barDockControlTop
@@ -480,7 +481,7 @@
             // txtMaChu
             // 
             this.txtMaChu.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsCMB, "MACHU", true));
-            this.txtMaChu.Location = new System.Drawing.Point(64, 31);
+            this.txtMaChu.Location = new System.Drawing.Point(80, 31);
             this.txtMaChu.MenuManager = this.barManager1;
             this.txtMaChu.Name = "txtMaChu";
             this.txtMaChu.Size = new System.Drawing.Size(82, 22);

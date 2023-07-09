@@ -39,6 +39,7 @@ namespace QuanLyMayBay
             this.mAYBAYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mAYBAYTableAdapter.Fill(this.DS.MAYBAY);
             
+            btnGhi.Enabled = btnPhucHoi.Enabled = false;
             
             
 
@@ -66,14 +67,14 @@ namespace QuanLyMayBay
             Int32 mal = 0;
             try
             {
-                mal = int.Parse(((DataRowView)bdsLMB[bdsLMB.Position])["MANHACHUA"].ToString());
+                mal = int.Parse(((DataRowView)bdsLMB[bdsLMB.Position])["MALOAI"].ToString());
                 bdsLMB.RemoveCurrent();
                 this.lOAIMAYBAYTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.lOAIMAYBAYTableAdapter.Update(this.DS.LOAIMAYBAY);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi xóa nhân viên. Bạn hãy xóa lại\n" + ex.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi xóa. Bạn hãy xóa lại\n" + ex.Message, "", MessageBoxButtons.OK);
                 this.lOAIMAYBAYTableAdapter.Fill(this.DS.LOAIMAYBAY);
                 bdsLMB.Position = bdsLMB.Find("MALOAI", mal);
                 return;

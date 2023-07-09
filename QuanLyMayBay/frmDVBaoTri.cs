@@ -41,7 +41,6 @@ namespace QuanLyMayBay
 
             this.getCacMayBayMaNhanVienChuyenVeTableAdapter.Connection.ConnectionString = Program.connstr;
             this.getCacMayBayMaNhanVienChuyenVeTableAdapter.Fill(this.DS.GetCacMayBayMaNhanVienChuyenVe, new System.Nullable<int>(((int)(System.Convert.ChangeType(Program.username, typeof(int))))));
-
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
             btnGhi.Enabled = btnPhucHoi.Enabled = false;
             panelControl1.Enabled = false;
@@ -52,16 +51,18 @@ namespace QuanLyMayBay
         {
             vitri = bdsDVBT.Position;
             dangThemMoi = true;
+            
             panelControl1.Enabled = true;
             gcDVBT.Enabled = false;
             bdsDVBT.AddNew();
+            txtMaNV.Text = Program.username;
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
         }
 
         private void btnHieuChinh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if(Program.username != maNVCheckSua.Text && Program.mGroup == "NHANVIEN")
+            if(Program.username != txtMaNV.Text)
             {
                 MessageBox.Show("Bạn không có quyền sửa thông tin DVBT của nhân viên này", "Xác nhận", MessageBoxButtons.OKCancel);
                 return;
@@ -75,7 +76,7 @@ namespace QuanLyMayBay
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (Program.username != maNVCheckSua.Text && Program.mGroup == "NHANVIEN")
+            if (Program.username != txtMaNV.Text)
             {
                 MessageBox.Show("Bạn không có quyền xóa thông tin DVBT của nhân viên này", "Xác nhận", MessageBoxButtons.OKCancel);
                 return;
@@ -108,6 +109,12 @@ namespace QuanLyMayBay
             {
                 MessageBox.Show("Mã đăng ký không được thiếu!", "", MessageBoxButtons.OK);
                 cmbMaDK.Focus();
+                return;
+            }
+            if (txtMaNV.Text.Trim() == "")
+            {
+                MessageBox.Show("Mã nhân viên bảo trì không được thiếu!", "", MessageBoxButtons.OK);
+                txtIDDVBT.Focus();
                 return;
             }
             if (txtIDDVBT.Text.Trim() == "")
@@ -207,11 +214,14 @@ namespace QuanLyMayBay
 
         }
 
-        private void txtMaNV_EditValueChanged(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
-            txtMaNV.Text = Program.username.ToString();
+
         }
 
-
+        private void maNVCheckSua_EditValueChanged(object sender, EventArgs e)
+        {
+            maNVCheckSua.Text = Program.username.ToString();
+        }
     }
 }

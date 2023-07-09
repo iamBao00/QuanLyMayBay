@@ -44,7 +44,7 @@ namespace QuanLyMayBay
                 btnTaoTaiKhoan.Enabled = true;
                 ribbonThongKe.Visible = true;
                 ribbonNhanVien.Visible = false;
-                ribbonNhanVien.Visible = true;
+                
             };
             if(Program.mGroup == "NHANVIEN") { 
                 ribbonNhanVien.Visible = true;

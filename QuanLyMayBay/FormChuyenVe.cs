@@ -36,6 +36,11 @@ namespace QuanLyMayBay
             btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
             btnGhi.Enabled = btnHuy.Enabled = false;
             cmb_Loai.Enabled = false;
+            if(Program.mGroup == "NHANVIEN")
+            {
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
+                btnGhi.Enabled = btnHuy.Enabled = false;
+            }
         }
 
         private void txtLoai_EditValueChanged(object sender, EventArgs e)

@@ -61,6 +61,8 @@
             this.colSOGIOBAOTRI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCONGVIEC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.txtMaNV = new DevExpress.XtraEditors.TextEdit();
+            this.label3 = new System.Windows.Forms.Label();
             this.maNVCheckSua = new DevExpress.XtraEditors.TextEdit();
             this.cmbMaDK = new System.Windows.Forms.ComboBox();
             this.getCacMayBayMaNhanVienChuyenVeBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -70,7 +72,6 @@
             this.txtSoGioBT = new DevExpress.XtraEditors.SpinEdit();
             this.dtpNgayGio = new DevExpress.XtraEditors.DateEdit();
             this.txtMaDK = new DevExpress.XtraEditors.TextEdit();
-            this.txtMaNV = new DevExpress.XtraEditors.TextEdit();
             this.txtIDDVBT = new DevExpress.XtraEditors.TextEdit();
             this.bdsMB = new System.Windows.Forms.BindingSource(this.components);
             this.bdsNV = new System.Windows.Forms.BindingSource(this.components);
@@ -86,6 +87,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maNVCheckSua.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getCacMayBayMaNhanVienChuyenVeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCongViec.Properties)).BeginInit();
@@ -93,7 +95,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayGio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayGio.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaDK.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDDVBT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNV)).BeginInit();
@@ -373,6 +374,8 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.txtMaNV);
+            this.panelControl1.Controls.Add(this.label3);
             this.panelControl1.Controls.Add(this.maNVCheckSua);
             this.panelControl1.Controls.Add(this.cmbMaDK);
             this.panelControl1.Controls.Add(this.label2);
@@ -384,7 +387,6 @@
             this.panelControl1.Controls.Add(nGAYGIOLabel);
             this.panelControl1.Controls.Add(this.dtpNgayGio);
             this.panelControl1.Controls.Add(this.txtMaDK);
-            this.panelControl1.Controls.Add(this.txtMaNV);
             this.panelControl1.Controls.Add(iDDVBTLabel);
             this.panelControl1.Controls.Add(this.txtIDDVBT);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -394,26 +396,47 @@
             this.panelControl1.TabIndex = 6;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
+            // txtMaNV
+            // 
+            this.txtMaNV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsDVBT, "MANV", true));
+            this.txtMaNV.Enabled = false;
+            this.txtMaNV.Location = new System.Drawing.Point(175, 64);
+            this.txtMaNV.MenuManager = this.barManager1;
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Size = new System.Drawing.Size(128, 22);
+            this.txtMaNV.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(63, 106);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 16);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "LOGIN:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // maNVCheckSua
             // 
             this.maNVCheckSua.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsDVBT, "MANV", true));
-            this.maNVCheckSua.Location = new System.Drawing.Point(863, 42);
+            this.maNVCheckSua.Enabled = false;
+            this.maNVCheckSua.Location = new System.Drawing.Point(175, 103);
             this.maNVCheckSua.MenuManager = this.barManager1;
             this.maNVCheckSua.Name = "maNVCheckSua";
-            this.maNVCheckSua.Size = new System.Drawing.Size(125, 22);
+            this.maNVCheckSua.Size = new System.Drawing.Size(128, 22);
             this.maNVCheckSua.TabIndex = 17;
-            this.maNVCheckSua.Visible = false;
+            this.maNVCheckSua.EditValueChanged += new System.EventHandler(this.maNVCheckSua_EditValueChanged);
             // 
             // cmbMaDK
             // 
             this.cmbMaDK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.getCacMayBayMaNhanVienChuyenVeBindingSource, "MADANGKY", true));
-            this.cmbMaDK.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsDVBT, "MADANGKY", true));
+            this.cmbMaDK.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.getCacMayBayMaNhanVienChuyenVeBindingSource, "MADANGKY", true));
             this.cmbMaDK.DataSource = this.getCacMayBayMaNhanVienChuyenVeBindingSource;
             this.cmbMaDK.DisplayMember = "MADANGKY";
             this.cmbMaDK.FormattingEnabled = true;
-            this.cmbMaDK.Location = new System.Drawing.Point(175, 106);
+            this.cmbMaDK.Location = new System.Drawing.Point(175, 141);
             this.cmbMaDK.Name = "cmbMaDK";
-            this.cmbMaDK.Size = new System.Drawing.Size(125, 24);
+            this.cmbMaDK.Size = new System.Drawing.Size(128, 24);
             this.cmbMaDK.TabIndex = 16;
             this.cmbMaDK.ValueMember = "MADANGKY";
             this.cmbMaDK.SelectedIndexChanged += new System.EventHandler(this.cmbMaDK_SelectedIndexChanged);
@@ -426,7 +449,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 106);
+            this.label2.Location = new System.Drawing.Point(74, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 16);
             this.label2.TabIndex = 13;
@@ -494,31 +517,20 @@
             // 
             this.txtMaDK.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsDVBT, "MADANGKY", true));
             this.txtMaDK.Enabled = false;
-            this.txtMaDK.Location = new System.Drawing.Point(175, 156);
+            this.txtMaDK.Location = new System.Drawing.Point(830, 143);
             this.txtMaDK.MenuManager = this.barManager1;
             this.txtMaDK.Name = "txtMaDK";
             this.txtMaDK.Size = new System.Drawing.Size(125, 22);
             this.txtMaDK.TabIndex = 5;
             this.txtMaDK.Visible = false;
             // 
-            // txtMaNV
-            // 
-            this.txtMaNV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsDVBT, "MANV", true));
-            this.txtMaNV.Enabled = false;
-            this.txtMaNV.Location = new System.Drawing.Point(178, 64);
-            this.txtMaNV.MenuManager = this.barManager1;
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(122, 22);
-            this.txtMaNV.TabIndex = 3;
-            this.txtMaNV.EditValueChanged += new System.EventHandler(this.txtMaNV_EditValueChanged);
-            // 
             // txtIDDVBT
             // 
             this.txtIDDVBT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsDVBT, "IDDVBT", true));
-            this.txtIDDVBT.Location = new System.Drawing.Point(178, 27);
+            this.txtIDDVBT.Location = new System.Drawing.Point(175, 27);
             this.txtIDDVBT.MenuManager = this.barManager1;
             this.txtIDDVBT.Name = "txtIDDVBT";
-            this.txtIDDVBT.Size = new System.Drawing.Size(121, 22);
+            this.txtIDDVBT.Size = new System.Drawing.Size(128, 22);
             this.txtIDDVBT.TabIndex = 1;
             // 
             // bdsMB
@@ -558,6 +570,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maNVCheckSua.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getCacMayBayMaNhanVienChuyenVeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCongViec.Properties)).EndInit();
@@ -565,7 +578,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayGio.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayGio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaDK.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDDVBT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNV)).EndInit();
@@ -600,7 +612,6 @@
         private DevExpress.XtraEditors.SpinEdit txtSoGioBT;
         private DevExpress.XtraEditors.DateEdit dtpNgayGio;
         private DevExpress.XtraEditors.TextEdit txtMaDK;
-        private DevExpress.XtraEditors.TextEdit txtMaNV;
         private DevExpress.XtraEditors.TextEdit txtIDDVBT;
         private DevExpress.XtraGrid.GridControl gcDVBT;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
@@ -618,5 +629,7 @@
         private DSTableAdapters.GetCacMayBayMaNhanVienChuyenVeTableAdapter getCacMayBayMaNhanVienChuyenVeTableAdapter;
         private System.Windows.Forms.ComboBox cmbMaDK;
         private DevExpress.XtraEditors.TextEdit maNVCheckSua;
+        private System.Windows.Forms.Label label3;
+        private DevExpress.XtraEditors.TextEdit txtMaNV;
     }
 }

@@ -87,6 +87,7 @@
             this.ribbonPageGroup13 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup14 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.L = new DevExpress.XtraBars.BarButtonItem();
             this.strip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
@@ -171,10 +172,11 @@
             this.btnDSNV,
             this.btnDSPC,
             this.btnDSDoanhNghiep,
-            this.barButtonItem14});
+            this.barButtonItem14,
+            this.L});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(12);
-            this.ribbonControl1.MaxItemId = 49;
+            this.ribbonControl1.MaxItemId = 51;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 1174;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -472,6 +474,7 @@
             // 
             this.ribbonPageGroup6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageGroup6.ImageOptions.Image")));
             this.ribbonPageGroup6.ItemLinks.Add(this.btnNhanVien);
+            this.ribbonPageGroup6.ItemLinks.Add(this.L);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             // 
             // ribbonPageGroup7
@@ -522,6 +525,14 @@
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
+            // L
+            // 
+            this.L.Caption = "Loại Chuyên Về";
+            this.L.Id = 50;
+            this.L.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("L.ImageOptions.Image")));
+            this.L.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("L.ImageOptions.LargeImage")));
+            this.L.Name = "L";
             // 
             // FormMain
             // 
@@ -605,6 +616,7 @@
         private DevExpress.XtraBars.BarButtonItem btnDSDoanhNghiep;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
         private DevExpress.XtraBars.BarButtonItem barButtonItem14;
+        private DevExpress.XtraBars.BarButtonItem L;
     }
 }
 

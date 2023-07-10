@@ -157,11 +157,31 @@ namespace QuanLyMayBay
 
                     if (result == 1)
                     {
-                        throw new Exception("Số CMND đã tồn tại!");
+                        MessageBox.Show("Số CMND của người này đã tồn tại", "Thông báo", MessageBoxButtons.OK);
+                        Program.myReader.Close();
+                        return;
+                    }
+                    else
+                    {
+                        Program.myReader.Close();
                     }
                     // KIEM TRA MA NV TON TAI (CHUA LAM)
+                    string checkMaNV = "exec [dbo].[sp_CheckTonTai] 'NHANVIEN', 'MANV'," + txtMaNV.Text;
 
-                    
+                    Program.myReader = Program.ExecSqlDataReader(checkMaNV);
+                    if (Program.myReader == null) { return; }
+                    Program.myReader.Read();
+                    if (Program.myReader.GetInt32(0) == 1)
+                    {
+                        MessageBox.Show("Mã nhân viên đã tồn tại", "Thông báo", MessageBoxButtons.OK);
+                        Program.myReader.Close();
+                        return;
+                    }
+                    else
+                    {
+                        Program.myReader.Close();
+                    }
+
 
                     // THEM VAO TABLE NHANVIEN va TABLE NGUOI
                     string themNguoi = "EXEC [dbo].[sp_ThemNguoi] @CMND =" + txtCMND.Text + ", @HoTen = N'" + txtHoTen.Text + "', @DiaChi = N'" + txtDiaChi.Text + "', @SoDienThoai = " + txtSDT.Text + ", @MaChu = null";

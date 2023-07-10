@@ -83,6 +83,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormBackUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBackUp.Designer.cs">
+      <DependentUpon>FormBackUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportChuCaNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportChuCaNhan.Designer.cs">
+      <DependentUpon>frmReportChuCaNhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormChuyenVe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +209,12 @@
     <Compile Include="frmReportPhiCong.Designer.cs">
       <DependentUpon>frmReportPhiCong.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRestore.designer.cs">
+      <DependentUpon>frmRestore.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTaoTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +235,12 @@
     <Compile Include="ReportDSDVBaoTri.Designer.cs">
       <DependentUpon>ReportDSDVBaoTri.cs</DependentUpon>
     </Compile>
+    <Compile Include="xrptReportChuCaNhan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="xrptReportChuCaNhan.Designer.cs">
+      <DependentUpon>xrptReportChuCaNhan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xrpt_reportnhanvien.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -229,6 +253,9 @@
     <Compile Include="Xrpt_reportPC.Designer.cs">
       <DependentUpon>Xrpt_reportPC.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormBackUp.resx">
+      <DependentUpon>FormBackUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormChuyenVe.resx">
       <DependentUpon>FormChuyenVe.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,6 +304,9 @@
     <EmbeddedResource Include="frmPhiCong.resx">
       <DependentUpon>frmPhiCong.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportChuCaNhan.resx">
+      <DependentUpon>frmReportChuCaNhan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReportDSDoanhNghiep.resx">
       <DependentUpon>frmReportDSDoanhNghiep.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportPhiCong.resx">
       <DependentUpon>frmReportPhiCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRestore.resx">
+      <DependentUpon>frmRestore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTaoTaiKhoan.resx">
       <DependentUpon>frmTaoTaiKhoan.cs</DependentUpon>
@@ -304,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportDSDVBaoTri.resx">
       <DependentUpon>ReportDSDVBaoTri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xrptReportChuCaNhan.resx">
+      <DependentUpon>xrptReportChuCaNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Xrpt_reportnhanvien.resx">
       <DependentUpon>Xrpt_reportnhanvien.cs</DependentUpon>

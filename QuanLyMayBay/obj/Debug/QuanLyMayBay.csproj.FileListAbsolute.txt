@@ -208,3 +208,7 @@ D:\QUANLYMAYBAY\QuanLyMayBay\obj\Debug\QuanLyMayBay.Xrpt_reportnhanvien.resource
 D:\QUANLYMAYBAY\QuanLyMayBay\obj\Debug\QuanLyMayBay.FormreportnhanVien.resources
 D:\QUANLYMAYBAY\QuanLyMayBay\obj\Debug\QuanLyMayBay.Xrpt_reportPC.resources
 D:\QUANLYMAYBAY\QuanLyMayBay\obj\Debug\QuanLyMayBay.FormLai.resources
+D:\QuanLyMayBay\QuanLyMayBay\obj\Debug\QuanLyMayBay.FormBackUp.resources
+D:\QUANLYMAYBAY\QuanLyMayBay\obj\Debug\QuanLyMayBay.frmReportChuCaNhan.resources
+D:\QUANLYMAYBAY\QuanLyMayBay\obj\Debug\QuanLyMayBay.xrptReportChuCaNhan.resources
+D:\QUANLYMAYBAY\QuanLyMayBay\obj\Debug\QuanLyMayBay.frmRestore.resources

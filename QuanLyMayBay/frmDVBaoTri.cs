@@ -111,6 +111,12 @@ namespace QuanLyMayBay
                 cmbMaDK.Focus();
                 return;
             }
+            if (txtMaDK.Text.Trim() == "")
+            {
+                MessageBox.Show("Mã đăng ký không được thiếu!", "", MessageBoxButtons.OK);
+                txtMaDK.Focus();
+                return;
+            }
             if (txtMaNV.Text.Trim() == "")
             {
                 MessageBox.Show("Mã nhân viên bảo trì không được thiếu!", "", MessageBoxButtons.OK);

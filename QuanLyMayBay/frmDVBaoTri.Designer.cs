@@ -67,7 +67,6 @@
             this.maNVCheckSua = new DevExpress.XtraEditors.TextEdit();
             this.cmbMaDK = new System.Windows.Forms.ComboBox();
             this.getCacMayBayMaNhanVienChuyenVeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsMB = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCongViec = new DevExpress.XtraEditors.TextEdit();
@@ -75,6 +74,7 @@
             this.dtpNgayGio = new DevExpress.XtraEditors.DateEdit();
             this.txtMaDK = new DevExpress.XtraEditors.TextEdit();
             this.txtIDDVBT = new DevExpress.XtraEditors.TextEdit();
+            this.bdsMB = new System.Windows.Forms.BindingSource(this.components);
             this.bdsNV = new System.Windows.Forms.BindingSource(this.components);
             this.getCacMayBayMaNhanVienChuyenVeTableAdapter = new QuanLyMayBay.DSTableAdapters.GetCacMayBayMaNhanVienChuyenVeTableAdapter();
             iDDVBTLabel = new System.Windows.Forms.Label();
@@ -91,13 +91,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maNVCheckSua.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getCacMayBayMaNhanVienChuyenVeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsMB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCongViec.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoGioBT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayGio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayGio.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaDK.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDDVBT.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsMB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -468,11 +468,6 @@
             this.getCacMayBayMaNhanVienChuyenVeBindingSource.DataMember = "GetCacMayBayMaNhanVienChuyenVe";
             this.getCacMayBayMaNhanVienChuyenVeBindingSource.DataSource = this.DS;
             // 
-            // bdsMB
-            // 
-            this.bdsMB.DataMember = "MAYBAY";
-            this.bdsMB.DataSource = this.DS;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -514,7 +509,7 @@
             this.txtSoGioBT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtSoGioBT.Properties.MaxValue = new decimal(new int[] {
-            8,
+            24,
             0,
             0,
             0});
@@ -560,6 +555,11 @@
             this.txtIDDVBT.Size = new System.Drawing.Size(128, 22);
             this.txtIDDVBT.TabIndex = 1;
             // 
+            // bdsMB
+            // 
+            this.bdsMB.DataMember = "MAYBAY";
+            this.bdsMB.DataSource = this.DS;
+            // 
             // bdsNV
             // 
             this.bdsNV.DataMember = "NHANVIEN";
@@ -595,13 +595,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maNVCheckSua.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getCacMayBayMaNhanVienChuyenVeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsMB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCongViec.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoGioBT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayGio.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNgayGio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaDK.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDDVBT.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsMB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

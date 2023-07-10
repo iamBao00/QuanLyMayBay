@@ -11,8 +11,6 @@ using DevExpress.XtraBars;
 using DevExpress.XtraRichEdit.Model;
 using System.Threading.Tasks;
 
-
-
 namespace QuanLyMayBay
 {
     public partial class FormMain : DevExpress.XtraBars.Ribbon.RibbonForm
@@ -44,7 +42,7 @@ namespace QuanLyMayBay
                 btnTaoTaiKhoan.Enabled = true;
                 ribbonThongKe.Visible = true;
                 ribbonNhanVien.Visible = false;
-                
+                ribbonPage2.Visible = true;
             };
             if(Program.mGroup == "NHANVIEN") { 
                 ribbonNhanVien.Visible = true;
@@ -94,6 +92,7 @@ namespace QuanLyMayBay
             ribbonAdmin.Visible = false;
             ribbonNhanVien.Visible = false;
             ribbonThongKe.Visible = false;
+            ribbonPage2.Visible = false;
         }
 
         private void barButtonItemDangXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -104,6 +103,7 @@ namespace QuanLyMayBay
             ribbonAdmin.Visible=false;
             ribbonNhanVien.Visible = false;
             ribbonThongKe.Visible =false;
+            ribbonPage2.Visible = false;
         }
 
         private void btnLoaiMB_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -313,6 +313,42 @@ namespace QuanLyMayBay
             {
                 FormLai f = new FormLai();
                 f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void btnFormBackUp_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(FormBackUp));
+            if (frm != null) frm.Activate();
+            else
+            {
+                FormBackUp f = new FormBackUp();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem16_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmRestore));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmRestore f = new frmRestore();
+                f.MdiParent = this;
+                f.Show();
+            }
+        }
+
+        private void barButtonItem18_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(frmReportChuCaNhan));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmReportChuCaNhan f = new frmReportChuCaNhan();
+                
                 f.Show();
             }
         }

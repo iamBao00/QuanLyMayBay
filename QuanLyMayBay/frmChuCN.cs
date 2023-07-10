@@ -149,8 +149,8 @@ namespace QuanLyMayBay
 
         private void btnThemN_Click(object sender, EventArgs e)
         {
-            btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnPhucHoi.Enabled = btnGhi.Enabled = false; 
-            btnThoat.Enabled = true;
+            btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled =  btnGhi.Enabled = false;
+            btnPhucHoi.Enabled = btnThoat.Enabled = true;
             
             bdsNguoi.AddNew();
             txtMaChuN.Text = txtMaChu.Text;
@@ -226,6 +226,27 @@ namespace QuanLyMayBay
             }
             try
             {
+                if(txtMaChuN.Text != "")
+                {
+                    string checkMaChu = "exec [dbo].[sp_CheckTonTai] 'NGUOI', 'MACHU'," + txtMaChuN.Text;
+
+                    Program.myReader = Program.ExecSqlDataReader(checkMaChu);
+                    if (Program.myReader == null) { return; }
+                    Program.myReader.Read();
+                    if (Program.myReader.GetInt32(0) == 1)
+                    {
+                        MessageBox.Show("Mã chủ đã tồn tại", "Thông báo", MessageBoxButtons.OK);
+                        Program.myReader.Close();
+                        btnThemN.Enabled = btnXoaN.Enabled = btnHieuChinhN.Enabled = true;
+                        btnGhiN.Enabled = btnPhucHoiN.Enabled = false;
+                        return;
+                    }
+                    else
+                    {
+                        Program.myReader.Close();
+                    }
+                }
+
                 bdsNguoi.EndEdit();
                 bdsNguoi.ResetCurrentItem();
                 this.nGUOITableAdapter.Connection.ConnectionString = Program.connstr;

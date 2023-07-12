@@ -109,6 +109,9 @@ namespace QuanLyMayBay
 
         private void frmTaoTaiKhoan_Load(object sender, EventArgs e)
         {
+            dS.EnforceConstraints = false;
+            this.v_DanhSachTaiKhoanTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.v_DanhSachTaiKhoanTableAdapter.Fill(this.dS.V_DanhSachTaiKhoan);
             if (Program.mGroup == "NHANVIEN")
             {
                 rbNhanVien.Visible = false;
@@ -121,6 +124,23 @@ namespace QuanLyMayBay
                 rbNhanVien.Visible = true;
             }
 
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.v_DanhSachTaiKhoanTableAdapter.Fill(this.dS.V_DanhSachTaiKhoan);
+                txtMaNV.Text = "";
+                txtTaiKhoan.Text = "";
+                txtMatKhau.Text = "";
+                txtXacNhanMK.Text = "";               
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Reload :" + ex.Message, "", MessageBoxButtons.OK);
+
+            }
         }
     }
 }

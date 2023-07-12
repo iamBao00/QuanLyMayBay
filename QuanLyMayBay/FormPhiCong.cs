@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -30,17 +31,13 @@ namespace QuanLyMayBay
 
         private void FormPhiCong_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dS.LOAIMAYBAY' table. You can move, or remove it, as needed.
-            this.lOAIMAYBAYTableAdapter.Fill(this.dS.LOAIMAYBAY);
-            // TODO: This line of code loads data into the 'dS.LAI' table. You can move, or remove it, as needed.
-
             dS.EnforceConstraints = false;
-
-
             this.thongTinPhiCongTableAdapter.Connection.ConnectionString = Program.connstr;
             this.thongTinPhiCongTableAdapter.Fill(this.dS.ThongTinPhiCong);
             this.lAITableAdapter.Connection.ConnectionString = Program.connstr;
             this.lAITableAdapter.Fill(this.dS.LAI);
+            this.lOAIMAYBAYTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.lOAIMAYBAYTableAdapter.Fill(this.dS.LOAIMAYBAY);
             GC_TTPC.Enabled = true;
             panelControl1.Enabled = false;
             btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnReload.Enabled = btnThoat.Enabled = true;
@@ -54,6 +51,8 @@ namespace QuanLyMayBay
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+           
+
             dangThemMoi = 1;
             txtMaPC.Enabled = true;
             txtCMND.Enabled = true;
@@ -63,6 +62,14 @@ namespace QuanLyMayBay
             btnGhi.Enabled = btnHuy.Enabled = true;
             GC_TTPC.Enabled = false;
             bds_ThongTinPhiCong.AddNew();
+            String strLenh = "DECLARE @ma int = DBO.UDF_TangMaPhiCong() " + "SELECT @MA";
+
+            Program.myReader = Program.ExecSqlDataReader(strLenh);
+            if (Program.myReader == null) return;
+            Program.myReader.Read();
+            txtMaPC.Text = Program.myReader.GetInt32(0).ToString();
+            Program.myReader.Close();
+            Program.conn.Close();
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -174,7 +181,7 @@ namespace QuanLyMayBay
                         Program.myReader.Close();
                     }
                     // KIEM TRA MA NV TON TAI (CHUA LAM)
-                    string checkMaPC = "exec [dbo].[sp_CheckTonTai] 'PHICONG', 'MAPC'," + txtMaPC.Text;
+                    string checkMaPC = "exec [dbo].[sp_CheckTonTai] 'PHICONG', 'MAPHICONG'," + txtMaPC.Text;
 
                     Program.myReader = Program.ExecSqlDataReader(checkMaPC);
                     if (Program.myReader == null) { return; }

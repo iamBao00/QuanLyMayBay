@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using System.Data.SqlClient;
+
 
 namespace QuanLyMayBay
 {
@@ -39,6 +42,7 @@ namespace QuanLyMayBay
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            
             vitri = bdsCMB.Position;
             dangThemMoi = true;
             panelControl1.Enabled = true;
@@ -48,6 +52,34 @@ namespace QuanLyMayBay
             bdsCMB.AddNew();
             btnThem.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
+            /*try
+            {
+                String strLenh = "DECLARE @ma int = DBO.UDF_TangMaChu() " + "SELECT @MA";
+
+                Program.myReader = Program.ExecSqlDataReader(strLenh);
+                if (Program.myReader == null) return;
+                Program.myReader.Read();
+                txtMaChu.Text = Program.myReader.GetDouble(0).ToString();
+                Program.myReader.Close();
+                Program.conn.Close();
+
+            }
+            catch (Exception ex)
+            {
+                bdsCMB.EndEdit();
+                bdsCMB.RemoveCurrent();
+                MessageBox.Show("Không thể kết nối. " + ex.Message, "Thông báo", MessageBoxButtons.OK);
+                Program.conn.Close();
+                return;
+            }*/
+            String strLenh = "DECLARE @ma int = DBO.UDF_TangMaChu() " + "SELECT @MA";
+
+            Program.myReader = Program.ExecSqlDataReader(strLenh);
+            if (Program.myReader == null) return;
+            Program.myReader.Read();
+            txtMaChu.Text = Program.myReader.GetInt32(0).ToString();
+            Program.myReader.Close();
+            Program.conn.Close();
         }
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -123,7 +123,8 @@
             // sOCMNDLabel
             // 
             sOCMNDLabel.AutoSize = true;
-            sOCMNDLabel.Location = new System.Drawing.Point(19, 23);
+            sOCMNDLabel.Location = new System.Drawing.Point(24, 29);
+            sOCMNDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             sOCMNDLabel.Name = "sOCMNDLabel";
             sOCMNDLabel.Size = new System.Drawing.Size(65, 16);
             sOCMNDLabel.TabIndex = 0;
@@ -132,7 +133,8 @@
             // hOTENLabel
             // 
             hOTENLabel.AutoSize = true;
-            hOTENLabel.Location = new System.Drawing.Point(30, 61);
+            hOTENLabel.Location = new System.Drawing.Point(38, 76);
+            hOTENLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             hOTENLabel.Name = "hOTENLabel";
             hOTENLabel.Size = new System.Drawing.Size(49, 16);
             hOTENLabel.TabIndex = 2;
@@ -141,7 +143,8 @@
             // dIACHILabel
             // 
             dIACHILabel.AutoSize = true;
-            dIACHILabel.Location = new System.Drawing.Point(30, 99);
+            dIACHILabel.Location = new System.Drawing.Point(38, 124);
+            dIACHILabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             dIACHILabel.Name = "dIACHILabel";
             dIACHILabel.Size = new System.Drawing.Size(51, 16);
             dIACHILabel.TabIndex = 4;
@@ -150,7 +153,8 @@
             // sODIENTHOAILabel
             // 
             sODIENTHOAILabel.AutoSize = true;
-            sODIENTHOAILabel.Location = new System.Drawing.Point(43, 139);
+            sODIENTHOAILabel.Location = new System.Drawing.Point(54, 174);
+            sODIENTHOAILabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             sODIENTHOAILabel.Name = "sODIENTHOAILabel";
             sODIENTHOAILabel.Size = new System.Drawing.Size(36, 16);
             sODIENTHOAILabel.TabIndex = 6;
@@ -159,7 +163,8 @@
             // sOCMNDLabel1
             // 
             sOCMNDLabel1.AutoSize = true;
-            sOCMNDLabel1.Location = new System.Drawing.Point(37, 23);
+            sOCMNDLabel1.Location = new System.Drawing.Point(46, 29);
+            sOCMNDLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             sOCMNDLabel1.Name = "sOCMNDLabel1";
             sOCMNDLabel1.Size = new System.Drawing.Size(65, 16);
             sOCMNDLabel1.TabIndex = 0;
@@ -168,7 +173,8 @@
             // mASOBANGLabel
             // 
             mASOBANGLabel.AutoSize = true;
-            mASOBANGLabel.Location = new System.Drawing.Point(22, 60);
+            mASOBANGLabel.Location = new System.Drawing.Point(28, 75);
+            mASOBANGLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mASOBANGLabel.Name = "mASOBANGLabel";
             mASOBANGLabel.Size = new System.Drawing.Size(78, 16);
             mASOBANGLabel.TabIndex = 2;
@@ -177,7 +183,8 @@
             // nGAYCAPLabel
             // 
             nGAYCAPLabel.AutoSize = true;
-            nGAYCAPLabel.Location = new System.Drawing.Point(34, 98);
+            nGAYCAPLabel.Location = new System.Drawing.Point(42, 122);
+            nGAYCAPLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             nGAYCAPLabel.Name = "nGAYCAPLabel";
             nGAYCAPLabel.Size = new System.Drawing.Size(64, 16);
             nGAYCAPLabel.TabIndex = 4;
@@ -186,7 +193,8 @@
             // mAPHICONGLabel
             // 
             mAPHICONGLabel.AutoSize = true;
-            mAPHICONGLabel.Location = new System.Drawing.Point(16, 136);
+            mAPHICONGLabel.Location = new System.Drawing.Point(20, 170);
+            mAPHICONGLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mAPHICONGLabel.Name = "mAPHICONGLabel";
             mAPHICONGLabel.Size = new System.Drawing.Size(81, 16);
             mAPHICONGLabel.TabIndex = 6;
@@ -337,6 +345,8 @@
             this.tableAdapterManager.NHANVIENTableAdapter = null;
             this.tableAdapterManager.PHICONGTableAdapter = this.pHICONGTableAdapter;
             this.tableAdapterManager.SOHUUTableAdapter = null;
+            this.tableAdapterManager.ThongTinNhanVienTableAdapter = null;
+            this.tableAdapterManager.ThongTinPhiCongTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QuanLyMayBay.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // pHICONGTableAdapter
@@ -347,11 +357,13 @@
             // 
             this.gcNguoi.DataSource = this.bdsNguoi;
             this.gcNguoi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gcNguoi.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcNguoi.Location = new System.Drawing.Point(0, 25);
             this.gcNguoi.MainView = this.gridView1;
+            this.gcNguoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gcNguoi.MenuManager = this.barManager1;
             this.gcNguoi.Name = "gcNguoi";
-            this.gcNguoi.Size = new System.Drawing.Size(1081, 159);
+            this.gcNguoi.Size = new System.Drawing.Size(1081, 199);
             this.gcNguoi.TabIndex = 5;
             this.gcNguoi.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -364,53 +376,54 @@
             this.colDIACHI,
             this.colSODIENTHOAI,
             this.colMACHU});
+            this.gridView1.DetailHeight = 437;
             this.gridView1.GridControl = this.gcNguoi;
             this.gridView1.Name = "gridView1";
             // 
             // colSOCMND
             // 
             this.colSOCMND.FieldName = "SOCMND";
-            this.colSOCMND.MinWidth = 25;
+            this.colSOCMND.MinWidth = 31;
             this.colSOCMND.Name = "colSOCMND";
             this.colSOCMND.Visible = true;
             this.colSOCMND.VisibleIndex = 0;
-            this.colSOCMND.Width = 94;
+            this.colSOCMND.Width = 117;
             // 
             // colHOTEN
             // 
             this.colHOTEN.FieldName = "HOTEN";
-            this.colHOTEN.MinWidth = 25;
+            this.colHOTEN.MinWidth = 31;
             this.colHOTEN.Name = "colHOTEN";
             this.colHOTEN.Visible = true;
             this.colHOTEN.VisibleIndex = 1;
-            this.colHOTEN.Width = 94;
+            this.colHOTEN.Width = 117;
             // 
             // colDIACHI
             // 
             this.colDIACHI.FieldName = "DIACHI";
-            this.colDIACHI.MinWidth = 25;
+            this.colDIACHI.MinWidth = 31;
             this.colDIACHI.Name = "colDIACHI";
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 2;
-            this.colDIACHI.Width = 94;
+            this.colDIACHI.Width = 117;
             // 
             // colSODIENTHOAI
             // 
             this.colSODIENTHOAI.FieldName = "SODIENTHOAI";
-            this.colSODIENTHOAI.MinWidth = 25;
+            this.colSODIENTHOAI.MinWidth = 31;
             this.colSODIENTHOAI.Name = "colSODIENTHOAI";
             this.colSODIENTHOAI.Visible = true;
             this.colSODIENTHOAI.VisibleIndex = 3;
-            this.colSODIENTHOAI.Width = 94;
+            this.colSODIENTHOAI.Width = 117;
             // 
             // colMACHU
             // 
             this.colMACHU.FieldName = "MACHU";
-            this.colMACHU.MinWidth = 25;
+            this.colMACHU.MinWidth = 31;
             this.colMACHU.Name = "colMACHU";
             this.colMACHU.Visible = true;
             this.colMACHU.VisibleIndex = 4;
-            this.colMACHU.Width = 94;
+            this.colMACHU.Width = 117;
             // 
             // panelControl1
             // 
@@ -423,45 +436,50 @@
             this.panelControl1.Controls.Add(sOCMNDLabel);
             this.panelControl1.Controls.Add(this.txtSCMND);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl1.Location = new System.Drawing.Point(0, 184);
+            this.panelControl1.Location = new System.Drawing.Point(0, 224);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(241, 227);
+            this.panelControl1.Size = new System.Drawing.Size(301, 187);
             this.panelControl1.TabIndex = 6;
             // 
             // txtSDT
             // 
             this.txtSDT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNguoi, "SODIENTHOAI", true));
-            this.txtSDT.Location = new System.Drawing.Point(99, 133);
+            this.txtSDT.Location = new System.Drawing.Point(124, 166);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSDT.MenuManager = this.barManager1;
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(125, 22);
+            this.txtSDT.Size = new System.Drawing.Size(156, 22);
             this.txtSDT.TabIndex = 7;
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNguoi, "DIACHI", true));
-            this.txtDiaChi.Location = new System.Drawing.Point(99, 96);
+            this.txtDiaChi.Location = new System.Drawing.Point(124, 120);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDiaChi.MenuManager = this.barManager1;
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(125, 22);
+            this.txtDiaChi.Size = new System.Drawing.Size(156, 22);
             this.txtDiaChi.TabIndex = 5;
             // 
             // txtHoTen
             // 
             this.txtHoTen.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNguoi, "HOTEN", true));
-            this.txtHoTen.Location = new System.Drawing.Point(99, 58);
+            this.txtHoTen.Location = new System.Drawing.Point(124, 72);
+            this.txtHoTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtHoTen.MenuManager = this.barManager1;
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(125, 22);
+            this.txtHoTen.Size = new System.Drawing.Size(156, 22);
             this.txtHoTen.TabIndex = 3;
             // 
             // txtSCMND
             // 
             this.txtSCMND.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsNguoi, "SOCMND", true));
-            this.txtSCMND.Location = new System.Drawing.Point(99, 20);
+            this.txtSCMND.Location = new System.Drawing.Point(124, 25);
+            this.txtSCMND.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSCMND.MenuManager = this.barManager1;
             this.txtSCMND.Name = "txtSCMND";
-            this.txtSCMND.Size = new System.Drawing.Size(125, 22);
+            this.txtSCMND.Size = new System.Drawing.Size(156, 22);
             this.txtSCMND.TabIndex = 1;
             // 
             // panelControl2
@@ -475,19 +493,22 @@
             this.panelControl2.Controls.Add(sOCMNDLabel1);
             this.panelControl2.Controls.Add(this.txtSCMNDPC);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl2.Location = new System.Drawing.Point(241, 184);
+            this.panelControl2.Location = new System.Drawing.Point(301, 224);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(286, 227);
+            this.panelControl2.Size = new System.Drawing.Size(358, 187);
             this.panelControl2.TabIndex = 7;
             // 
             // txtMaPC
             // 
             this.txtMaPC.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsPC, "MAPHICONG", true));
-            this.txtMaPC.Location = new System.Drawing.Point(128, 133);
+            this.txtMaPC.Location = new System.Drawing.Point(160, 166);
+            this.txtMaPC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaPC.MenuManager = this.barManager1;
             this.txtMaPC.Name = "txtMaPC";
-            this.txtMaPC.Size = new System.Drawing.Size(125, 22);
+            this.txtMaPC.Size = new System.Drawing.Size(156, 22);
             this.txtMaPC.TabIndex = 7;
+            this.txtMaPC.EditValueChanged += new System.EventHandler(this.txtMaPC_EditValueChanged);
             // 
             // bdsPC
             // 
@@ -498,33 +519,36 @@
             // 
             this.dtpNgay.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsPC, "NGAYCAP", true));
             this.dtpNgay.EditValue = null;
-            this.dtpNgay.Location = new System.Drawing.Point(128, 95);
+            this.dtpNgay.Location = new System.Drawing.Point(160, 119);
+            this.dtpNgay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpNgay.MenuManager = this.barManager1;
             this.dtpNgay.Name = "dtpNgay";
             this.dtpNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dtpNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dtpNgay.Size = new System.Drawing.Size(125, 22);
+            this.dtpNgay.Size = new System.Drawing.Size(156, 22);
             this.dtpNgay.TabIndex = 5;
             // 
             // txtMaSoBang
             // 
             this.txtMaSoBang.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsPC, "MASOBANG", true));
-            this.txtMaSoBang.Location = new System.Drawing.Point(128, 57);
+            this.txtMaSoBang.Location = new System.Drawing.Point(160, 71);
+            this.txtMaSoBang.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMaSoBang.MenuManager = this.barManager1;
             this.txtMaSoBang.Name = "txtMaSoBang";
-            this.txtMaSoBang.Size = new System.Drawing.Size(125, 22);
+            this.txtMaSoBang.Size = new System.Drawing.Size(156, 22);
             this.txtMaSoBang.TabIndex = 3;
             // 
             // txtSCMNDPC
             // 
             this.txtSCMNDPC.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsPC, "SOCMND", true));
             this.txtSCMNDPC.Enabled = false;
-            this.txtSCMNDPC.Location = new System.Drawing.Point(128, 20);
+            this.txtSCMNDPC.Location = new System.Drawing.Point(160, 25);
+            this.txtSCMNDPC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSCMNDPC.MenuManager = this.barManager1;
             this.txtSCMNDPC.Name = "txtSCMNDPC";
-            this.txtSCMNDPC.Size = new System.Drawing.Size(125, 22);
+            this.txtSCMNDPC.Size = new System.Drawing.Size(156, 22);
             this.txtSCMNDPC.TabIndex = 1;
             // 
             // contextMenuStrip1
@@ -600,11 +624,11 @@
             this.gcPC.ContextMenuStrip = this.contextMenuStrip1;
             this.gcPC.DataSource = this.pHICONGBindingSource;
             this.gcPC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcPC.Location = new System.Drawing.Point(527, 184);
+            this.gcPC.Location = new System.Drawing.Point(659, 224);
             this.gcPC.Name = "gcPC";
             this.gcPC.RowHeadersWidth = 51;
             this.gcPC.RowTemplate.Height = 24;
-            this.gcPC.Size = new System.Drawing.Size(554, 227);
+            this.gcPC.Size = new System.Drawing.Size(422, 187);
             this.gcPC.TabIndex = 15;
             // 
             // dataGridViewTextBoxColumn1

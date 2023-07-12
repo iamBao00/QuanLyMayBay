@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLai));
             System.Windows.Forms.Label mALOAILabel;
             System.Windows.Forms.Label mAPHICONGLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLai));
             this.barManager2 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar12 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -49,6 +49,8 @@
             this.bdsPC = new System.Windows.Forms.BindingSource(this.components);
             this.pHICONGTableAdapter = new QuanLyMayBay.DSTableAdapters.PHICONGTableAdapter();
             this.tableAdapterManager = new QuanLyMayBay.DSTableAdapters.TableAdapterManager();
+            this.lAITableAdapter = new QuanLyMayBay.DSTableAdapters.LAITableAdapter();
+            this.lOAIMAYBAYTableAdapter = new QuanLyMayBay.DSTableAdapters.LOAIMAYBAYTableAdapter();
             this.pHICONGGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colSOCMND = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,20 +58,18 @@
             this.colNGAYCAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAPHICONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMAPC = new DevExpress.XtraEditors.TextEdit();
             this.bdsLAI = new System.Windows.Forms.BindingSource(this.components);
-            this.lAITableAdapter = new QuanLyMayBay.DSTableAdapters.LAITableAdapter();
+            this.txtMALOAI = new DevExpress.XtraEditors.TextEdit();
+            this.cmbLMB = new System.Windows.Forms.ComboBox();
+            this.cB_LOAIMAYBAYBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.bdsLOAIMB = new System.Windows.Forms.BindingSource(this.components);
+            this.cB_LOAIMAYBAYTableAdapter = new QuanLyMayBay.DSTableAdapters.CB_LOAIMAYBAYTableAdapter();
             this.lAIGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMALOAI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAPHICONG1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.txtMALOAI = new DevExpress.XtraEditors.TextEdit();
-            this.txtMAPC = new DevExpress.XtraEditors.TextEdit();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cmbLMB = new System.Windows.Forms.ComboBox();
-            this.bdsLOAIMB = new System.Windows.Forms.BindingSource(this.components);
-            this.lOAIMAYBAYTableAdapter = new QuanLyMayBay.DSTableAdapters.LOAIMAYBAYTableAdapter();
-            this.cB_LOAIMAYBAYBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cB_LOAIMAYBAYTableAdapter = new QuanLyMayBay.DSTableAdapters.CB_LOAIMAYBAYTableAdapter();
             mALOAILabel = new System.Windows.Forms.Label();
             mAPHICONGLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager2)).BeginInit();
@@ -78,14 +78,32 @@
             ((System.ComponentModel.ISupportInitialize)(this.pHICONGGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMAPC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLAI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMALOAI.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cB_LOAIMAYBAYBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLOAIMB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lAIGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMALOAI.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMAPC.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLOAIMB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cB_LOAIMAYBAYBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // mALOAILabel
+            // 
+            mALOAILabel.AutoSize = true;
+            mALOAILabel.Location = new System.Drawing.Point(26, 127);
+            mALOAILabel.Name = "mALOAILabel";
+            mALOAILabel.Size = new System.Drawing.Size(59, 16);
+            mALOAILabel.TabIndex = 5;
+            mALOAILabel.Text = "MALOAI:";
+            // 
+            // mAPHICONGLabel
+            // 
+            mAPHICONGLabel.AutoSize = true;
+            mAPHICONGLabel.Location = new System.Drawing.Point(23, 33);
+            mAPHICONGLabel.Name = "mAPHICONGLabel";
+            mAPHICONGLabel.Size = new System.Drawing.Size(91, 16);
+            mAPHICONGLabel.TabIndex = 6;
+            mAPHICONGLabel.Text = "MAPHICONG:";
             // 
             // barManager2
             // 
@@ -189,16 +207,16 @@
             this.barDockControl4.Location = new System.Drawing.Point(0, 0);
             this.barDockControl4.Manager = this.barManager2;
             this.barDockControl4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControl4.Size = new System.Drawing.Size(822, 30);
+            this.barDockControl4.Size = new System.Drawing.Size(1237, 30);
             // 
             // barDockControl5
             // 
             this.barDockControl5.CausesValidation = false;
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl5.Location = new System.Drawing.Point(0, 491);
+            this.barDockControl5.Location = new System.Drawing.Point(0, 796);
             this.barDockControl5.Manager = this.barManager2;
             this.barDockControl5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControl5.Size = new System.Drawing.Size(822, 0);
+            this.barDockControl5.Size = new System.Drawing.Size(1237, 0);
             // 
             // barDockControl6
             // 
@@ -207,16 +225,16 @@
             this.barDockControl6.Location = new System.Drawing.Point(0, 30);
             this.barDockControl6.Manager = this.barManager2;
             this.barDockControl6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControl6.Size = new System.Drawing.Size(0, 461);
+            this.barDockControl6.Size = new System.Drawing.Size(0, 766);
             // 
             // barDockControl8
             // 
             this.barDockControl8.CausesValidation = false;
             this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl8.Location = new System.Drawing.Point(822, 30);
+            this.barDockControl8.Location = new System.Drawing.Point(1237, 30);
             this.barDockControl8.Manager = this.barManager2;
             this.barDockControl8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.barDockControl8.Size = new System.Drawing.Size(0, 461);
+            this.barDockControl8.Size = new System.Drawing.Size(0, 766);
             // 
             // dS
             // 
@@ -251,15 +269,25 @@
             this.tableAdapterManager.ThongTinPhiCongTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QuanLyMayBay.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // lAITableAdapter
+            // 
+            this.lAITableAdapter.ClearBeforeFill = true;
+            // 
+            // lOAIMAYBAYTableAdapter
+            // 
+            this.lOAIMAYBAYTableAdapter.ClearBeforeFill = true;
+            // 
             // pHICONGGridControl
             // 
             this.pHICONGGridControl.DataSource = this.bdsPC;
             this.pHICONGGridControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pHICONGGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.pHICONGGridControl.Location = new System.Drawing.Point(0, 30);
             this.pHICONGGridControl.MainView = this.gridView1;
+            this.pHICONGGridControl.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.pHICONGGridControl.MenuManager = this.barManager2;
             this.pHICONGGridControl.Name = "pHICONGGridControl";
-            this.pHICONGGridControl.Size = new System.Drawing.Size(822, 220);
+            this.pHICONGGridControl.Size = new System.Drawing.Size(1237, 344);
             this.pHICONGGridControl.TabIndex = 5;
             this.pHICONGGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -271,148 +299,103 @@
             this.colMASOBANG,
             this.colNGAYCAP,
             this.colMAPHICONG});
+            this.gridView1.DetailHeight = 546;
             this.gridView1.GridControl = this.pHICONGGridControl;
             this.gridView1.Name = "gridView1";
             // 
             // colSOCMND
             // 
             this.colSOCMND.FieldName = "SOCMND";
-            this.colSOCMND.MinWidth = 25;
+            this.colSOCMND.MinWidth = 39;
             this.colSOCMND.Name = "colSOCMND";
             this.colSOCMND.Visible = true;
             this.colSOCMND.VisibleIndex = 0;
-            this.colSOCMND.Width = 94;
+            this.colSOCMND.Width = 146;
             // 
             // colMASOBANG
             // 
             this.colMASOBANG.FieldName = "MASOBANG";
-            this.colMASOBANG.MinWidth = 25;
+            this.colMASOBANG.MinWidth = 39;
             this.colMASOBANG.Name = "colMASOBANG";
             this.colMASOBANG.Visible = true;
             this.colMASOBANG.VisibleIndex = 1;
-            this.colMASOBANG.Width = 94;
+            this.colMASOBANG.Width = 146;
             // 
             // colNGAYCAP
             // 
             this.colNGAYCAP.FieldName = "NGAYCAP";
-            this.colNGAYCAP.MinWidth = 25;
+            this.colNGAYCAP.MinWidth = 39;
             this.colNGAYCAP.Name = "colNGAYCAP";
             this.colNGAYCAP.Visible = true;
             this.colNGAYCAP.VisibleIndex = 2;
-            this.colNGAYCAP.Width = 94;
+            this.colNGAYCAP.Width = 146;
             // 
             // colMAPHICONG
             // 
             this.colMAPHICONG.FieldName = "MAPHICONG";
-            this.colMAPHICONG.MinWidth = 25;
+            this.colMAPHICONG.MinWidth = 39;
             this.colMAPHICONG.Name = "colMAPHICONG";
             this.colMAPHICONG.Visible = true;
             this.colMAPHICONG.VisibleIndex = 3;
-            this.colMAPHICONG.Width = 94;
+            this.colMAPHICONG.Width = 146;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cmbLMB);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(mAPHICONGLabel);
             this.groupBox1.Controls.Add(this.txtMAPC);
             this.groupBox1.Controls.Add(mALOAILabel);
             this.groupBox1.Controls.Add(this.txtMALOAI);
+            this.groupBox1.Controls.Add(this.cmbLMB);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox1.Location = new System.Drawing.Point(0, 250);
+            this.groupBox1.Location = new System.Drawing.Point(0, 374);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(569, 241);
+            this.groupBox1.Size = new System.Drawing.Size(583, 422);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
+            // 
+            // txtMAPC
+            // 
+            this.txtMAPC.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLAI, "MAPHICONG", true));
+            this.txtMAPC.Location = new System.Drawing.Point(121, 30);
+            this.txtMAPC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMAPC.MenuManager = this.barManager2;
+            this.txtMAPC.Name = "txtMAPC";
+            this.txtMAPC.Size = new System.Drawing.Size(156, 22);
+            this.txtMAPC.TabIndex = 7;
             // 
             // bdsLAI
             // 
             this.bdsLAI.DataMember = "FK_LAI_PHICONG";
             this.bdsLAI.DataSource = this.bdsPC;
             // 
-            // lAITableAdapter
-            // 
-            this.lAITableAdapter.ClearBeforeFill = true;
-            // 
-            // lAIGridControl
-            // 
-            this.lAIGridControl.DataSource = this.bdsLAI;
-            this.lAIGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lAIGridControl.Location = new System.Drawing.Point(569, 250);
-            this.lAIGridControl.MainView = this.gridView2;
-            this.lAIGridControl.MenuManager = this.barManager2;
-            this.lAIGridControl.Name = "lAIGridControl";
-            this.lAIGridControl.Size = new System.Drawing.Size(253, 241);
-            this.lAIGridControl.TabIndex = 6;
-            this.lAIGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMALOAI,
-            this.colMAPHICONG1});
-            this.gridView2.GridControl = this.lAIGridControl;
-            this.gridView2.Name = "gridView2";
-            // 
-            // colMALOAI
-            // 
-            this.colMALOAI.FieldName = "MALOAI";
-            this.colMALOAI.MinWidth = 25;
-            this.colMALOAI.Name = "colMALOAI";
-            this.colMALOAI.Visible = true;
-            this.colMALOAI.VisibleIndex = 0;
-            this.colMALOAI.Width = 94;
-            // 
-            // colMAPHICONG1
-            // 
-            this.colMAPHICONG1.FieldName = "MAPHICONG";
-            this.colMAPHICONG1.MinWidth = 25;
-            this.colMAPHICONG1.Name = "colMAPHICONG1";
-            this.colMAPHICONG1.Visible = true;
-            this.colMAPHICONG1.VisibleIndex = 1;
-            this.colMAPHICONG1.Width = 94;
-            // 
-            // mALOAILabel
-            // 
-            mALOAILabel.AutoSize = true;
-            mALOAILabel.Enabled = false;
-            mALOAILabel.Location = new System.Drawing.Point(52, 197);
-            mALOAILabel.Name = "mALOAILabel";
-            mALOAILabel.Size = new System.Drawing.Size(59, 16);
-            mALOAILabel.TabIndex = 0;
-            mALOAILabel.Text = "MALOAI:";
-            mALOAILabel.Visible = false;
-            // 
             // txtMALOAI
             // 
             this.txtMALOAI.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLAI, "MALOAI", true));
-            this.txtMALOAI.Enabled = false;
-            this.txtMALOAI.Location = new System.Drawing.Point(117, 191);
+            this.txtMALOAI.Location = new System.Drawing.Point(121, 124);
+            this.txtMALOAI.Margin = new System.Windows.Forms.Padding(4);
             this.txtMALOAI.MenuManager = this.barManager2;
             this.txtMALOAI.Name = "txtMALOAI";
-            this.txtMALOAI.Size = new System.Drawing.Size(125, 22);
-            this.txtMALOAI.TabIndex = 1;
-            this.txtMALOAI.Visible = false;
+            this.txtMALOAI.Size = new System.Drawing.Size(156, 22);
+            this.txtMALOAI.TabIndex = 6;
             // 
-            // mAPHICONGLabel
+            // cmbLMB
             // 
-            mAPHICONGLabel.AutoSize = true;
-            mAPHICONGLabel.Location = new System.Drawing.Point(20, 41);
-            mAPHICONGLabel.Name = "mAPHICONGLabel";
-            mAPHICONGLabel.Size = new System.Drawing.Size(91, 16);
-            mAPHICONGLabel.TabIndex = 2;
-            mAPHICONGLabel.Text = "MAPHICONG:";
+            this.cmbLMB.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsLAI, "MALOAI", true));
+            this.cmbLMB.DataSource = this.cB_LOAIMAYBAYBindingSource;
+            this.cmbLMB.DisplayMember = "LOAI";
+            this.cmbLMB.FormattingEnabled = true;
+            this.cmbLMB.Location = new System.Drawing.Point(121, 73);
+            this.cmbLMB.Name = "cmbLMB";
+            this.cmbLMB.Size = new System.Drawing.Size(446, 24);
+            this.cmbLMB.TabIndex = 5;
+            this.cmbLMB.ValueMember = "MALOAI";
+            this.cmbLMB.SelectedIndexChanged += new System.EventHandler(this.cmbMALOAI_SelectedIndexChanged);
             // 
-            // txtMAPC
+            // cB_LOAIMAYBAYBindingSource
             // 
-            this.txtMAPC.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsPC, "MAPHICONG", true));
-            this.txtMAPC.Enabled = false;
-            this.txtMAPC.Location = new System.Drawing.Point(117, 38);
-            this.txtMAPC.MenuManager = this.barManager2;
-            this.txtMAPC.Name = "txtMAPC";
-            this.txtMAPC.Size = new System.Drawing.Size(125, 22);
-            this.txtMAPC.TabIndex = 3;
+            this.cB_LOAIMAYBAYBindingSource.DataMember = "CB_LOAIMAYBAY";
+            this.cB_LOAIMAYBAYBindingSource.DataSource = this.dS;
             // 
             // label1
             // 
@@ -423,42 +406,62 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "LOAI MB:";
             // 
-            // cmbLMB
-            // 
-            this.cmbLMB.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsLAI, "MALOAI", true));
-            this.cmbLMB.DataSource = this.cB_LOAIMAYBAYBindingSource;
-            this.cmbLMB.DisplayMember = "LOAI";
-            this.cmbLMB.FormattingEnabled = true;
-            this.cmbLMB.Location = new System.Drawing.Point(117, 73);
-            this.cmbLMB.Name = "cmbLMB";
-            this.cmbLMB.Size = new System.Drawing.Size(446, 24);
-            this.cmbLMB.TabIndex = 5;
-            this.cmbLMB.ValueMember = "MALOAI";
-            this.cmbLMB.SelectedIndexChanged += new System.EventHandler(this.cmbMALOAI_SelectedIndexChanged);
-            // 
             // bdsLOAIMB
             // 
             this.bdsLOAIMB.DataMember = "LOAIMAYBAY";
             this.bdsLOAIMB.DataSource = this.dS;
             // 
-            // lOAIMAYBAYTableAdapter
-            // 
-            this.lOAIMAYBAYTableAdapter.ClearBeforeFill = true;
-            // 
-            // cB_LOAIMAYBAYBindingSource
-            // 
-            this.cB_LOAIMAYBAYBindingSource.DataMember = "CB_LOAIMAYBAY";
-            this.cB_LOAIMAYBAYBindingSource.DataSource = this.dS;
-            // 
             // cB_LOAIMAYBAYTableAdapter
             // 
             this.cB_LOAIMAYBAYTableAdapter.ClearBeforeFill = true;
+            // 
+            // lAIGridControl
+            // 
+            this.lAIGridControl.DataSource = this.bdsLAI;
+            this.lAIGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lAIGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.lAIGridControl.Location = new System.Drawing.Point(583, 374);
+            this.lAIGridControl.MainView = this.gridView2;
+            this.lAIGridControl.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.lAIGridControl.MenuManager = this.barManager2;
+            this.lAIGridControl.Name = "lAIGridControl";
+            this.lAIGridControl.Size = new System.Drawing.Size(654, 422);
+            this.lAIGridControl.TabIndex = 10;
+            this.lAIGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMALOAI,
+            this.colMAPHICONG1});
+            this.gridView2.DetailHeight = 437;
+            this.gridView2.GridControl = this.lAIGridControl;
+            this.gridView2.Name = "gridView2";
+            // 
+            // colMALOAI
+            // 
+            this.colMALOAI.FieldName = "MALOAI";
+            this.colMALOAI.MinWidth = 31;
+            this.colMALOAI.Name = "colMALOAI";
+            this.colMALOAI.Visible = true;
+            this.colMALOAI.VisibleIndex = 0;
+            this.colMALOAI.Width = 117;
+            // 
+            // colMAPHICONG1
+            // 
+            this.colMAPHICONG1.FieldName = "MAPHICONG";
+            this.colMAPHICONG1.MinWidth = 31;
+            this.colMAPHICONG1.Name = "colMAPHICONG1";
+            this.colMAPHICONG1.Visible = true;
+            this.colMAPHICONG1.VisibleIndex = 1;
+            this.colMAPHICONG1.Width = 117;
             // 
             // FormLai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 491);
+            this.ClientSize = new System.Drawing.Size(1237, 796);
             this.Controls.Add(this.lAIGridControl);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pHICONGGridControl);
@@ -476,13 +479,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMAPC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsLAI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMALOAI.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cB_LOAIMAYBAYBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLOAIMB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lAIGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMALOAI.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMAPC.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsLOAIMB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cB_LOAIMAYBAYBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -516,17 +519,17 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMAPHICONG;
         private DSTableAdapters.LAITableAdapter lAITableAdapter;
         private System.Windows.Forms.BindingSource bdsLAI;
-        private DevExpress.XtraGrid.GridControl lAIGridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn colMALOAI;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAPHICONG1;
         private System.Windows.Forms.ComboBox cmbLMB;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.TextEdit txtMAPC;
-        private DevExpress.XtraEditors.TextEdit txtMALOAI;
         private DSTableAdapters.LOAIMAYBAYTableAdapter lOAIMAYBAYTableAdapter;
         private System.Windows.Forms.BindingSource bdsLOAIMB;
         private System.Windows.Forms.BindingSource cB_LOAIMAYBAYBindingSource;
         private DSTableAdapters.CB_LOAIMAYBAYTableAdapter cB_LOAIMAYBAYTableAdapter;
+        private DevExpress.XtraGrid.GridControl lAIGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn colMALOAI;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAPHICONG1;
+        private DevExpress.XtraEditors.TextEdit txtMAPC;
+        private DevExpress.XtraEditors.TextEdit txtMALOAI;
     }
 }

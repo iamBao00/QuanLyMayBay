@@ -49,6 +49,7 @@ namespace QuanLyMayBay
             bdsNguoi.AddNew();
             btnThem.Enabled = btnHieuChinh.Enabled = btnXoa.Enabled = btnReload.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnPhucHoi.Enabled = true;
+            
         }
 
         private void btnHieuChinh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -307,6 +308,11 @@ namespace QuanLyMayBay
             btnThemPC.Enabled = btnXoaPC.Enabled = btnHieuChinhPC.Enabled = true;
             btnGhiPC.Enabled = btnPhucHoiPC.Enabled = false;
             btnReload.Enabled = btnThem.Enabled = btnXoa.Enabled = btnHieuChinh.Enabled = true;
+        }
+
+        private void txtMaPC_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

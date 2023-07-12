@@ -903,6 +903,24 @@ FROM     dbo.NHACHUAMAYBAY</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_DanhSachTaiKhoanTableAdapter" GeneratorDataComponentClassName="V_DanhSachTaiKhoanTableAdapter" Name="V_DanhSachTaiKhoan" UserDataComponentName="V_DanhSachTaiKhoanTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QUANLYSANBAYConnectionString (Settings)" DbObjectName="QUANLYSANBAY.dbo.V_DanhSachTaiKhoan" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TenDangNhap, MaNhanVien, Quyen FROM dbo.V_DanhSachTaiKhoan</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TenDangNhap" DataSetColumn="TenDangNhap" />
+              <Mapping SourceColumn="MaNhanVien" DataSetColumn="MaNhanVien" />
+              <Mapping SourceColumn="Quyen" DataSetColumn="Quyen" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources>
           <DbSource ConnectionRef="QUANLYSANBAYConnectionString (Settings)" DbObjectName="QUANLYSANBAY.dbo.sp_CheckNguoiTonTai" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="sp_CheckNguoiTonTai" MethodsParameterType="CLR" Modifier="Public" Name="sp_CheckNguoiTonTai" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="sp_CheckNguoiTonTai">
@@ -1394,13 +1412,40 @@ FROM     dbo.NHACHUAMAYBAY</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GetCacMayBayMaNhanVienChuyenVe" msprop:Generator_RowEvHandlerName="GetCacMayBayMaNhanVienChuyenVeRowChangeEventHandler" msprop:Generator_RowDeletedName="GetCacMayBayMaNhanVienChuyenVeRowDeleted" msprop:Generator_RowDeletingName="GetCacMayBayMaNhanVienChuyenVeRowDeleting" msprop:Generator_RowEvArgName="GetCacMayBayMaNhanVienChuyenVeRowChangeEvent" msprop:Generator_TablePropName="GetCacMayBayMaNhanVienChuyenVe" msprop:Generator_RowChangedName="GetCacMayBayMaNhanVienChuyenVeRowChanged" msprop:Generator_RowChangingName="GetCacMayBayMaNhanVienChuyenVeRowChanging" msprop:Generator_TableClassName="GetCacMayBayMaNhanVienChuyenVeDataTable" msprop:Generator_RowClassName="GetCacMayBayMaNhanVienChuyenVeRow" msprop:Generator_TableVarName="tableGetCacMayBayMaNhanVienChuyenVe" msprop:Generator_UserTableName="GetCacMayBayMaNhanVienChuyenVe">
+        <xs:element name="GetCacMayBayMaNhanVienChuyenVe" msprop:Generator_RowClassName="GetCacMayBayMaNhanVienChuyenVeRow" msprop:Generator_RowEvHandlerName="GetCacMayBayMaNhanVienChuyenVeRowChangeEventHandler" msprop:Generator_RowDeletedName="GetCacMayBayMaNhanVienChuyenVeRowDeleted" msprop:Generator_RowDeletingName="GetCacMayBayMaNhanVienChuyenVeRowDeleting" msprop:Generator_RowEvArgName="GetCacMayBayMaNhanVienChuyenVeRowChangeEvent" msprop:Generator_TablePropName="GetCacMayBayMaNhanVienChuyenVe" msprop:Generator_RowChangedName="GetCacMayBayMaNhanVienChuyenVeRowChanged" msprop:Generator_UserTableName="GetCacMayBayMaNhanVienChuyenVe" msprop:Generator_RowChangingName="GetCacMayBayMaNhanVienChuyenVeRowChanging" msprop:Generator_TableClassName="GetCacMayBayMaNhanVienChuyenVeDataTable" msprop:Generator_TableVarName="tableGetCacMayBayMaNhanVienChuyenVe">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="MADANGKY" msprop:Generator_ColumnPropNameInRow="MADANGKY" msprop:Generator_ColumnPropNameInTable="MADANGKYColumn" msprop:Generator_ColumnVarNameInTable="columnMADANGKY" msprop:Generator_UserColumnName="MADANGKY">
+              <xs:element name="MADANGKY" msprop:Generator_UserColumnName="MADANGKY" msprop:Generator_ColumnPropNameInTable="MADANGKYColumn" msprop:Generator_ColumnPropNameInRow="MADANGKY" msprop:Generator_ColumnVarNameInTable="columnMADANGKY">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="V_DanhSachTaiKhoan" msprop:Generator_RowEvHandlerName="V_DanhSachTaiKhoanRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DanhSachTaiKhoanRowDeleted" msprop:Generator_RowDeletingName="V_DanhSachTaiKhoanRowDeleting" msprop:Generator_RowEvArgName="V_DanhSachTaiKhoanRowChangeEvent" msprop:Generator_TablePropName="V_DanhSachTaiKhoan" msprop:Generator_RowChangedName="V_DanhSachTaiKhoanRowChanged" msprop:Generator_RowChangingName="V_DanhSachTaiKhoanRowChanging" msprop:Generator_TableClassName="V_DanhSachTaiKhoanDataTable" msprop:Generator_RowClassName="V_DanhSachTaiKhoanRow" msprop:Generator_TableVarName="tableV_DanhSachTaiKhoan" msprop:Generator_UserTableName="V_DanhSachTaiKhoan">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TenDangNhap" msprop:Generator_ColumnPropNameInRow="TenDangNhap" msprop:Generator_ColumnPropNameInTable="TenDangNhapColumn" msprop:Generator_ColumnVarNameInTable="columnTenDangNhap" msprop:Generator_UserColumnName="TenDangNhap">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaNhanVien" msprop:Generator_ColumnPropNameInRow="MaNhanVien" msprop:Generator_ColumnPropNameInTable="MaNhanVienColumn" msprop:Generator_ColumnVarNameInTable="columnMaNhanVien" msprop:Generator_UserColumnName="MaNhanVien">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Quyen" msprop:Generator_ColumnPropNameInRow="Quyen" msprop:Generator_ColumnPropNameInTable="QuyenColumn" msprop:Generator_ColumnVarNameInTable="columnQuyen" msprop:Generator_UserColumnName="Quyen">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="128" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -1484,31 +1529,35 @@ FROM     dbo.NHACHUAMAYBAY</CommandText>
       <xs:selector xpath=".//mstns:GetCacMayBayMaNhanVienChuyenVe" />
       <xs:field xpath="mstns:MADANGKY" />
     </xs:unique>
-    <xs:keyref name="FK_NHANVIEN_NGUOI1" refer="NGUOI_Constraint1" msprop:rel_Generator_UserParentTable="NGUOI" msprop:rel_Generator_UserChildTable="ThongTinNhanVien" msprop:rel_Generator_RelationVarName="relationFK_NHANVIEN_NGUOI1" msprop:rel_Generator_ChildPropName="GetThongTinNhanVienRows" msprop:rel_Generator_UserRelationName="FK_NHANVIEN_NGUOI1" msprop:rel_Generator_ParentPropName="NGUOIRow" msdata:AcceptRejectRule="Cascade">
-      <xs:selector xpath=".//mstns:ThongTinNhanVien" />
-      <xs:field xpath="mstns:SOCMND" />
-    </xs:keyref>
-    <xs:keyref name="FK_NHANVIEN_ThongTinNhanVien" refer="NHANVIEN_Constraint1" msprop:rel_Generator_UserParentTable="NHANVIEN" msprop:rel_Generator_UserChildTable="ThongTinNhanVien" msprop:rel_Generator_RelationVarName="relationFK_NHANVIEN_ThongTinNhanVien" msprop:rel_Generator_ChildPropName="GetThongTinNhanVienRows" msprop:rel_Generator_UserRelationName="FK_NHANVIEN_ThongTinNhanVien" msprop:rel_Generator_ParentPropName="NHANVIENRow" msdata:AcceptRejectRule="Cascade">
+    <xs:keyref name="FK_NHANVIEN_ThongTinNhanVien" refer="NHANVIEN_Constraint1" msprop:rel_Generator_UserParentTable="NHANVIEN" msprop:rel_Generator_UserChildTable="ThongTinNhanVien" msprop:rel_Generator_RelationVarName="relationFK_NHANVIEN_ThongTinNhanVien" msprop:rel_Generator_ChildPropName="GetThongTinNhanVienRows" msprop:rel_Generator_ParentPropName="NHANVIENRow" msprop:rel_Generator_UserRelationName="FK_NHANVIEN_ThongTinNhanVien" msdata:AcceptRejectRule="Cascade">
       <xs:selector xpath=".//mstns:ThongTinNhanVien" />
       <xs:field xpath="mstns:MANV" />
+    </xs:keyref>
+    <xs:keyref name="FK_NHANVIEN_NGUOI1" refer="NGUOI_Constraint1" msprop:rel_Generator_UserParentTable="NGUOI" msprop:rel_Generator_UserChildTable="ThongTinNhanVien" msprop:rel_Generator_RelationVarName="relationFK_NHANVIEN_NGUOI1" msprop:rel_Generator_ChildPropName="GetThongTinNhanVienRows" msprop:rel_Generator_ParentPropName="NGUOIRow" msprop:rel_Generator_UserRelationName="FK_NHANVIEN_NGUOI1" msdata:AcceptRejectRule="Cascade">
+      <xs:selector xpath=".//mstns:ThongTinNhanVien" />
+      <xs:field xpath="mstns:SOCMND" />
     </xs:keyref>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_CHUYENVE_LOAIMAYBAY" msdata:parent="LOAIMAYBAY" msdata:child="CHUYENVE" msdata:parentkey="MALOAI" msdata:childkey="MALOAI" msprop:Generator_UserParentTable="LOAIMAYBAY" msprop:Generator_UserChildTable="CHUYENVE" msprop:Generator_RelationVarName="relationFK_CHUYENVE_LOAIMAYBAY" msprop:Generator_ChildPropName="GetCHUYENVERows" msprop:Generator_UserRelationName="FK_CHUYENVE_LOAIMAYBAY" msprop:Generator_ParentPropName="LOAIMAYBAYRow" />
-      <msdata:Relationship name="FK_CHUYENVE_NHANVIEN" msdata:parent="NHANVIEN" msdata:child="CHUYENVE" msdata:parentkey="MANV" msdata:childkey="MANV" msprop:Generator_UserParentTable="NHANVIEN" msprop:Generator_UserChildTable="CHUYENVE" msprop:Generator_RelationVarName="relationFK_CHUYENVE_NHANVIEN" msprop:Generator_ChildPropName="GetCHUYENVERows" msprop:Generator_UserRelationName="FK_CHUYENVE_NHANVIEN" msprop:Generator_ParentPropName="NHANVIENRow" />
-      <msdata:Relationship name="FK_DICHVUBAOTRI_MAYBAY" msdata:parent="MAYBAY" msdata:child="DICHVUBAOTRI" msdata:parentkey="MADANGKY" msdata:childkey="MADANGKY" msprop:Generator_UserParentTable="MAYBAY" msprop:Generator_UserChildTable="DICHVUBAOTRI" msprop:Generator_RelationVarName="relationFK_DICHVUBAOTRI_MAYBAY" msprop:Generator_ChildPropName="GetDICHVUBAOTRIRows" msprop:Generator_UserRelationName="FK_DICHVUBAOTRI_MAYBAY" msprop:Generator_ParentPropName="MAYBAYRow" />
-      <msdata:Relationship name="FK_DICHVUBAOTRI_NHANVIEN" msdata:parent="NHANVIEN" msdata:child="DICHVUBAOTRI" msdata:parentkey="MANV" msdata:childkey="MANV" msprop:Generator_UserParentTable="NHANVIEN" msprop:Generator_UserChildTable="DICHVUBAOTRI" msprop:Generator_RelationVarName="relationFK_DICHVUBAOTRI_NHANVIEN" msprop:Generator_ChildPropName="GetDICHVUBAOTRIRows" msprop:Generator_UserRelationName="FK_DICHVUBAOTRI_NHANVIEN" msprop:Generator_ParentPropName="NHANVIENRow" />
-      <msdata:Relationship name="FK_DOANHNGHIEP_NGUOICHU" msdata:parent="CHUMAYBAY" msdata:child="DOANHNGHIEP" msdata:parentkey="MACHU" msdata:childkey="MACHU" msprop:Generator_UserParentTable="CHUMAYBAY" msprop:Generator_UserChildTable="DOANHNGHIEP" msprop:Generator_RelationVarName="relationFK_DOANHNGHIEP_NGUOICHU" msprop:Generator_ChildPropName="GetDOANHNGHIEPRows" msprop:Generator_ParentPropName="CHUMAYBAYRow" msprop:Generator_UserRelationName="FK_DOANHNGHIEP_NGUOICHU" />
-      <msdata:Relationship name="FK_LAI_LOAIMAYBAY" msdata:parent="LOAIMAYBAY" msdata:child="LAI" msdata:parentkey="MALOAI" msdata:childkey="MALOAI" msprop:Generator_UserParentTable="LOAIMAYBAY" msprop:Generator_UserChildTable="LAI" msprop:Generator_RelationVarName="relationFK_LAI_LOAIMAYBAY" msprop:Generator_ChildPropName="GetLAIRows" msprop:Generator_UserRelationName="FK_LAI_LOAIMAYBAY" msprop:Generator_ParentPropName="LOAIMAYBAYRow" />
-      <msdata:Relationship name="FK_LAI_PHICONG" msdata:parent="PHICONG" msdata:child="LAI" msdata:parentkey="MAPHICONG" msdata:childkey="MAPHICONG" msprop:Generator_UserParentTable="PHICONG" msprop:Generator_UserChildTable="LAI" msprop:Generator_RelationVarName="relationFK_LAI_PHICONG" msprop:Generator_ChildPropName="GetLAIRows" msprop:Generator_UserRelationName="FK_LAI_PHICONG" msprop:Generator_ParentPropName="PHICONGRow" />
-      <msdata:Relationship name="FK_MAYBAY_LOAIMAYBAY" msdata:parent="LOAIMAYBAY" msdata:child="MAYBAY" msdata:parentkey="MALOAI" msdata:childkey="MALOAI" msprop:Generator_UserParentTable="LOAIMAYBAY" msprop:Generator_UserChildTable="MAYBAY" msprop:Generator_RelationVarName="relationFK_MAYBAY_LOAIMAYBAY" msprop:Generator_ChildPropName="GetMAYBAYRows" msprop:Generator_ParentPropName="LOAIMAYBAYRow" msprop:Generator_UserRelationName="FK_MAYBAY_LOAIMAYBAY" />
-      <msdata:Relationship name="FK_MAYBAY_NHACHUAMAYBAY" msdata:parent="NHACHUAMAYBAY" msdata:child="MAYBAY" msdata:parentkey="MANHACHUA" msdata:childkey="MANHACHUA" msprop:Generator_UserParentTable="NHACHUAMAYBAY" msprop:Generator_UserChildTable="MAYBAY" msprop:Generator_RelationVarName="relationFK_MAYBAY_NHACHUAMAYBAY" msprop:Generator_ChildPropName="GetMAYBAYRows" msprop:Generator_UserRelationName="FK_MAYBAY_NHACHUAMAYBAY" msprop:Generator_ParentPropName="NHACHUAMAYBAYRow" />
-      <msdata:Relationship name="FK_NGUOI_NGUOICHU" msdata:parent="CHUMAYBAY" msdata:child="NGUOI" msdata:parentkey="MACHU" msdata:childkey="MACHU" msprop:Generator_UserParentTable="CHUMAYBAY" msprop:Generator_UserChildTable="NGUOI" msprop:Generator_RelationVarName="relationFK_NGUOI_NGUOICHU" msprop:Generator_ChildPropName="GetNGUOIRows" msprop:Generator_ParentPropName="CHUMAYBAYRow" msprop:Generator_UserRelationName="FK_NGUOI_NGUOICHU" />
-      <msdata:Relationship name="FK_NHANVIEN_NGUOI" msdata:parent="NGUOI" msdata:child="NHANVIEN" msdata:parentkey="SOCMND" msdata:childkey="SOCMND" msprop:Generator_UserParentTable="NGUOI" msprop:Generator_UserChildTable="NHANVIEN" msprop:Generator_RelationVarName="relationFK_NHANVIEN_NGUOI" msprop:Generator_ChildPropName="GetNHANVIENRows" msprop:Generator_ParentPropName="NGUOIRow" msprop:Generator_UserRelationName="FK_NHANVIEN_NGUOI" />
-      <msdata:Relationship name="FK_PHICONG_NGUOI" msdata:parent="NGUOI" msdata:child="PHICONG" msdata:parentkey="SOCMND" msdata:childkey="SOCMND" msprop:Generator_UserParentTable="NGUOI" msprop:Generator_UserChildTable="PHICONG" msprop:Generator_RelationVarName="relationFK_PHICONG_NGUOI" msprop:Generator_ChildPropName="GetPHICONGRows" msprop:Generator_ParentPropName="NGUOIRow" msprop:Generator_UserRelationName="FK_PHICONG_NGUOI" />
-      <msdata:Relationship name="FK_SOHUU_MAYBAY" msdata:parent="MAYBAY" msdata:child="SOHUU" msdata:parentkey="MADANGKY" msdata:childkey="MADANGKY" msprop:Generator_UserParentTable="MAYBAY" msprop:Generator_UserChildTable="SOHUU" msprop:Generator_RelationVarName="relationFK_SOHUU_MAYBAY" msprop:Generator_ChildPropName="GetSOHUURows" msprop:Generator_ParentPropName="MAYBAYRow" msprop:Generator_UserRelationName="FK_SOHUU_MAYBAY" />
-      <msdata:Relationship name="FK_SOHUU_NGUOICHU" msdata:parent="CHUMAYBAY" msdata:child="SOHUU" msdata:parentkey="MACHU" msdata:childkey="MACHU" msprop:Generator_UserParentTable="CHUMAYBAY" msprop:Generator_UserChildTable="SOHUU" msprop:Generator_RelationVarName="relationFK_SOHUU_NGUOICHU" msprop:Generator_ChildPropName="GetSOHUURows" msprop:Generator_ParentPropName="CHUMAYBAYRow" msprop:Generator_UserRelationName="FK_SOHUU_NGUOICHU" />
+      <msdata:Relationship name="FK_CHUYENVE_LOAIMAYBAY" msdata:parent="LOAIMAYBAY" msdata:child="CHUYENVE" msdata:parentkey="MALOAI" msdata:childkey="MALOAI" msprop:Generator_UserParentTable="LOAIMAYBAY" msprop:Generator_UserChildTable="CHUYENVE" msprop:Generator_RelationVarName="relationFK_CHUYENVE_LOAIMAYBAY" msprop:Generator_ChildPropName="GetCHUYENVERows" msprop:Generator_ParentPropName="LOAIMAYBAYRow" msprop:Generator_UserRelationName="FK_CHUYENVE_LOAIMAYBAY" />
+      <msdata:Relationship name="FK_CHUYENVE_NHANVIEN" msdata:parent="NHANVIEN" msdata:child="CHUYENVE" msdata:parentkey="MANV" msdata:childkey="MANV" msprop:Generator_UserParentTable="NHANVIEN" msprop:Generator_UserChildTable="CHUYENVE" msprop:Generator_RelationVarName="relationFK_CHUYENVE_NHANVIEN" msprop:Generator_ChildPropName="GetCHUYENVERows" msprop:Generator_ParentPropName="NHANVIENRow" msprop:Generator_UserRelationName="FK_CHUYENVE_NHANVIEN" />
+      <msdata:Relationship name="FK_DICHVUBAOTRI_MAYBAY" msdata:parent="MAYBAY" msdata:child="DICHVUBAOTRI" msdata:parentkey="MADANGKY" msdata:childkey="MADANGKY" msprop:Generator_UserParentTable="MAYBAY" msprop:Generator_UserChildTable="DICHVUBAOTRI" msprop:Generator_RelationVarName="relationFK_DICHVUBAOTRI_MAYBAY" msprop:Generator_ChildPropName="GetDICHVUBAOTRIRows" msprop:Generator_ParentPropName="MAYBAYRow" msprop:Generator_UserRelationName="FK_DICHVUBAOTRI_MAYBAY" />
+      <msdata:Relationship name="FK_DICHVUBAOTRI_NHANVIEN" msdata:parent="NHANVIEN" msdata:child="DICHVUBAOTRI" msdata:parentkey="MANV" msdata:childkey="MANV" msprop:Generator_UserParentTable="NHANVIEN" msprop:Generator_UserChildTable="DICHVUBAOTRI" msprop:Generator_RelationVarName="relationFK_DICHVUBAOTRI_NHANVIEN" msprop:Generator_ChildPropName="GetDICHVUBAOTRIRows" msprop:Generator_ParentPropName="NHANVIENRow" msprop:Generator_UserRelationName="FK_DICHVUBAOTRI_NHANVIEN" />
+      <msdata:Relationship name="FK_DOANHNGHIEP_NGUOICHU" msdata:parent="CHUMAYBAY" msdata:child="DOANHNGHIEP" msdata:parentkey="MACHU" msdata:childkey="MACHU" msprop:Generator_UserParentTable="CHUMAYBAY" msprop:Generator_UserChildTable="DOANHNGHIEP" msprop:Generator_RelationVarName="relationFK_DOANHNGHIEP_NGUOICHU" msprop:Generator_ChildPropName="GetDOANHNGHIEPRows" msprop:Generator_UserRelationName="FK_DOANHNGHIEP_NGUOICHU" msprop:Generator_ParentPropName="CHUMAYBAYRow" />
+      <msdata:Relationship name="FK_LAI_LOAIMAYBAY" msdata:parent="LOAIMAYBAY" msdata:child="LAI" msdata:parentkey="MALOAI" msdata:childkey="MALOAI" msprop:Generator_UserParentTable="LOAIMAYBAY" msprop:Generator_UserChildTable="LAI" msprop:Generator_RelationVarName="relationFK_LAI_LOAIMAYBAY" msprop:Generator_ChildPropName="GetLAIRows" msprop:Generator_ParentPropName="LOAIMAYBAYRow" msprop:Generator_UserRelationName="FK_LAI_LOAIMAYBAY" />
+      <msdata:Relationship name="FK_LAI_PHICONG" msdata:parent="PHICONG" msdata:child="LAI" msdata:parentkey="MAPHICONG" msdata:childkey="MAPHICONG" msprop:Generator_UserParentTable="PHICONG" msprop:Generator_UserChildTable="LAI" msprop:Generator_RelationVarName="relationFK_LAI_PHICONG" msprop:Generator_ChildPropName="GetLAIRows" msprop:Generator_ParentPropName="PHICONGRow" msprop:Generator_UserRelationName="FK_LAI_PHICONG" />
+      <msdata:Relationship name="FK_MAYBAY_LOAIMAYBAY" msdata:parent="LOAIMAYBAY" msdata:child="MAYBAY" msdata:parentkey="MALOAI" msdata:childkey="MALOAI" msprop:Generator_UserParentTable="LOAIMAYBAY" msprop:Generator_UserChildTable="MAYBAY" msprop:Generator_RelationVarName="relationFK_MAYBAY_LOAIMAYBAY" msprop:Generator_ChildPropName="GetMAYBAYRows" msprop:Generator_UserRelationName="FK_MAYBAY_LOAIMAYBAY" msprop:Generator_ParentPropName="LOAIMAYBAYRow" />
+      <msdata:Relationship name="FK_MAYBAY_NHACHUAMAYBAY" msdata:parent="NHACHUAMAYBAY" msdata:child="MAYBAY" msdata:parentkey="MANHACHUA" msdata:childkey="MANHACHUA" msprop:Generator_UserParentTable="NHACHUAMAYBAY" msprop:Generator_UserChildTable="MAYBAY" msprop:Generator_RelationVarName="relationFK_MAYBAY_NHACHUAMAYBAY" msprop:Generator_ChildPropName="GetMAYBAYRows" msprop:Generator_ParentPropName="NHACHUAMAYBAYRow" msprop:Generator_UserRelationName="FK_MAYBAY_NHACHUAMAYBAY" />
+      <msdata:Relationship name="FK_NGUOI_NGUOICHU" msdata:parent="CHUMAYBAY" msdata:child="NGUOI" msdata:parentkey="MACHU" msdata:childkey="MACHU" msprop:Generator_UserParentTable="CHUMAYBAY" msprop:Generator_UserChildTable="NGUOI" msprop:Generator_RelationVarName="relationFK_NGUOI_NGUOICHU" msprop:Generator_ChildPropName="GetNGUOIRows" msprop:Generator_UserRelationName="FK_NGUOI_NGUOICHU" msprop:Generator_ParentPropName="CHUMAYBAYRow" />
+      <msdata:Relationship name="FK_NHANVIEN_NGUOI" msdata:parent="NGUOI" msdata:child="NHANVIEN" msdata:parentkey="SOCMND" msdata:childkey="SOCMND" msprop:Generator_UserParentTable="NGUOI" msprop:Generator_UserChildTable="NHANVIEN" msprop:Generator_RelationVarName="relationFK_NHANVIEN_NGUOI" msprop:Generator_ChildPropName="GetNHANVIENRows" msprop:Generator_UserRelationName="FK_NHANVIEN_NGUOI" msprop:Generator_ParentPropName="NGUOIRow" />
+      <msdata:Relationship name="FK_PHICONG_NGUOI" msdata:parent="NGUOI" msdata:child="PHICONG" msdata:parentkey="SOCMND" msdata:childkey="SOCMND" msprop:Generator_UserParentTable="NGUOI" msprop:Generator_UserChildTable="PHICONG" msprop:Generator_RelationVarName="relationFK_PHICONG_NGUOI" msprop:Generator_ChildPropName="GetPHICONGRows" msprop:Generator_UserRelationName="FK_PHICONG_NGUOI" msprop:Generator_ParentPropName="NGUOIRow" />
+      <msdata:Relationship name="FK_SOHUU_MAYBAY" msdata:parent="MAYBAY" msdata:child="SOHUU" msdata:parentkey="MADANGKY" msdata:childkey="MADANGKY" msprop:Generator_UserParentTable="MAYBAY" msprop:Generator_UserChildTable="SOHUU" msprop:Generator_RelationVarName="relationFK_SOHUU_MAYBAY" msprop:Generator_ChildPropName="GetSOHUURows" msprop:Generator_UserRelationName="FK_SOHUU_MAYBAY" msprop:Generator_ParentPropName="MAYBAYRow" />
+      <msdata:Relationship name="FK_SOHUU_NGUOICHU" msdata:parent="CHUMAYBAY" msdata:child="SOHUU" msdata:parentkey="MACHU" msdata:childkey="MACHU" msprop:Generator_UserParentTable="CHUMAYBAY" msprop:Generator_UserChildTable="SOHUU" msprop:Generator_RelationVarName="relationFK_SOHUU_NGUOICHU" msprop:Generator_ChildPropName="GetSOHUURows" msprop:Generator_UserRelationName="FK_SOHUU_NGUOICHU" msprop:Generator_ParentPropName="CHUMAYBAYRow" />
+      <msdata:Relationship name="FK_CHUYENVE_LOAIMAYBAY1" msdata:parent="CB_LOAIMAYBAY" msdata:child="CHUYENVE" msdata:parentkey="MALOAI" msdata:childkey="MALOAI" msprop:Generator_UserParentTable="CB_LOAIMAYBAY" msprop:Generator_UserChildTable="CHUYENVE" msprop:Generator_RelationVarName="relationFK_CHUYENVE_LOAIMAYBAY1" msprop:Generator_UserRelationName="FK_CHUYENVE_LOAIMAYBAY1" msprop:Generator_ChildPropName="GetCHUYENVERows" msprop:Generator_ParentPropName="CB_LOAIMAYBAYRow" />
+      <msdata:Relationship name="FK_LAI_LOAIMAYBAY1" msdata:parent="CB_LOAIMAYBAY" msdata:child="LAI" msdata:parentkey="MALOAI" msdata:childkey="MALOAI" msprop:Generator_UserParentTable="CB_LOAIMAYBAY" msprop:Generator_UserChildTable="LAI" msprop:Generator_RelationVarName="relationFK_LAI_LOAIMAYBAY1" msprop:Generator_UserRelationName="FK_LAI_LOAIMAYBAY1" msprop:Generator_ChildPropName="GetLAIRows" msprop:Generator_ParentPropName="CB_LOAIMAYBAYRow" />
+      <msdata:Relationship name="FK_MAYBAY_LOAIMAYBAY1" msdata:parent="CB_LOAIMAYBAY" msdata:child="MAYBAY" msdata:parentkey="MALOAI" msdata:childkey="MALOAI" msprop:Generator_UserParentTable="CB_LOAIMAYBAY" msprop:Generator_UserChildTable="MAYBAY" msprop:Generator_RelationVarName="relationFK_MAYBAY_LOAIMAYBAY1" msprop:Generator_UserRelationName="FK_MAYBAY_LOAIMAYBAY1" msprop:Generator_ChildPropName="GetMAYBAYRows" msprop:Generator_ParentPropName="CB_LOAIMAYBAYRow" />
+      <msdata:Relationship name="FK_MAYBAY_NHACHUAMAYBAY1" msdata:parent="CB_NHACHUAMAYBAY" msdata:child="MAYBAY" msdata:parentkey="MANHACHUA" msdata:childkey="MANHACHUA" msprop:Generator_UserParentTable="CB_NHACHUAMAYBAY" msprop:Generator_UserChildTable="MAYBAY" msprop:Generator_RelationVarName="relationFK_MAYBAY_NHACHUAMAYBAY1" msprop:Generator_UserRelationName="FK_MAYBAY_NHACHUAMAYBAY1" msprop:Generator_ChildPropName="GetMAYBAYRows" msprop:Generator_ParentPropName="CB_NHACHUAMAYBAYRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
